@@ -9,6 +9,8 @@ redirect_from:
 ---
 ### Hi, this is Charles! I am just an ***Art*** and ***Sports*** aficionado who knows a little bit about Mathematics and Computer Science.
 
+<br>
+<br>
 
 <details>
 <summary>Okay, for more...</summary>
