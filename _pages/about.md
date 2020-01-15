@@ -17,7 +17,7 @@ redirect_from:
 <br>
 I am a highly passionate first-year Mathematics and Computer Science student at Macalester College with a solid background in both pure mathematics and applied mathematics(invovled with computer and data science). I love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in *R, Java, Python, MATLAB, SQL, HTML, CSS, Hadoop,* I love using mathematical thinking to sovle practical problems as well.
 <br>
-I 
+I am indulged in Chinese Calligraphy, and playing any sports with friends and strangers. 
 
 
  </details>
