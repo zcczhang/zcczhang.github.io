@@ -16,7 +16,7 @@ redirect_from:
 <br>
 <br>
 <font color="grey" size = "4"><strong>SEP, 2019</strong></font><br>
-<font color="purple" size = "4.5"><strong>SCHOLARSHP, </strong></font><font size = "3.5"><strong>Charles J. Turck Presidential Honor Scholarship</strong></font><br>
+<font color="purple" size = "4.5"><strong>SCHOLARSHIP, </strong></font><font size = "3.5"><strong>Charles J. Turck Presidential Honor Scholarship</strong></font><br>
 &nbsp;&nbsp;&nbsp;&nbsp; <img src="/images/c.png" width="23.5" height="23.5"> Four-year scholarship	
 <br>
 <br>
