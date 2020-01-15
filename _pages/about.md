@@ -8,11 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi, this is Charles! There is no self-introduction for now...
+### Hi, this is Charles! I am just an ***Art*** and ***Sports*** aficionado who knows a little bit about Mathematics and Computer Science.
 
 
 <details>
-<summary>Don't Click!</summary>
-There is no self-introduction for now as well!
-
-</details>
+<summary>Okay, for more...</summary>
+I am a highly passionate first-year Mathematics and Computer Science student at Macalester College with a solid background in both pure mathematics and applied mathematics(invovled with computer and data science). I love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in R, Java, Python, MATLAB, SQL, HTML, CSS, Hadoop,  I love using mathematical thinking to sovle practical problems. </details>
