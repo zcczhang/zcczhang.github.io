@@ -74,4 +74,4 @@ Honors
 =====
   
 
-![](https://raw.githubusercontent.com/CZhang666/MyResume/master/CVpic.png)
+![](https://raw.githubusercontent.com/zcczhang/MyResume/master/CVpic.png)
