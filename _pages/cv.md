@@ -17,7 +17,7 @@ Education
 Skills
 ======
 - Language: Mandarin and English
-- Programming: R, Java, Python, SQL, MATLAB, HTML, CSS, Markdown, TeX, COMSOL
+- Programming(Tools): R, Java, Python, SQL, MATLAB, HTML, CSS, Tensorflow, OpenCV, Markdown, TeX, COMSOL
 - Interest: Calligraphy, Piano, any Sports, Travelling 
 
 
@@ -74,4 +74,4 @@ Honors
 =====
   
 
-![](https://raw.githubusercontent.com/zcczhang/MyResume/master/CVpic.png)
+![](https://raw.githubusercontent.com/zcczhang/MyResume/master/CVpic.png)	
