@@ -23,4 +23,7 @@ I am indulged in Chinese Calligraphy, and playing basketball, ping-pong, soccer 
  
  
  
-<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw&cl=ffffff&w=a"></script>
+<br>
+<br><br><br>
+
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=100&t=n&d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw&co=00b2ff&cmo=bd00ff&cmn=f70000"></script>
