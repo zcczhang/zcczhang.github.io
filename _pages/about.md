@@ -23,4 +23,4 @@ I am indulged in Chinese Calligraphy, and playing basketball, ping-pong, soccer 
  
  
  
- <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw" zoon="20%"></script>
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw&cl=ffffff&w=a"></script>
