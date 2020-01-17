@@ -70,7 +70,7 @@ Honors
 
 <br>
 
- One-Page CV
+ [One-Page CV](https://github.com/zcczhang/MyResume)
 =====
   
 
