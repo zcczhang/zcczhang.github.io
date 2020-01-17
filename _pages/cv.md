@@ -16,9 +16,9 @@ Education
   
 Skills
 ======
-- Language: Mandarin and English
-- Programming(Tools): R, Java, Python, SQL, MATLAB, HTML, CSS, Tensorflow, OpenCV, Markdown, TeX, COMSOL
-- Interest: Calligraphy, Piano, any Sports, Travelling 
+- **Language:** Mandarin and English
+- **Programming:** R(ggplot, ggmap, plotly, leaflet, gganimate, rvest, shinny), Python(numpy, pandas, easygui, matplotlib, openCV, tensorflow), Java, SQL, MATLAB, HTML, CSS, Markdown, TeX, COMSOL
+- **Interest:** Calligraphy, Piano, any Sports, Travelling 
 
 
 Experience
