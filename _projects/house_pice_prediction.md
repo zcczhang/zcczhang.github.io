@@ -7,8 +7,8 @@ date: 2020-01-19
 year: 2020
 location: "Jinan, China"
 image: ""
-language: "Python"
-tool: "/images/python.png"
+language: "Jupyter Notebook"
+tool: "/images/jupyter.png"
 ---
 
 
