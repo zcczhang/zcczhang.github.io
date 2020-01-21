@@ -6,7 +6,7 @@ permalink: /projects/house_pice_prediction
 date: 2020-01-19
 year: 2020
 location: "Jinan, China"
-image: ""
+image: "/images/kaggle1.png"
 language: "Jupyter Notebook"
 tool: "/images/jupyter.png"
 ---
