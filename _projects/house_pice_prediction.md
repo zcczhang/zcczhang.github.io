@@ -31,6 +31,27 @@ version3: Score: 11977.59807; ***Rank: 13 out of 19,465 teams(0.06%)***
 
 
 
+<head><meta charset="utf-8" />
+<title>A Detailed Regression Guide with House-pricing (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<style type="text/css">
+    /*!
+*
+* Twitter Bootstrap
+*
+*/
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 body {
   margin: 0;
 }
