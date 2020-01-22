@@ -11,7 +11,7 @@ language: "Jupyter Notebook"
 tool: "/images/jupyter.png"
 ---
 
-This is the practice for machine learning and for **Kaggle competition**: [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques).<br>Using gradient boost, XgBoost, StackingCVR, etc, to reach Score: 11977.59807; ***13<sup>th</sup> place*** out of 19,465 teams***(0.06%)***
+This is the practice for machine learning and for **Kaggle competition**: [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques).<br>Using gradient boosting, XgBoost, StackingCVR, etc, to reach Score: 11977.59807; ***13<sup>th</sup> place*** out of 19,465 teams***(0.06%)***
 
 
 <br>
@@ -51,6 +51,32 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
 }
 [hidden],
 template {
