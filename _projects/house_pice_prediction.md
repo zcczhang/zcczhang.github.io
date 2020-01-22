@@ -1,5 +1,5 @@
 ---
-title: House Price Prediction"
+title: House Price Prediction
 collection: projects
 type: "Projects"
 permalink: /projects/house_pice_prediction
