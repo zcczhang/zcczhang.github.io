@@ -25,8 +25,7 @@ This is the practice for machine learning and for **Kaggle competition**: [House
 [version 1:]() 
 Simple Prediction(with ridge regression, random forest, bagging, XGBoost) [View PDF](https://zcczhang.github.io/files/House_Price_Prediction_v1.pdf)
 
-
-[version 2:](https://github.com/zcczhang/House_Price_Prediction_Model/blob/master/house_price_prediction_v2.ipynb) Score(root mean squared logarithmic error): 0.10643; ***Rank: top 2%***. 
+[version 2:](https://github.com/zcczhang/House_Price_Prediction_Model/blob/master/house_price_prediction_v2.ipynb) Score(root mean squared logarithmic error): 0.10643; ***Rank: top 2%***. score: 0.10643;  
 
 version3: Score(mean absolute error): 11977.59807; ***Rank: 13 out of 19,465 teams(0.06%)***
 
@@ -40,7 +39,16 @@ version3: Score(mean absolute error): 11977.59807; ***Rank: 13 out of 19,465 tea
 
 <style type="text/css">
     /*!
-normalize.css */
+*
+* Twitter Bootstrap
+*
+*/
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
