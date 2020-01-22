@@ -40,16 +40,7 @@ version3: Score(mean absolute error): 11977.59807; ***Rank: 13 out of 19,465 tea
 
 <style type="text/css">
     /*!
-*
-* Twitter Bootstrap
-*
-*/
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
