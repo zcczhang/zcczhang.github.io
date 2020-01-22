@@ -28,9 +28,6 @@ Simple Prediction(with ridge regression, random forest, bagging, XGBoost)
 version3: Score: 11977.59807; ***Rank: 13 out of 19,465 teams(0.06%)***
 
 
-<embed src="/files/House_Price_Prediction_v1.pdf" height="100%" width="100%">
-
-
 
 <!DOCTYPE html>
 <html>
