@@ -21,7 +21,7 @@ This is the practice for machine learning and for **Kaggle competition**: [House
 <br>
 
 [version 1:]() 
-Simple Prediction(with ridge regression, random forest, bagging, XGBoost)
+Simple Prediction(with ridge regression, random forest, bagging, XGBoost)[View PDF](https://zcczhang.github.io/files/House_Price_Prediction_v1.pdf)
 <br>
 [version 2:](https://github.com/zcczhang/House_Price_Prediction_Model/blob/master/house_price_prediction_v2.ipynb) Score: 0.10643; ***Rank: top 2%***. score: 0.10643;  
 <br>
@@ -29,11 +29,9 @@ version3: Score: 11977.59807; ***Rank: 13 out of 19,465 teams(0.06%)***
 
 
 
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<title>A Detailed Regression Guide with House-pricing (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
 
 <style type="text/css">
     /*!
