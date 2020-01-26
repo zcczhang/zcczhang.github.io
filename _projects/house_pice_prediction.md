@@ -1522,7 +1522,6 @@ blockquote .small {
   line-height: 1.42857143;
   color: #777777;
 }
-blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
   content: '\2014 \00A0';
