@@ -29,7 +29,6 @@ version3: Score(mean absolute error): 11977.59807; ***Rank: 13 out of 19,465 tea
 
 
 
-
 # **House Price Prediction --- version 2**
 ***Charles Zhang*** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Jan 19 2020**
 
@@ -948,7 +947,7 @@ plotting_3_chart(train, 'SalePrice')
 ```
 
 
-![png](output_12_0.png)
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/1.png)
 
 
 These **three** charts above can tell us a lot about our target variable.
@@ -977,7 +976,7 @@ plotting_3_chart(train, 'SalePrice')
 ```
 
 
-![png](output_15_0.png)
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/2.png)
 
 
 As you can see the log transformation removes the normality of errors. This solves some of the other assumptions that we talked about above like Homoscedasticity. Let's make a comparison of the pre-transformed and post-transformed state of residual plots. 
@@ -992,9 +991,7 @@ sns.residplot(x = previous_train.GrLivArea, y = previous_train.SalePrice, ax = a
 sns.residplot(x = train.GrLivArea, y = train.SalePrice, ax = ax2);
 ```
 
-
-![png](output_17_0.png)
-
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/3.png)
 
 Here, we can see that the pre-transformed chart on the left has heteroscedasticity, and the post-transformed chart on the right has almost an equal amount of variance across the zero lines.
 
@@ -1016,8 +1013,7 @@ sns.heatmap(train.corr(), cmap=sns.diverging_palette(20, 220, n=200), mask = mas
 plt.title("Heatmap of all the Features", fontsize = 30);
 ```
 
-
-![png](output_19_0.png)
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/4.png)
 
 
 
@@ -1170,7 +1166,7 @@ sns.distplot(all_data['1stFlrSF']);
 ```
 
 
-![png](output_30_0.png)
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/5.png)
 
 
 
@@ -1256,7 +1252,7 @@ sns.distplot(all_data['1stFlrSF']);
 ```
 
 
-![png](output_33_0.png)
+![png](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/6.png)
 
 
 
