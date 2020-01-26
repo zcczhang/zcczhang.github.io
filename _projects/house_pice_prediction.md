@@ -14,8 +14,6 @@ tool: "/images/jupyter.png"
 This is the practice for machine learning and for **Kaggle competition**: [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques). Using Ridge, Lasso, LGBM, XGB, Stacking CV Regressor, and etc, to reach Score(mean absolute error): 11977.59807; ***13<sup>th</sup> place*** out of 19,465 teams***(0.06%)*** For more information, please visit my [Github Repository](https://github.com/zcczhang/House_Price_Prediction_Model) or download the [HTML file](https://github.com/zcczhang/House_Price_Prediction_Model/blob/master/house_price_prediction_v2.html).
 
 
-
-
 <br>
 
 ![](https://raw.githubusercontent.com/zcczhang/House_Price_Prediction_Model/master/output/rank.png)
