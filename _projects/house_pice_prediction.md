@@ -5962,10 +5962,6 @@ button.close {
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
-.modal-footer .btn + .btn {
-  margin-left: 5px;
-  margin-bottom: 0;
-}
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
