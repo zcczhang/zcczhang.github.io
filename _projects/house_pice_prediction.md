@@ -1398,7 +1398,7 @@ There are three types of regularizations.
 * **Lasso**
 * **Elastic Net**
 
-<div>
+
     
 ### Ridge:
 Ridge regression adds penalty equivalent to the square of the magnitude of the coefficients. This penalty is added to the least square loss function above and looks like this...
