@@ -8,7 +8,7 @@ year: 2020
 location: "Saint Paul, Minnesota"
 image: ""
 language: "Python"
-tool: "/images/python.jpeg"
+tool: "/images/python.png"
 ---
 
 working on this...
