@@ -12,5 +12,5 @@ date: "2020-06-01"
 
 ### Responsibilities:	
 - Implement the area coverage approach on unmanned aerial vehicles(UAVs)
-- Develop and implement deep reinforcement learning based algorithms with simulations for UAVs coverage
-- Make visualizations for the result of coverage and test the real drones in a specific field. 
+- Develop and implement deep reinforcement learning based algorithms with simulations for UAVs coverage 
+- Implement a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by stable baseline in Python.
