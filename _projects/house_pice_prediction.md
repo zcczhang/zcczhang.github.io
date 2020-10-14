@@ -11,7 +11,7 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-This is the practice for machine learning and for **Kaggle competition**: [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques). Using Ridge, Lasso, LGBM, XGB, Stacking CV Regressor, and etc, to reach Score(mean absolute error): 11977.59807; ***13<sup>th</sup> place*** out of 19,465 teams***(0.06%)*** For more information, please see my project directly or visit my [Github Repository](https://github.com/zcczhang/House_Price_Prediction_Model).
+This is the first practice for machine learning and for **Kaggle competition**: [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques). Using Ridge, Lasso, LGBM, XGB, Stacking CV Regressor, and etc, to reach Score(mean absolute error): 11977.59807; ***13<sup>th</sup> place*** out of 19,465 teams ***(0.06%)*** For more information, please see my project directly or visit my [Github Repository](https://github.com/zcczhang/House_Price_Prediction_Model).
 
 
 <br>
@@ -1868,3 +1868,11 @@ submission['SalePrice'] = submission['SalePrice'].apply(lambda x: x if x > q1 el
 submission['SalePrice'] = submission['SalePrice'].apply(lambda x: x if x < q2 else x*1.1)
 submission.to_csv("submission.csv", index=False)
 ```
+### Reference
+Notebooks in kaggle:
+
+[House Prices: 1st Approach to Data Science Process](https://www.kaggle.com/cheesu/house-prices-1st-approach-to-data-science-process)
+
+[Stack&Blend LRs XGB LGB {House Prices K} v17](https://www.kaggle.com/itslek/stack-blend-lrs-xgb-lgb-house-prices-k-v17)
+
+[EDA, New Models and Stacking](https://www.kaggle.com/datafan07/top-1-approach-eda-new-models-and-stacking)
