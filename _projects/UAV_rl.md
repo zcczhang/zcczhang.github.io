@@ -11,6 +11,8 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
+2020 Summer Research with professor Esra Kadioglu Urtis at Macalester College. We first implemented the area coverage approach on unmanned aerial vehicles(UAVs). We also developed and implemented deep reinforcement learning based algorithms with simulations and a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by stable baseline in Python.
+
 still working on this...
 
 ![](https://github.com/zcczhang/UAV_Coverage/blob/master/Pictures/NMDP%20Tabular%20Q%20Learning.png?raw=true)
