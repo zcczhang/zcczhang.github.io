@@ -11,5 +11,10 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-working on this...
+still working on this...
+
+![](https://github.com/zcczhang/UAV_Coverage/blob/master/Pictures/NMDP%20Tabular%20Q%20Learning.png?raw=true)
+![](https://github.com/zcczhang/UAV_Coverage/blob/master/Pictures/Learning%20with%20Graph-Based%20State%20Representations.png?raw=true)
+![](https://github.com/zcczhang/zcczhang.github.io/blob/master/images/uavposter.png?raw=true)
+
 
