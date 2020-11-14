@@ -6,9 +6,9 @@ permalink: /projects/uav
 date: 2020-08-07
 year: 2020
 location: "Saint Paul, Minnesota"
-image: "/images/uav.png"
+image: "/images/double10x10.gif"
 language: "Python"
-tool: "/images/double10x10.gif"
+tool: "/images/pytoh.png"
 ---
 
 2020 **Summer Research** with professor Esra Kadioglu Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. We first implemented the area coverage approach on unmanned aerial vehicles(UAVs). We also developed and implemented reinforcement learning based algorithms with simulations and a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region ***(ACKTR) deep reinforcement learning*** method provided by Stable Baselines(OpenAI) in Python.
