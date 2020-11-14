@@ -1,5 +1,5 @@
 ---
-title: "Deep Reinforcement Learning Research Assistant"
+title: "Deep Reinforcement Learning Researcher"
 collection: experience
 permalink: /experience/summer2020
 venue: "Mathematics, Statistics and Computer Science Department, Macalester College"
