@@ -13,6 +13,6 @@ Anderson-Grossheusch Summer Research Collaboration Fund, Mac/Faculty Collaborati
 
 
 ### Responsibilities:	
-- Implement the hexagonal tesselation area coverage approach on unmanned aerial vehicles(UAVs) in Python
-- Develop tabular Q learning based algorithms with simulations for UAVs coverage builing in Gym or by graph.
-- Implement a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by Stable Baselines in Python.
+- Implement the hexagonal tessellation area coverage approach on unmanned aerial vehicles(UAVs) in Python
+- Develop Q learning based algorithms with simulations for UAVs coverage building in Gym or by graph.
+- Create a gym environment for implementing the coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by Stable Baselines in Python.

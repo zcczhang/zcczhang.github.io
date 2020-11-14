@@ -4,14 +4,16 @@ collection: experience
 permalink: /experience/spring2020
 venue: "Mathematics, Statistics and Computer Science Department, Macalester College"
 location: "St. Paul, MN"
-term: "Spring "
-date: "2020-01-01"
+term: "Spring 2020 - "
+date: "PRESENT"
 ---
-- ### Teaching Assistant(Preceptor) in **STAT/COMP 112 Intro to the Data Science** at Macalester College
+- ### Teaching Assistant(Preceptor) in **COMP 128 Data Structure** in Fall 2020 at Macalester College
+- ### Teaching Assistant(Preceptor) in **STAT/COMP 112 Intro to the Data Science** in Spring 2020 at Macalester College
+
 
 
 ### Responsibilities:	
-- Helped students with realize multivariate visualization, data wrangling, interactivity, Leaflet, scraping data, SQL, and machine learning by R(RStudio)
+- Helped over 100 students intotal with implementations and applications in Java and R
 - Assist faculty as requested
 - Hold tutoring sessions
 - Grade homework
