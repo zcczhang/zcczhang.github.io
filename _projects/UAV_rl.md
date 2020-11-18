@@ -58,7 +58,7 @@ The coverage path planning(CPP) for Unmanned Aerial Vehicles (a.k.a drones) are 
 
 Many existed work have already addressed the coverage problem by both theoretically methods or learning-based algorithms[5][6][7]. However, drones in those methods are either static for coverage in terms of drones’ field of view(FOV), or only complete one-way coverage paths where the cost for the drones’ recovery is not under the consideration. Therefore, in this work, we not only consider how to generate the shortest coverage paths, but also include letting the UAV return back to the launch position, which will be addressed in this work using reinforcement learning algorithms illustrated in detail in the overview sections in this report.
 
-The main contribution of this work is to demonstrate approaches to the reinforcement learning algorithms, named Q-learning and d Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning, to perform the CPP of an regular or irregular environment with known obstacles, visiting only once each center of the FOV and returning(for single drone so far), resulting in an optimized path.
+The main contribution of this work is to demonstrate approaches to the reinforcement learning algorithms, named Q-learning and Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning, to perform the CPP of an regular or irregular environment with known obstacles, visiting only once each center of the FOV and returning(for single drone so far), resulting in an optimized path.
 
 <a id="2"></a>
 ## 2 Implementation of Hexagonal Tessellation
@@ -88,7 +88,7 @@ In this section, the whole field will be covered by one agent(a drone), using th
 
 ![](/images/eq2.png)
 
-where $r$ is a relatively large constant reward and $f_i : {S} → {0,1}$ shows whether the state is visited, where 0 for unvisited while 1 for visited. The value function can be defined via the value $V (s)$ as an expected total reward (optionally discounted) that is obtainable from the state. This quantity gave a name to the whole family of methods called $Q$-learning[8]. Applying the bellman equation and temporal difference method, the tabular $Q$ learning updates the $Q$ value $Q(S, A)$ corresponding with the state s and action a after each step, showing following:
+where $r$ is a relatively large constant reward and $f_i : \{S\} → \{0,1\}$ shows whether the state is visited, where 0 for unvisited while 1 for visited. The value function can be defined via the value $V (s)$ as an expected total reward (optionally discounted) that is obtainable from the state. This quantity gave a name to the whole family of methods called $Q$-learning[8]. Applying the bellman equation and temporal difference method, the tabular $Q$ learning updates the $Q$ value $Q(S, A)$ corresponding with the state s and action a after each step, showing following:
 
 ![](/images/eq3.png)
 
@@ -97,7 +97,7 @@ where $S$ and $S'$ are the current and next (potential) states respectively; R i
 <a id="3.2"></a>
 ### 3.2 NMDP Tabular Q Learning
 
-Since in each step in each episode, the agent has to observe if the current state is visited or not in order to get the reward, instead of only observing the current state, the process is the non-Markov Decision Process(NMDP). In order to let the agent ”learn” faster, I assume that they will visit the unvisited grid first. I also implement the decaying epsilon-greedy method to maximize the numerical reward for the action policy π(s) for each state s, shown below,
+Since in each step in each episode, the agent has to observe if the current state is visited or not in order to get the reward, instead of only observing the current state, the process is the non-Markov Decision Process(NMDP). In order to let the agent ”learn” faster, I assume that they will visit the unvisited grid first. I also implement the decaying epsilon-greedy method to maximize the numerical reward for the action policy $\pi(s)$ for each state $s$, shown below,
 
 ![](/images/eq4.png)
 
