@@ -24,7 +24,8 @@ pdf version(recommanded for format)
 
 #### Glance at my presentation: [LINK](https://docs.google.com/presentation/d/1c5O4AdvdayNQrn9QppQWCvnQDMCDF5lfyIztgM2HMwM/edit?usp=sharing)
 
---
+---
+
 <center> <h1> Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning</h1> </center>
 
 <center> <h5> By </h5> </center>
