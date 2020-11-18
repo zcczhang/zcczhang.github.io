@@ -68,7 +68,7 @@ The main contribution of this work is to demonstrate approaches to the reinforce
 
 Professor Esra Kadioglu shows that a coverage path can be obtained by using polygon tessellation of a given area, and hexagonal tessellation produces a shorter coverage path than a square tessellation, in the paper *UAV Coverage Using Hexagonal Tessellation*[6]. This paper provides the algorithm to generate the Hamiltonian circuit in a rectangular field, and I implemented this algorithm to get GPS way-points given diagonal coordinates of the field and the radius of the field of view(FOV) of the UAV[code](https://github.com/zcczhang/UAV_Coverage/tree/master/Get_Path). To improve the accuracy of the translation between longitude, latitude, and meter, I transform the coordinates to the radian first and calculate the distance showing below, with two diagonal points: (top, left), (bottom, right):
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq1.png?raw=true" width=610" height="50"/></center>
+![](/images/eq1.png)
 
 so that: longitude per meter = (right - left) / width, and latitude per meter = (top-bottom)/height.
 
@@ -85,12 +85,12 @@ Figures below show two circumstances of GPS way-points for drone covering a rect
 
 In comparison with the hexagon tessellation which is calculated and proved mathematically that generates the shorter coverage path than the square tessellation, we want to figure out if it is possible to implement the reinforcement learning to find the shortest coverage path in a given field. To begin with, the environment is set to be the rectangular grid world, and the start point is the same with the end point. Specifically, the graph below gives a simple example of the rectangular 4x5 grid world where the agent starts at the (0, 0) at the upper left corner. And the drone will ideally pass through every center of the FOV, and take photos or make some other actions along with the coverage each step. Then our problem becomes to implement the reinforcement learning looking for the shortest path where the drone visits all grids(squares) and returns back to the launch position in the environment grid world.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/3.png?raw=true" width=320" height="130" /></center>
+![](/images/fig2.png)
 <center> <h7> Figure 2: The example of a projected area of a UAV and a simple 4x5 gridworld starting at (0,0)</h7> </center>
 
 In this section, the whole field will be covered by one agent(a drone), using the reinforcement learning by tabular Q learning. We can define a quantity Q(s,a) that equals the total reward got by executing action a in state s. The agent will receive a huge global reward when finish the task visiting all cells and returning back to the launch position, and will receive a small penalty when revisit a cell in the gridworld, shown in the equation below.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq2.png?raw=true" width=370" height="55" /></center>
+![](/images/eq2.png)
 
 where r is a relatively large constant reward and fi : {S} → {0,1} shows whether the state is visited, where 0 for unvisited while 1 for visited. The value function can be defined via the value V (s) as an expected total reward (optionally discounted) that is obtainable from the state. This quantity gave a name to the whole family of methods called Q-learning[8]. Applying the bellman equation and temporal difference method, the tabular Q learning updates the Q value Q(S, A) corresponding with the state s and action a after each step, showing following:
 
