@@ -88,6 +88,8 @@ In comparison with the hexagon tessellation which is calculated and proved mathe
 ![](/images/fig2.png)
 <center> <h7> Figure 2: The example of a projected area of a UAV and a simple 4x5 gridworld starting at (0,0)</h7> </center>
 
+<br>
+
 In this section, the whole field will be covered by one agent(a drone), using the reinforcement learning by tabular Q learning. We can define a quantity Q(s,a) that equals the total reward got by executing action a in state s. The agent will receive a huge global reward when finish the task visiting all cells and returning back to the launch position, and will receive a small penalty when revisit a cell in the gridworld, shown in the equation below.
 
 ![](/images/eq2.png)
