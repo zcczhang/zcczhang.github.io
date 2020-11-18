@@ -16,4 +16,4 @@ Anderson-Grossheusch Summer Research Collaboration Fund, Mac/Faculty Collaborati
 - Develop Q learning based algorithms with simulations for UAVs coverage building in Gym or by graph.
 - Create a gym environment for implementing the coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by Stable Baselines in Python.
 
-<embed src="/files/MEMS.pdf" height="100%" width="100%">
+<embed src="/files/Research_Report.pdf" height="100%" width="100%">
