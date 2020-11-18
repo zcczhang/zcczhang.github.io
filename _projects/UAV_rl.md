@@ -11,7 +11,7 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-2020 **Summer Research** with professor Esra Kadioglu Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. We first implemented the area coverage approach on unmanned aerial vehicles(UAVs). We also developed and implemented reinforcement learning based algorithms with simulations and a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region ***(ACKTR) deep reinforcement learning*** method provided by Stable Baselines(OpenAI) in Python([My Reseaerch Report](/files/Research_Report.pdf), [My Github Repository](https://github.com/zcczhang/UAV_Coverage)).
+2020 **Summer Research** with professor Esra Kadioglu Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. We developed and implemented reinforcement learning based algorithms with simulations and a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region ***(ACKTR) deep reinforcement learning*** method provided by Stable Baselines(OpenAI) in Python([My Reseaerch Report](/files/Research_Report.pdf), [My Github Repository](https://github.com/zcczhang/UAV_Coverage)).
 
 ### My Research Report 
 
