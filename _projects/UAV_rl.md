@@ -94,7 +94,7 @@ In this section, the whole field will be covered by one agent(a drone), using th
 
 where r is a relatively large constant reward and fi : {S} → {0,1} shows whether the state is visited, where 0 for unvisited while 1 for visited. The value function can be defined via the value V (s) as an expected total reward (optionally discounted) that is obtainable from the state. This quantity gave a name to the whole family of methods called Q-learning[8]. Applying the bellman equation and temporal difference method, the tabular Q learning updates the Q value Q(S, A) corresponding with the state s and action a after each step, showing following:
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq3.png?raw=true" width=350" height="36" /></center>
+![](/images/eq3.png)
 
 where S and S′ are the current and next (potential) states respectively; R is the reward based on the current state s and action a; α is the learning rate; and γ is the discount factor[8]. In our research, the state is set to be the waypoint of the environment—the gridworld in this section.
 
@@ -103,7 +103,7 @@ where S and S′ are the current and next (potential) states respectively; R is 
 
 Since in each step in each episode, the agent has to observe if the current state is visited or not in order to get the reward, instead of only observing the current state, the process is the non-Markov Decision Process(NMDP). In order to let the agent ”learn” faster, I assume that they will visit the unvisited grid first. I also implement the decaying epsilon-greedy method to maximize the numerical reward for the action policy π(s) for each state s, shown below,
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq4.png?raw=true" width=300" height="43" /></center>
+![](/images/eq4.png)
 
 where ε decreases over time proportionally. Since the agent has to finish two task for each episode: visit all grids and complete the loop back to the origin, the agent will randomly move and receive the reward when visit the unvisited grid, and will receive a much larger global reward for both finishing visit and coming back. Instead of terminating the episode once the agent re-visit a state where leads to a ”fail” for the shortest coverage task like most reinforcement learning algorithms, my algorithm allows the repetition of visits but the agent will receive a negative reward for the penalty, in order to make the agent ”learn” and distinguish faster both from the good decisions and bad decisions[9]. The algorithm below shows the tabular Q learning for one agent looking for the optimal path.
 
