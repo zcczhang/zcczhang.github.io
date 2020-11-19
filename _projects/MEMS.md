@@ -11,7 +11,7 @@ language: "COMSOL"
 tool: "/images/comsol.png"
 ---
 
-This project is mentored by a doctor at UCLA and the final paper was published.<br>
+This project is mentored by Albert Chen at UCLA and the final paper was published.<br>
 In this work, using COMSOL and MATLAB, a finite element code was used for the design, optimization and visualization of a comb drive accelerator. 
 
 
