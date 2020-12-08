@@ -258,6 +258,13 @@ defaults:
       layout: single
       author_profile: true
       share: true
+  - scope:
+      path: ""
+      type: blog
+      values:
+      layout: single
+      author_profile: true
+      share: true
 
 # Sass/SCSS
 sass:
