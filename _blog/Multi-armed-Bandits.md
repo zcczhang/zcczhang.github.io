@@ -6,8 +6,7 @@ tags:
   - Reinforcement Learning
   - Tabular Solution Method
 --- 
- 
-## Chapter 2 Multi-armed Bandits (action-value method)
+action-value method
 
 k-armed: k options(actions)
 
