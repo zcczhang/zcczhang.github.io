@@ -2,7 +2,6 @@
 title: "Chapter 2 Multi-armed Bandits"
 collection: blog
 permalink: /blog/multi-armed-bandits
-<!--date: "2020-01-01"-->
 tags:
   - Reinforcement-Learning
 ---
