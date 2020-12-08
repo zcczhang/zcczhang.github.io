@@ -10,7 +10,7 @@ redirect_from:
 
 ## Reinforcement Learning Notes
 
-  <ul>{% for post in site.rl %}
+  <ul>{% for post in site.rl reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
