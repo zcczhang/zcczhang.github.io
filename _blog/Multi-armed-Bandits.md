@@ -4,7 +4,7 @@ collection: blog
 permalink: /blog/multi-armed-bandits
 <!--date: "2020-01-01"-->
 tags:
-  - Reinforcement Learning
+  - Reinforcement-Learning
 ---
 
 # I. Tabular Solution Method
