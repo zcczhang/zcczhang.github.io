@@ -1,11 +1,11 @@
 ---
 title: "Chapter 4 Dynamics Programming"
-collection: blog
-permalink: /blog/DP
+collection: rl
+permalink: /rl/DP
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
+date: "2020-12-03"
 --- 
-$\text{ }$
 
 to be continued

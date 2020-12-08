@@ -8,8 +8,9 @@ redirect_from:
 
 {% include base_path %}
 
+## Reinforcement Learning Notes
 
-  <ul>{% for post in site.blog reversed %}
+  <ul>{% for post in site.rl reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 

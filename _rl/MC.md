@@ -1,11 +1,11 @@
 ---
 title: "Chapter 5 Monte Carlo Methods"
-collection: blog
-permalink: /blog/MC-methods
+collection: rl
+permalink: /rl/MC-methods
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
+date: "2020-12-04"
 --- 
- 
- 
+
 to be continued
