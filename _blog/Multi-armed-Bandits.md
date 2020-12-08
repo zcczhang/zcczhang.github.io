@@ -6,7 +6,7 @@ tags:
   - Reinforcement Learning
   - Tabular Solution Method
 --- 
-action-value method
+Action-Value method
 
 k-armed: k options(actions)
 
