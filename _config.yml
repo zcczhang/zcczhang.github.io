@@ -261,7 +261,7 @@ defaults:
   - scope:
       path: ""
       type: blog
-      values:
+    values:
       layout: single
       author_profile: true
       share: true
