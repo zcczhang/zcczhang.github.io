@@ -54,7 +54,7 @@ Q_{n+1} &= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) Q_n 
 &= (1-\alpha)^n Q_1 + \sum_{i=1}^n \alpha(1-\alpha)^{n-i}R_i 
 \end{aligned}\]
 
-Note \((1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1, \alpha \in (0,1]\), \(Q_{n+1}\) therefore is called (exponetial recency-)weight average of past \(R \text{ and } Q_1\).<br><br>
+Note \((1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1, \alpha \in [0,1]\), \(Q_{n+1}\) therefore is called (exponetial recency-)weight average of past \(R \text{ and } Q_1\).<br><br>
 <i>Proof</i>:<br><br>
 \(n=1, 1-\alpha+\alpha = 1\);<br>
 assume for \(n=k, (1-\alpha)^k+ \displaystyle\sum_{i=1}^k \alpha(1-\alpha)^{k-i} = 1\);<br>
@@ -65,10 +65,19 @@ then for \(n=k+1\), <br>
 &= -\alpha(1-\alpha)^k+\alpha(1-\alpha)^k \\
 &= 0
 \end{aligned} 
-\)
+\)<br>
+\(\therefore  (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\alpha)^{k+1-i} = 1, \forall k \in \mathbb{N}\)<br>
+\(\therefore \forall n\in\mathbb{N}, \text{ }\alpha \in [0,1], \text{ } (1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1\)
+<br><br>
+Consider \(\{\alpha_n\}\) by stochastic approximation theory: P(coverage) = 1:
+\[
+\sum_{n=1}^\infty \alpha_n(a) = \infty \text{ }\text{ }\text{ }\text{ and } \text{ }\text{ }\text{ } \sum_{n=1}^\infty \alpha_n(a) < \infty 
+\]
+This means (i)steps are large enough to overcome initial condition or random fluctuations (ii) steps become small enough to coverage.
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br>
 
 
 
