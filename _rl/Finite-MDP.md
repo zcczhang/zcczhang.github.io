@@ -5,6 +5,7 @@ permalink: /rl/Finite-MDP
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
+  - My Note
 date: "2020-12-02"
 --- 
 ***Reinforcement Learning: An Introduction***

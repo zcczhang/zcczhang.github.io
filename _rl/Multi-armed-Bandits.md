@@ -5,6 +5,7 @@ permalink: /rl/multi-armed-bandits
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
+  - My Note
 date: "2020-12-01"
 --- 
 ***Reinforcement Learning: An Introduction***
