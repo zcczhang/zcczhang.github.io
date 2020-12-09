@@ -10,7 +10,7 @@ date: "2020-12-01"
 <b>Action-Value method</b>
 
 > Author: Charles Zhang
-<br>This post is created following [*BU-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing.
+<br>This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing.
 
 <html>
 <head>
