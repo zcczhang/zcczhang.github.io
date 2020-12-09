@@ -6,12 +6,9 @@ tags:
   - Reinforcement Learning
   - Tabular Solution Method
 date: "2020-12-01"
+useMath: true
 --- 
 
-
----
-useMath: true
----
 
 Action-Value method
 
