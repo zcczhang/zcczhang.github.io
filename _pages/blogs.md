@@ -10,6 +10,8 @@ redirect_from:
 
 ## Reinforcement Learning Notes
 
+> Reading notes and mathematical proofs for *Reinforcement Learning: An Introduction*. My own practicing Code for exercises is private so far.
+
   <ul>{% for post in site.rl %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
