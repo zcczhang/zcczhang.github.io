@@ -101,7 +101,7 @@ where \(\alpha>0, \overline{R_t} = avr\{R_1...R_{t-1}\}\)<br>
 <br>
 Conclusion: it is a stochastic approximation to gradient ascent(proof in P.38):
 \[
-H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_*(x)
+H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb{E}[R_t] = \sum_x\pi_t(x)q_*(x)
 \]
 update = gradient of \(\mathbb{E}[R_t]\Rightarrow\) stochastic gradient ascent \(\Rightarrow\) robust convergence.
 </p>
