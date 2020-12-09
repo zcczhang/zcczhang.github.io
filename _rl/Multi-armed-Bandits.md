@@ -14,7 +14,7 @@ Action-Value method
 
 k-armed: k options(actions)
 
-$q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]$ , using $Q_t(a) \approx q_*(a)$ estimation.
+\(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.
 
 $Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbf{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbf{1}_{A_i = a}}$, $\mathbf{1} := \begin{array}{c}
      & 1 \text{ if predicate is true} \\
