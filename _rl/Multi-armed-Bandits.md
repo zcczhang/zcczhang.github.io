@@ -9,6 +9,7 @@ date: "2020-12-01"
 --- 
 <b>Action-Value method</b>
 
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -99,11 +100,53 @@ H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
 where \(\alpha>0, \overline{R_t} = avr\{R_1...R_{t-1}\}\)<br>
 \(\overline{R_t}\Rightarrow\) baseline, \(R_t>\overline{R_t}, P(A_t)\) in the future increases, vice versa.
 <br>
-Conclusion: it is a stochastic approximation to gradient ascent(proof in P.38):
+Conclusion: it is a stochastic approximation to gradient ascent:
 \[
-H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb{E}[R_t] = \sum_x\pi_t(x)q_*(x)
+H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_*(x)
 \]
 update = gradient of \(\mathbb{E}[R_t]\Rightarrow\) stochastic gradient ascent \(\Rightarrow\) robust convergence.
+<br>
+<i>Proof:</i>
+<br>
+\(\begin{aligned} \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)}\left[\sum_{b} \pi_{t}(b) q_{*}(b)\right] \\ &=\sum_{b} q_{*}(b) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \end{aligned}\)
+<br>
+Let \(\forall X_t\) and \(b\) are independent, then \(\displaystyle \sum_b\frac{\partial\pi_t(b)}{\partial H_t(b)} = 0\), so we have
+<br>
+\(\begin{aligned}\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &
+=\sum_{b}\left(q_{*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \\
+&=\sum_{b} \pi_{t}(b)\left(q_{*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} / \pi_{t}(b) \\
+&=\mathbb{E}\left[\left(q_{*}\left(A_{t}\right)-X_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
+\end{aligned}\)
+<br><br>
+given \(A_t, \mathbb{E}[R_t|A_t] = q_*(A_t) = R_t\), and let arbitary \(X_t\) be \(\overline{R_t}\) then:
+<br><br>
+\(\displaystyle
+\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} = \mathbb{E}\left[\left(R_t)-\overline{R_t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
+\)
+<br><br>
+Next,
+<br><br>
+\(\begin{aligned}
+\frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)} \pi_{t}(b) \\
+&=\frac{\partial}{\partial H_{t}(a)}\left[\frac{e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}\right] \\
+&=\frac{\frac{\partial e^{H_{t}(b)}}{\partial H_{t}(a)} \sum_{c=1}^{k} e^{H_{t}(c)}-e^{H_{t}(b)} \frac{\partial \sum_{c=1}^{k} e^{H_{t}(c)}}{\partial H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
+&=\frac{\mathbb{1}_{a=b} e^{H_{t}(a)} \sum_{c=1}^{k} e_{t}^{H}(c)-e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
+&=\frac{{\mathbb{1}}_{a=b}{ }^{k} e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}-\frac{e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
+&={\mathbb{1}}_{a=b} \pi_{t}(b)-\pi_{t}(b){\pi}_{t}(a) \\
+&=\pi_{t}(b)\left({\mathbb{1}}_{a=b}-\pi_{t}(a)\right)
+\end{aligned}\)
+<br><br>
+Therefore,
+<br><br>
+\(
+\begin{aligned}
+\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right] \\
+&=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right) \pi_{t}\left(A_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right) / \pi_{t}\left(A_{t}\right)\right] \\
+&=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right)\right]
+\end{aligned}
+\)
+<br>
+which is corresponding with the equation for the gradient ascent. 
 </p>
 </body>
 </html> 
