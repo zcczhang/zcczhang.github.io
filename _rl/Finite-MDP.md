@@ -10,6 +10,9 @@ date: "2020-12-02"
 
 ![](/images/mdp.png)
 
+> Author: Charles Zhang
+<br>This post is created following [*BU-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing.
+
 <html>
 <head>
   <meta charset="utf-8">
