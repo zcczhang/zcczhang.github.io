@@ -7,7 +7,7 @@ tags:
   - Tabular Solution Method
 date: "2020-12-02"
 --- 
-MDP
+***Reinforcement Learning: An Introduction***
 
 > Author: Charles Zhang
 <br>This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing.
