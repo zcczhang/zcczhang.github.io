@@ -105,4 +105,6 @@ v_\pi(s)=\sum_a\pi(a|s)q_\pi(s,a)
 </body>
 </html> 
 
+The backup diagrams below provide the better understanding to the bellman equation.
+
 ![](/images/mdp2.png)
