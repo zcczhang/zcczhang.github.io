@@ -133,10 +133,10 @@ v_\pi^{\text{new}}(s) &= \mathbb{E}_\pi\left[ \sum_{k=0}^\infty \gamma^k \left(R
 <br><br>
 <b>Optimal policy and value functions:</b>
 \[
-v_*(s)\doteq \max_\pi v_\pi(s) = \max_a \sum_{s',r}p(s'r|s,a)[r+\gamma v_*(s')], \text{  } \forall s\in\mathcal{S} 
+v_*(s)\doteq \max_\pi v_\pi(s) = \max_a \sum_{s',r}p(s',r|s,a)[r+\gamma v_*(s')], \text{  } \forall s\in\mathcal{S} 
 \]
 \[
-q_*(s,a)\doteq \max_\pi q_\pi(s,a) = \sum_{s',r}p(s'r|s,a)[r+\gamma \max_{a'} q_*(s',a')], \text{  } \forall s\in\mathcal{S}
+q_*(s,a)\doteq \max_\pi q_\pi(s,a) = \sum_{s',r}p(s', r|s,a)[r+\gamma \max_{a'} q_*(s',a')], \text{  } \forall s\in\mathcal{S}
 \]
 If there were finite \(n\) states, then there will be \(n\) equations for \(v_*(s)\) since dynamics \(p\) is known and MDP is finite. Then, the best policy could be found by "greedy". However, "optimal" requires extreme computatoinal and memory cost due to the enumerations, so we are looking for approximations.<br>
 <b>Greedy Policy</b> \(\pi'(s) = \arg\max_x q_\pi(s,a)\)<br>

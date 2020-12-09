@@ -152,3 +152,7 @@ which is corresponding with the equation for the gradient ascent.
 </p>
 </body>
 </html> 
+
+***Reference***
+
+[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
