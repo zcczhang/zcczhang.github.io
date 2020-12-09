@@ -8,7 +8,6 @@ tags:
 date: "2020-12-01"
 --- 
 
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -79,7 +78,7 @@ As \(Q_{n+1}\) more or less dependent on \(Q_1(a) \Rightarrow\) biased by initia
 Then, for genral stationary case, we encourage exploration optimistic initial value(\(Q_1>0, \epsilon=0\) compared with greedy's).
 <br><br>
 
-<b>Upper Confidence Bound</b>(UCB) Action selection:
+<b>Upper Confidence Bound</b>(UCB) Action selection:   
 \[ A_t \doteq \arg\max_a\left[Q_t(a)+c\cdot\sqrt{\frac{\ln t}{N_t(a)}}\right]\]
 where \(N_t(a)\): number of times "\(a\)" has been selected before "\(t\)";<br>
 c>0 controls the degree of exploration;<br>
@@ -98,11 +97,13 @@ H_{t+1}(A_t) \doteq H_t(A_t) + \alpha(R_t-\overline{R_t})(\mathbb{1}_{a=A_t}-\pi
 H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
 \]
 where \(\alpha>0, \overline{R_t} = avr\{R_1...R_{t-1}\}\)<br>
-\(\overline{R_t}\Rightarrow\) baseline
-<br><br><br><br><br><br><br>
-
-
-
+\(\overline{R_t}\Rightarrow\) baseline, \(R_t>\overline{R_t}, P(A_t)\) in the future increases, vice versa.
+<br>
+Conclusion: it is a stochastic approximation to gradient ascent(proof in P.38):
+\[
+H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_*(x)
+\]
+update = gradient of \(\mathbb{E}[R_t]\Rightarrow\) stochastic gradient ascent \(\Rightarrow\) robust convergence.
 </p>
 </body>
-</html>
+</html> 
