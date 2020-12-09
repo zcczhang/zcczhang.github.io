@@ -143,4 +143,13 @@ If there were finite \(n\) states, then there will be \(n\) equations for \(v_*(
 Efficiency: search directly: \(O(k^n)\) with n states k actions; dynamic programing: \(O(c^n, c^k)\), with constant c, which will be introduced in the next section. 
 </p>
 </body>
-</html> <br><br><br>
+</html>
+<br><br><br>
+
+***Reference***
+
+[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
+
+
+
+
