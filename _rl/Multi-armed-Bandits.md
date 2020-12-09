@@ -55,7 +55,7 @@ Q_{n+1} &= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) Q_n 
 \end{aligned}\]
 
 Note \((1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1, \alpha \in [0,1]\), \(Q_{n+1}\) therefore is called (exponetial recency-)weight average of past \(R \text{ and } Q_1\).<br><br>
-<i>Proof</i>:<br><br>
+<i>Proof</i>:<br>
 \(n=1, 1-\alpha+\alpha = 1\);<br>
 assume for \(n=k, (1-\alpha)^k+ \displaystyle\sum_{i=1}^k \alpha(1-\alpha)^{k-i} = 1\);<br>
 then for \(n=k+1\), <br>
@@ -123,19 +123,21 @@ given \(A_t, \mathbb{E}[R_t|A_t] = q_*(A_t) = R_t\), and let arbitary \(X_t\) be
 \(\displaystyle
 \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} = \mathbb{E}\left[\left(R_t)-\overline{R_t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
 \)
-<br><br>
+<br>
 Next,
-<br><br>
+<br>
 \(\begin{aligned}
 \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)} \pi_{t}(b) \\
 &=\frac{\partial}{\partial H_{t}(a)}\left[\frac{e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}\right] \\
+&=\frac{\frac{\partial e^{H_{t}(b)}}{\partial H_{t}(a)} \sum_{c=1}^{k} e^{H_{t}(c)}-e^{H_{t}(b)} \frac{\partial \sum_{c=1}^{k} e^{H_{t}(c)}}{\partial H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
+&=\frac{\mathbb{1}_{a=b} e^{H_{t}(a)} \sum_{c=1}^{k} e_{t}^{H}(c)-e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
 &=\frac{{\mathbb{1}}_{a=b}{ }^{k} e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}-\frac{e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
 &={\mathbb{1}}_{a=b} \pi_{t}(b)-\pi_{t}(b){\pi}_{t}(a) \\
 &=\pi_{t}(b)\left({\mathbb{1}}_{a=b}-\pi_{t}(a)\right)
 \end{aligned}\)
-<br><br>
+<br>
 Therefore,
-<br><br>
+<br>
 \(
 \begin{aligned}
 \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right] \\
