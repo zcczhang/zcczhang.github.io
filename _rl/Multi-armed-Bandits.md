@@ -139,9 +139,9 @@ Therefore,
 <br><br>
 \(
 \begin{aligned}
-\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right] \\
-&=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right) \pi_{t}\left(A_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right) / \pi_{t}\left(A_{t}\right)\right] \\
-&=\mathbb{E}\left[\left(R_{t}-\bar{R}_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right)\right]
+\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\mathbb{E}\left[\left(R_{t}-\overline{R}_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right] \\
+&=\mathbb{E}\left[\left(R_{t}-\overline{R}_{t}\right) \pi_{t}\left(A_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right) / \pi_{t}\left(A_{t}\right)\right] \\
+&=\mathbb{E}\left[\left(R_{t}-\overline{R}_{t}\right)\left(\mathbf{1}_{a=A_{t}}-\pi_{t}(a)\right)\right]
 \end{aligned}
 \)
 <br><br>
