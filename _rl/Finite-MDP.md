@@ -81,15 +81,20 @@ v_\pi(s) = \sum_{a} \pi(a | s) \sum_{s^{\prime}, r} p\left(s^{\prime}, r | s, a\
 \]
 <i>Proof:</i>
 <br>
-
-<br><br><br><br><br><br>
-
-
-
-
-
-
-
+Consider: \(\displaystyle \mathbb{E}_\pi[R_{t+1}|S_t=s] = \sum_r p(r|s)r = \sum_{s'} \sum_{a} \sum_{r} p(s'a,r|s)r = \sum_{s'} \sum_{a} \sum_{r} \pi(a|s)p(s',r|s,a)r \), and: \(\displaystyle \mathbb{E}_\pi[v_\pi(S_{t+1})|S_t=s] = \sum_a\pi(a|s)\sum_{s'}\sum_rp(s',r|s,a) v_\pi(s')\)
+\[
+\begin{aligned}
+v_{\pi}(s) &=\mathbb{E}_{\pi}\left[G_{t} | S_{t}=s\right] \\
+&=\mathbb{E}_{\pi}\left[R_{t+1}+\gamma G_{t+1} | S_{t}=s\right] \\
+&=\mathbb{E}_{\pi}\left[R_{t+1}+\gamma \mathbb{E}_{\pi}\left[G_{t+1} | S_{t+1}\right] | S_{t}=s\right] \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{(by Law of iterated expectation)}\\
+&=\mathbb{E}_{\pi}\left[R_{t+1}+\gamma v_{\pi}\left(S_{t+1}\right) | S_{t}=s\right] \\
+&=\sum_{a} \pi(a | s) \sum_{r} \sum_{s^{\prime}} p\left(s^{\prime}, r | s, a\right) r+\gamma \sum_{a} \pi(a | s) \sum_{s^{\prime}} \sum_{r} p\left(s^{\prime}, r | s, a\right) v_{\pi}\left(s^{\prime}\right) \\
+&=\sum_{a} \pi(a | s) \sum_{s'} \sum_{r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right] \\
+&= \sum_{a} \pi(a | s) \sum_{s^{\prime}, r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right],  \forall s\in \mathcal{S}
+\end{aligned}
+\]
 </p>
 </body>
 </html> 
+
+![](/images/mdp2.png)
