@@ -8,7 +8,7 @@ tags:
 date: "2020-12-01"
 --- 
 
-<!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -24,12 +24,12 @@ date: "2020-12-01"
   <b>Action-Value method</b><br>
   k-armed: k options(actions)<br>
   <i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
-  \[Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbf{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbf{1}_{A_i = a}}, \mathbf{1} := \left\{\begin{array}{c}
+  \[Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbb{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbb{1}_{A_i = a}}, \mathbb{1} := \left\{\begin{array}{c}
      & 1 \text{ if predicate is true} \\
      & 0 \text{ if predicate is false}
 \end{array}\right.\]
 <br>
-when \(\displaystyle\sum_{i=1}^{t-1} \mathbf{1}_{A_i=a} \rightarrow \infty\), \(Q(a) \rightarrow q_*(a)\)
+when \(\displaystyle\sum_{i=1}^{t-1} \mathbb{1}_{A_i=a} \rightarrow \infty\), \(Q(a) \rightarrow q_*(a)\)
 <br>
 Greedy action: \(\displaystyle A_t \doteq \arg\max_a Q_t(a)\), \(\epsilon\)-greedy: prevent local optimum
 <br><br>
@@ -74,10 +74,32 @@ Consider \(\{\alpha_n\}\) by stochastic approximation theory: P(coverage) = 1:
 \sum_{n=1}^\infty \alpha_n(a) = \infty \text{ }\text{ }\text{ }\text{ and } \text{ }\text{ }\text{ } \sum_{n=1}^\infty \alpha_n(a) < \infty 
 \]
 This means (i)steps are large enough to overcome initial condition or random fluctuations (ii) steps become small enough to coverage.
+<br><br>
+As \(Q_{n+1}\) more or less dependent on \(Q_1(a) \Rightarrow\) biased by initial estimate.<br>
+Then, for genral stationary case, we encourage exploration optimistic initial value(\(Q_1>0, \epsilon=0\) compared with greedy's).
+<br><br>
 
+<b>Upper Confidence Bound</b>(UCB) Action selection:
+\[ A_t \doteq \arg\max_a\left[Q_t(a)+c\cdot\sqrt{\frac{\ln t}{N_t(a)}}\right]\]
+where \(N_t(a)\): number of times "\(a\)" has been selected before "\(t\)";<br>
+c>0 controls the degree of exploration;<br>
+\(\displaystyle \sqrt{\frac{\ln t}{N_t(a)}}\): uncertainty, or variance(many "action "\(\rightarrow\)bad\(\rightarrow\)less this "action")
+<br><br>
 
-
-<br><br><br><br><br><br><br><br><br>
+<b>Gradient Bandit Algorithms</b><br>
+soft-max distribution(i.e. Gibbs or Boltzmann distribution)<br>
+\[\text{Pr}\{A_t=a\} \doteq \displaystyle \frac{e^{H_t(a)}}{\sum_{b=1}^k e^{H_t(b)}} \doteq \pi_t(a)\]
+\(H_t(a)\in\mathbb{R}\): preference for each action, initially \(H_1(a)=0\)
+Natural Learning algorithmm for soft-max action preferences based on the idea of the stochastic gradient ascent(↑). For update: 
+\[
+H_{t+1}(A_t) \doteq H_t(A_t) + \alpha(R_t-\overline{R_t})(\mathbb{1}_{a=A_t}-\pi_t(A_t))
+\]
+\[
+H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
+\]
+where \(\alpha>0, \overline{R_t} = avr\{R_1...R_{t-1}\}\)<br>
+\(\overline{R_t}\Rightarrow\) baseline
+<br><br><br><br><br><br><br>
 
 
 
