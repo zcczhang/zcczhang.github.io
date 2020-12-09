@@ -16,11 +16,11 @@ k-armed: k options(actions)
 
 \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.
 
-$Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbf{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbf{1}_{A_i = a}}$, $\mathbf{1} := \begin{array}{c}
+\(Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbf{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbf{1}_{A_i = a}}\), \(\mathbf{1} := \begin{array}{c}
      & 1 \text{ if predicate is true} \\
      & 0 \text{ if predicate is false}
-\end{array}$
+\end{array}\)
 
-when $\displaystyle\sum_{i=1}^{t-1} \mathbf{1}_{A_i=a} \rightarrow \infty$, $Q(a) \rightarrow q_*(a)$
+when \(\displaystyle\sum_{i=1}^{t-1} \mathbf{1}_{A_i=a} \rightarrow \infty\), \(Q(a) \rightarrow q_*(a)\)
 
-Greedy action: $\displaystyle A_t \doteq \argmax_a Q_t(a)$
+Greedy action: \(\displaystyle A_t \doteq \argmax_a Q_t(a)\)
