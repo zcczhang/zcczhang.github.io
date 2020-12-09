@@ -9,7 +9,6 @@ date: "2020-12-01"
 --- 
 <b>Action-Value method</b>
 
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -129,6 +128,7 @@ Next,
 \(\begin{aligned}
 \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)} \pi_{t}(b) \\
 &=\frac{\partial}{\partial H_{t}(a)}\left[\frac{e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}\right] \\
+&=\frac{\frac{\partial e^{H_{t}(b)}}{\partial H_{t}(a)} \sum_{c=1}^{k} e^{H_{t}(c)}-e^{H_{t}(b)} \frac{\partial \sum_{c=1}^{k} e^{H_{t}(c)}}{\partial H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
 \end{aligned}\)
 <br><br>
 Therefore,
