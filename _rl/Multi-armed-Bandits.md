@@ -127,10 +127,7 @@ given \(A_t, \mathbb{E}[R_t|A_t] = q_*(A_t) = R_t\), and let arbitary \(X_t\) be
 Next,
 <br>
 \(\begin{aligned}
-\frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)} \pi_{t}(b) \\
-&=\frac{\partial}{\partial H_{t}(a)}\left[\frac{e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}\right] \\
-&=\frac{\frac{\partial e^{H_{t}(b)}}{\partial H_{t}(a)} \sum_{c=1}^{k} e^{H_{t}(c)}-e^{H_{t}(b)} \frac{\partial \sum_{c=1}^{k} e^{H_{t}(c)}}{\partial H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
-&=\frac{\mathbb{1}_{a=b} e^{H_{t}(a)} \sum_{c=1}^{k} e_{t}^{H}(c)-e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
+\frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} &=\frac{\mathbb{1}_{a=b} e^{H_{t}(a)} \sum_{c=1}^{k} e_{t}^{H}(c)-e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
 &=\frac{{\mathbb{1}}_{a=b}{ }^{k} e^{H_{t}(b)}}{\sum_{c=1}^{k} e^{H_{t}(c)}}-\frac{e^{H_{t}(b)} e^{H_{t}(a)}}{\left(\sum_{c=1}^{k} e^{H_{t}(c)}\right)^{2}} \\
 &={\mathbb{1}}_{a=b} \pi_{t}(b)-\pi_{t}(b){\pi}_{t}(a) \\
 &=\pi_{t}(b)\left({\mathbb{1}}_{a=b}-\pi_{t}(a)\right)
