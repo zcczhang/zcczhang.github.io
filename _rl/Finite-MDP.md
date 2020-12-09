@@ -93,6 +93,14 @@ v_{\pi}(s) &=\mathbb{E}_{\pi}\left[G_{t} | S_{t}=s\right] \\
 &= \sum_{a} \pi(a | s) \sum_{s^{\prime}, r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right],  \forall s\in \mathcal{S}
 \end{aligned}
 \]
+Similarly, we have the bellman equation for \(q_\pi(s,a)\):
+\[
+q_{\pi}(s, a)\doteq \mathbb{E}_\pi[G_t|S_t=s, A_t=a]=\sum_{s^{\prime}, r} p\left(s^{\prime}, r \mid s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right]
+\]
+and therefore, 
+\[
+v_\pi(s)=\sum_a\pi(a|s)q_\pi(s,a)
+\]
 </p>
 </body>
 </html> 
