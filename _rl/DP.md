@@ -11,6 +11,8 @@ date: "2020-12-03"
 
 ***Reinforcement Learning: An Introduction***
 
+> Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
+
 ### Policy Evaluation
 
 <html>
@@ -167,3 +169,5 @@ The process and convergence is clearly illustrated in the figure below:
 ***Reference***
 
 [1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
+<br>
+[2] Sauer, Timothy. Numerical analysis. Pearson, 2018.

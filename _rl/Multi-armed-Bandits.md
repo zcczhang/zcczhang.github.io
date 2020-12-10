@@ -10,8 +10,7 @@ date: "2020-12-01"
 --- 
 ***Reinforcement Learning: An Introduction***
 
-> Author: Charles Zhang
-<br>This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing.
+> Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
 <html>
 <head>
