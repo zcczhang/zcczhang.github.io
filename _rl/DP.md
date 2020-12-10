@@ -59,8 +59,7 @@ Therefore, when \(\gamma \in [0,1)\),<br>
 The DP algorith:
 </p>
 </body>
-</html> <br><br><br>
-
+</html> 
 ![](/images/dp1.png)
 
 ### Policy Improvement
