@@ -107,12 +107,59 @@ And the equation for updating new greedy policy \(\pi'\):
 
 ### Policy Iteration
 
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+Idea: \(\pi_0 \xrightarrow{E} v_{\pi_0} \xrightarrow{I} \pi_1 \xrightarrow{E} v_{\pi_1} \xrightarrow{I} \pi_2 \xrightarrow{E} ... \xrightarrow{I} \pi_* \xrightarrow{E} v_*  \), where \(\xrightarrow{E}\) is policy evaluation and \(\xrightarrow{I}\) is policy improvement.<br>
+The DP algorithm below illustrates this iteration directly:
+</p>
+</body>
+</html> 
 
+![](/images/dp2.png)
 
 ### Value Iteration
 
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+Idea: update operation that combines the policy improvement and truncated policy evaluation steps:<br>
+\(\begin{aligned}
+v_{k+1}(s) & \doteq \max _{a} \mathbb{E}\left[R_{t+1}+\gamma v_{k}\left(S_{t+1}\right) \mid S_{t}=s, A_{t}=a\right] \\
+&=\max _{a} \sum_{s^{\prime}, r} p\left(s^{\prime}, r \mid s, a\right)\left[r+\gamma v_{k}\left(s^{\prime}\right)\right], \text{ }\forall s\in\mathcal{S}
+\end{aligned}\)<br>
+As for arbitrary \(v_0\), \(\{v_k\}\) is shown to be guaranteed to converge to \(v_*\) by the bellman equation illustrated last chapter. The DP algorithm below follows this update: 
+</p>
+</body>
+</html> 
 
+![](/images/dp3.png)
 
+### Generalized Policy Iteration (GPI)
+
+Important model in reinforcement learnig. e.g. policy-evaluation and policy-improvement processes. 
+
+The process and convergence is clearly illustrated in the figure below:
+
+![](/images/dp4.png)
 
 <br>
 <br>
