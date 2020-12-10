@@ -92,9 +92,18 @@ v_{\pi}(s) & \leq q_{\pi}\left(s, \pi^{\prime}(s)\right) \\
 &=\mathbb{E}_{\pi^{\prime}}\left[G_{t} \mid S_{t}=s\right] \\
 &=v_{\pi^{\prime}}(s)
 \end{aligned}\)
+<br>
+And the equation for updating new greedy policy \(\pi'\):
+\[
+\begin{aligned}
+\pi^{\prime}(s) & \doteq \underset{a}{\arg \max } q_{\pi}(s, a) \\
+&=\underset{a}{\arg \max } \mathbb{E}\left[R_{t+1}+\gamma v_{\pi}\left(S_{t+1}\right) \mid S_{t}=s, A_{t}=a\right] \\
+&=\underset{a}{\arg \max } \sum_{s^{\prime}, r} p\left(s^{\prime}, r \mid s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right]
+\end{aligned}
+\]
 </p>
 </body>
-</html> <br><br><br>
+</html> 
 
 ### Policy Iteration
 
