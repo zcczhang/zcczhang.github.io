@@ -1,5 +1,5 @@
 ---
-title: "IHC HER-2 Automated Scoring "
+title: "IHC HER-2 Autonomous Scoring "
 collection: projects
 type: "Projects"
 permalink: /projects/her2_scoring
@@ -11,7 +11,7 @@ language: "Python"
 tool: "/images/python.jpeg"
 ---
 
-- ###  Full time research internship for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/).(editing...)
+Full time research internship for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/).(editing...)
 
 [Weekly Report](https://docs.google.com/document/d/10F--fGvFPijiZacUawUlXw1b1-bKIR5gRwGxpEDQQqE/edit?usp=sharing)
 
