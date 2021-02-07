@@ -8,7 +8,7 @@ year: 2021
 location: "Beijing, China"
 image: "/images/her2example2.png"
 language: "Python"
-tool: "/images/python.jpeg"
+tool: "/images/python.png"
 ---
 
 Full time research internship for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/).(editing...)
