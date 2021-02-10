@@ -39,7 +39,7 @@ I love to see the aurora driving four hours away from my school, and I am indulg
             totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
     		if(($(document).height()-range) <= totalheight  && num != maxnum) {
                 main.append("<div style='border:1px solid tomato;margin-top:20px;height:"+elemt+
-							"' >这是下拉后的内容---"+num+"</div>");
+							"' >TEST---"+num+"</div>");
                 num++;
             }
         });
@@ -48,7 +48,7 @@ I love to see the aurora driving four hours away from my school, and I am indulg
 </head>
 <body>
     <div id="content" style="height:960px">
-		<div style='border:1px solid tomato;margin-top:20px;height:30' >下拉加载更多内容</div>
+		<div style='border:1px solid tomato;margin-top:20px;height:30' >TEST</div>
 		
     </div>
 </body> 
