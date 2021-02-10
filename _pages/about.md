@@ -21,6 +21,35 @@ I love to see the aurora driving four hours away from my school, and I am indulg
  </details>
  
  
+ <script src="js/jquery.min.js" type="text/javascript"></script>
+ 
+   <script type="text/javascript">
+    $(document).ready(function(){
+        var range = 50;             //距下边界长度/单位px
+        var elemt = 30;           //插入元素高度/单位px
+        var maxnum = 30;            //设置加载最多次数
+        var num = 1;
+        var totalheight = 0; 
+        var main = $("#content");                     //主体元素
+        $(window).scroll(function(){
+            var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度);
+			
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+    		if(($(document).height()-range) <= totalheight  && num != maxnum) {
+                main.append("<div style='border:1px solid tomato;margin-top:20px;height:"+elemt+
+							"' >这是下拉后的内容---"+num+"</div>");
+                num++;
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="content" style="height:960px">
+		<div style='border:1px solid tomato;margin-top:20px;height:30' >下拉加载更多内容</div>
+		
+    </div>
+</body> 
  
 <br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>

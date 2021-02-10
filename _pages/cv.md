@@ -10,7 +10,7 @@ redirect_from:
 
 Education
 ======
-* B.A. in Mathematics and Computer Science, Macalester, 2023(expected)
+* B.A., B.S. in Mathematics and Computer Science, Macalester, 2023(expected)
 * Shandong Experimental High School, China, 2016-2019
 * Renmin University of China, Calligraphy and Painting Art Program, 2016-2017
   
