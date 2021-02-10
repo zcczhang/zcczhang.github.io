@@ -21,7 +21,9 @@ I love to see the aurora driving four hours away from my school, and I am indulg
  </details>
  
  
- <script src="js/jquery.min.js" type="text/javascript"></script>
+ 
+ 
+ <script src="./js/jquery.min.js" type="text/javascript"></script>
  
    <script type="text/javascript">
     $(document).ready(function(){
