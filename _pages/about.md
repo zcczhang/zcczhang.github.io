@@ -14,7 +14,7 @@ redirect_from:
 <details>
 <summary>Okay, for more...</summary>
 <br>
-I am a highly passionate second-year Mathematics and Computer Science student at Macalester College with a solid background in both pure mathematics and applied mathematics(involved with computer and data science). My primary research interest lies in designing, developing, and optimizing reinforcement learning and deep learning algorithms as well as understanding their underlying mathematical principles to build autonomous agents that can perform in dynamic environments. I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in <i>R, Java, Python, MATLAB, SQL, HTML, CSS</i>, I love using mathematical thinking to solve practical problems as well.
+I am a highly passionate second-year Mathematics and Computer Science student at Macalester College with a solid background in both pure mathematics and applied mathematics involved with computer and data science. My primary research interest lies in designing, developing, optimizing, and deploying reinforcement learning and deep learning algorithms as well as their underlying mathematical principles to build autonomous agents that can perform in dynamic environments, sovling real-world puzzles. I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in <i>R, Java, Python, MATLAB, SQL, HTML, CSS</i>, I love using mathematical thinking to solve practical problems as well.
 <br>
 I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c. in my spare time. 
 
