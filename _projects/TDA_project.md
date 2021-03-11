@@ -11,7 +11,6 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-<!DOCTYPE html>
 <html>
 
 <head>
