@@ -6,7 +6,7 @@ permalink: /projects/her2_scoring
 date: 2021-01-12
 year: 2021
 location: "Beijing, China"
-image: "/images/her2_mtd2_flow_2.png"
+image: "/images/her2demo.png"
 language: "Python"
 tool: "/images/python.png"
 ---
