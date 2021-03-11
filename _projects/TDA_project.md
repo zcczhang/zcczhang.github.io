@@ -6,7 +6,7 @@ permalink: /projects/tda_project
 date: 2021-03-12
 year: 2021
 location: "Beijing, China"
-image: "/images/her2example2.png"
+image: "/images/tda_mapper.png"
 language: "Python"
 tool: "/images/python.png"
 ---
