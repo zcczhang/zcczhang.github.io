@@ -11,4 +11,4 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-This is the project for the capstone class MATH 471 Topology at Macalester College, discussed the power of the topological data analysis for machine learning. [Project Reprot](), [GitHub Repo](https://github.com/zcczhang/TDA-project)
+This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussed the power of the topological data analysis for machine learning. Due to the time limit, the test for methodology was on the MNIST dataset. For more information, please see my project directly or visit [Project Reprot](), [GitHub Repo](https://github.com/zcczhang/TDA-project).
