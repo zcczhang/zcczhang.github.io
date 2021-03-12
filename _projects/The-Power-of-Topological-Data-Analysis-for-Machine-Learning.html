@@ -13217,7 +13217,7 @@ $$
 be the $i$ -th sublevel set of $K .$ The set $\left\{K_{i}\right\}_{i \in \operatorname{Im}(I)}$ defines a filtration of cubical complexes, indexed by the value of the grayscale function $\mathcal{I}$. The steps we factor through to obtain a filtration from a grayscale image are then:</p>
 <p>Image $\rightarrow$ Cubical complex $\rightarrow$ Sublevel sets $\rightarrow$ Filtration.</p>
 <p>Moreover, the filtrations I used for this project will be introduced in the section 2.2.2.</p>
-<p>Finally, just a breif intruduction about the machine learning. <strong>Machine learning</strong> is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention. And <strong>supervised learning</strong> is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples. To verify the power of TDA techiniques for machine learning, the experiment of this project is conducted in the well-known dataset <strong>MNIST</strong> which consists of 70,000 images of handwritten digits of size 28 $\times$ 28 for classification.</p>
+<p>Finally, just a breif intruduction about the machine learning. <strong>Machine learning</strong> is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention. And <strong>supervised learning</strong> is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples. To verify the power of TDA techiniques for machine learning, the experiment of this project is conducted in the well-known dataset <strong>MNIST</strong> which consists of 70,000 images of handwritten digits of size 28 $\times$ 28 for classification. The more detailed description of this dataset will be shown in the section 2.1.1.</p>
 
 </div>
 </div>
@@ -13225,9 +13225,9 @@ be the $i$ -th sublevel set of $K .$ The set $\left\{K_{i}\right\}_{i \in \opera
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Applications">2. Applications<a class="anchor-link" href="#2.-Applications">&#182;</a></h2><h3 id="2.1-Shape-Analysis">2.1 Shape Analysis<a class="anchor-link" href="#2.1-Shape-Analysis">&#182;</a></h3><p>Topological data analysis(TDA) produces an abstract representation of the data, a simplicial complex(<strong><em>TODO: the definition is illustrated above?</em></strong>) summary of the original data. This complex could be said to represent the shape of the data, or a higher order representation of the data. The complex does not come with coordinates and should be considered a combinatorial representation of topological (and geometric) features of the original space.</p>
-<p>A topological network (i.e. a graph) produced by TDA represents data by grouping similar data points into nodes, and connecting those nodes by an edge if the corresponding collections have a data point in common. Because each node represents multiple data points, the network gives a compressed version of extremely high dimensional datasets.[some reference]</p>
-<p>TDA seeks to compare or understand global invariants of a dataset (persistent homology) that <strong>characterise the shape of the data, or partition data for further applications of machine learning</strong> [some reference e.g. (Morse-Smale clustering, Mapper algorithm)]. TDA is a relatively recent technique, popularized in a landmark paper by Gunnar Carlsson in 2009.</p>
+<h2 id="2.-Applications">2. Applications<a class="anchor-link" href="#2.-Applications">&#182;</a></h2><h3 id="2.1-Shape-Analysis">2.1 Shape Analysis<a class="anchor-link" href="#2.1-Shape-Analysis">&#182;</a></h3><p>Topological data analysis(TDA) produces an abstract representation of the data, a simplicial complex summary of the original data. This complex could be said to represent the shape of the data, or a higher order representation of the data. The complex does not come with coordinates and should be considered a combinatorial representation of topological (and geometric) features of the original space.</p>
+<p>A topological network (i.e. a graph) produced by TDA represents data by grouping similar data points into nodes, and connecting those nodes by an edge if the corresponding collections have a data point in common. Because each node represents multiple data points, the network gives a compressed version of extremely high dimensional datasets.</p>
+<p>TDA seeks to compare or understand global invariants of a dataset (persistent homology) that <strong>characterise the shape of the data, or partition data for further applications of machine learning</strong>. TDA is a relatively recent technique, popularized in a landmark paper by Gunnar Carlsson in 2009.</p>
 <p>In this section, I make use of the mapper algorithm that uses TDA on our MNIST digits dataset which is discussed in section 2.1.2, implemented by the <a href="https://kepler-mapper.scikit-tda.org/en/latest/">Kepler Mapper Library</a> in Python.</p>
 <h4 id="2.1.1-load-data">2.1.1 load data<a class="anchor-link" href="#2.1.1-load-data">&#182;</a></h4>
 </div>
@@ -13830,8 +13830,31 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are many kinds of filtration, including binary，height, radial, density, dilation, erosion, and signed filtration[some reference]. The example of radial filtration which assigns to each pixel a value corresponding to its distance from a predefined center of the image is shown below, with (radial, center) = (20, 6). This is reproducing the filtered image from the MNIST article: A Topological "Reading" Lesson: Classification of MNIST using TDA (<a href="https://arxiv.org/abs/1910.08345">arXiv</a>), where "8" is used as the example digit in the article, and 0 in this project.</p>
-<p><strong><em>TODO: lots of Mathematical background, meaning, reasons why we use filration.</em></strong></p>
+<p>There are many kinds of filtration, including binary，height, radial, density, dilation, erosion, and signed filtration[3]. Fully definitions of filtrations that the project will use for the machine learning pipeline is illustrated now.</p>
+<p>1) <strong>Binary filtration</strong>: The binary filtration consists of computing the persistence diagram straight from the binary image,
+i.e. by considering the binary values of the pixels as a twolevel filtration. It is related to computing the homology of the image.</p>
+<p>2) <strong>Height filtration</strong>: The height filtration is inspired by Morse theory and by the Persistent Homology Transform
+[8]. For cubical complexes, we define the height filtration $\mathcal{H}: I \longrightarrow \mathbb{R}$ of a $d$ -dimensional binary image $I$ by choosing a direction $v \in \mathbb{R}^{d}$ of norm 1 and defining new values on all the voxels of value 1 as follows: if $p \in I$ is such that $\mathcal{B}(p)=1,$ then one assigns a new value $\mathcal{H}(p):=&lt;p, v&gt;$ the distance of $p$ to the hyperplane defined by $v .$ If $\mathcal{B}(p)=0$ then $\mathcal{H}(p):=H_{\infty},$ where $H_{\infty}$ is the filtration value of the pixel that is the farthest away from the hyperplane.</p>
+<p>3) <strong>Radial filtration</strong>: The radial filtration $\mathcal{R}$ of $I$ with center $c \in I,$ inspired from $[9],$ is defined by assigning to a voxel $p$ the value corresponding to its distance to the center
+$$
+\mathcal{R}(p):=\left\{\begin{array}{ll}
+\|c-p\|_{2} &amp; \text { if } \mathcal{B}(p)=1 \\
+\mathcal{R}_{\infty} &amp; \text { if } \mathcal{B}(p)=0
+\end{array}\right.
+$$
+where $\mathcal{R}_{\infty}$ is the distance of the pixel that is the farthest away from the center.</p>
+<p>4) <strong>Density filtration</strong>: The density filtration gives each voxel a value depending on the number of neighbors it has at a certain distance. For a parameter $r,$ the radius of the ball we want to consider, the density filtration is:
+$$
+\mathcal{D}_{e}(p):=\#\{v \in I, \mathcal{B}(v)=1 \text { and }\|p-v\| \leq r\}
+$$
+where the norm can be any norm on $\mathbb{R}^{d},$ but we choose the $L 1$ -norm in our implementation.</p>
+<p>5) <strong>Dilation filtration</strong>: The dilation filtration of $I$ defines a new grayscale image $\mathcal{D}: I \longrightarrow \mathbb{R}$ as follows: a vertex $p$ in $I$ is assigned the smallest distance to a vertex of value 1 in $I$ :
+$$
+\mathcal{D}(p):=\min \left\{\|p-v\|_{1}, \mathcal{B}(v)=1\right\}
+$$</p>
+<p>6) <strong>Erosion filtration</strong>: The erosion filtration is the inverse of the dilation filtration. Instead of dilating the object it erodes it. To obtain the erosion filtration, one applies the dilation filtration to the inverse image, where 0 and 1 are switched. Note that in the case of extended persistence $[8],$ the two filtrations return the same information by duality, but it is not the case here as we consider only standard persistence.</p>
+<p>7) <strong>Signed distance filtration</strong>: The signed distance filtration is a combination of the erosion and dilation filtrations that returns both positive and negative values. It takes positive values on the 1 -valued voxels by taking the distance to the boundary and negative values on the 0 -valued voxels, by attributing them the negative distance to the same boundary.</p>
+<p>The example of radial filtration which assigns to each pixel a value corresponding to its distance from a predefined center of the image is shown below, with (radial, center) = (20, 6). This is reproducing the filtered image from the MNIST article: A Topological "Reading" Lesson: Classification of MNIST using TDA (<a href="https://arxiv.org/abs/1910.08345">arXiv</a>), where "8" is used as the example digit in the article, and 0 in this project.</p>
 
 </div>
 </div>
@@ -13897,9 +13920,8 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, the result shows transforming the binary image of "0" into a greyscale one, where the pixel values increase as we move from the upper-right to bottom-left of the image. These pixel values can be used to define a filtration of cubical complexes, <strong><em>TODO mathematical meaning &amp; languages</em></strong>, and then it will be straightforward to calculate the corresponding persistence diagram, illustrated in the next subsection.</p>
-<h4 id="2.2.3-Persistence-Diagram">2.2.3 Persistence Diagram<a class="anchor-link" href="#2.2.3-Persistence-Diagram">&#182;</a></h4><p>Inspired by [a reference] defining the amplitude of a persistence diagram as its distance to the empty diagram, which contains only the diagonal points. I use two metrics of the Wasserstein and Bottleneck distances, and three kernels of Betti curves, persistence landscapes, and heat kernel. For these procedures, this section demonstrates the persistence diagram first.</p>
-<p>We can clearly see one persistent generators $H_1$ corresponding to the loops in the digit “0”, along with a single $H_0$ generator corresponding to the connected components. And it makes sense by the shape of the "0" a connected loop!</p>
+<p>Then, the result shows transforming the binary image of "0" into a greyscale one, where the pixel values increase as we move from the upper-right to bottom-left of the image. These pixel values can be used to define a filtration of cubical complexes, as shown in the introduction section, and then it will be straightforward to calculate the corresponding persistence diagram, illustrated in the next subsection.</p>
+<h4 id="2.2.3-Persistence-Diagram">2.2.3 Persistence Diagram<a class="anchor-link" href="#2.2.3-Persistence-Diagram">&#182;</a></h4><p>We can clearly see one persistent generators $H_1$ corresponding to the loops in the digit “0”, along with a single $H_0$ generator corresponding to the connected components. And it makes sense by the shape of the "0" a connected loop!</p>
 
 </div>
 </div>
@@ -14032,8 +14054,6 @@ if (outputEl) {{
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Vectorial representation of the persistence diagram would be the main part that how to use the persistence diagram to obtain features used in machine learning algorithms. To do so, an example of the heat kernel representation of a diagram in the homology dimension 1 is given.</p>
-<p><strong><em>TODO explain "convolve", "Gaussian kernel"</em></strong>
-<strong><em>TODO illustration of other types of representation as well? e.g. barcode?</em></strong></p>
 
 </div>
 </div>
@@ -14096,6 +14116,49 @@ if (outputEl) {{
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This project defines the <strong>amplitude</strong> of a persistence diagram as its distance to the empty diagram, which contains only the diagonal points. In this project, we use two metrics: the Wasserstein and Bottleneck distances, and three kernels: Betti curves, persistence landscapes, and heat kernel, for which diagrams are sampled using 100 filtration values and the amplitude of the kernel is obtained using either L1 or L2 norms.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1) <strong>Betti curves</strong>: The Betti curve $B_{n}: I \longrightarrow \mathbb{R}$ of a barcode $D=\left\{\left(b_{j}, d_{j}\right)\right\}_{j \in I}$ is the function that return for each step $i \in I,$ the number of bars $\left(b_{j}, d_{j}\right)$ that contains $i$
+$$
+i \mapsto \#\left\{\left(b_{j}, d_{j}\right), i \in\left(b_{j}, d_{j}\right)\right\}
+$$
+2) <strong>Persistence landscapes</strong>: Introduced in [11], the $k$ -th persistence landscape of a barcode $\left\{\left(b_{i}, d_{i}\right)\right\}_{i=1}^{n}$ is the function $\lambda_{k}: \mathbb{R} \longrightarrow[0, \infty)$ where $\lambda_{k}(x)$ is the $k$ -th largest value of $\left\{f_{\left(b_{i}, d_{i}\right)}(x)\right\}_{i=1}^{n},$ with
+$$
+f_{(b, d)}(x)=\left\{\begin{array}{l}
+0 \quad \text { if } x \notin(b, d) \\
+x-b \quad \text { if } x \in\left(b, \frac{b+d}{2}\right) \\
+-x+d \quad \text { if } x \in\left(\frac{b+d}{2}, d\right)
+\end{array}\right.
+$$
+The parameter $k$ is called the layer. Here we consider curves obtained by setting $k=1$ and $k \in\{1,2\}$.</p>
+<p>3) <strong>Heat kernel</strong>: In [10], the authors introduce a kernel by placing Gaussians of standard deviation $\sigma$ over every point of the persistence diagram and a negative Gaussian of the same standard deviation in the mirror image of the points across the diagonal. The output of this operation is a real-valued function on $\mathbb{R}^{2}$. In this work, we consider two possible values for $\sigma$, 10 and 15 (in the unit of discrete filtration values).</p>
+<p>4) <strong>Wasserstein amplitude</strong>: Based on the Wasserstein distance, the Wasserstein amplitude of order $p$ is the $L p$ norm of the vector of point distances to the diagonal:
+$$
+A_{W}=\frac{\sqrt{2}}{2}\left(\sum_{i}\left(d_{i}-b i\right)^{p}\right)^{\frac{1}{p}}
+$$
+In this project, we use $p=1,2$.</p>
+<p>5) <strong>Bottleneck distance</strong>: When we let $p$ go to $\infty$ in the definition of the Wasserstein amplitude, we obtain the Bottleneck amplitude:
+$$
+A_{B}=\frac{\sqrt{2}}{2} \sup _{i}\left(d_{i}-b_{i}\right)
+$$</p>
+<p>6) <strong>Persistent entropy</strong>: The persistent entropy of a barcode, introduced in [11], is a real number extracted by taking the Shannon entropy of the persistence (lifetime) of all cycles:
+$$
+P E(D)=\sum_{i=1}^{n} \frac{l_{i}}{L(B)} \log \left(\frac{l_{i}}{L(B)}\right)
+$$
+where $l_{i}:=d_{i}-b_{i}$ and $L(B):=l_{1}+, \ldots+l_{n}$ is the sum of all the persistences.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14163,7 +14226,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Inspired by the article by Garin and Tauzin, I extract a wide variety of features over the whole training set. To keep things simple, augment the radial filtration with a height filtration $\mathcal{H}$, defined by choosing a unit vector $v\in\mathbb{R}^2$ in some direction and assigning values $\mathcal{H}(p) = &lt;p,v&gt;$ based on the distance of $p$ to the hyperplane defined by $v$. Also, I pick a uniform set of directions and centers for our filtrations as shown in the figure below. Features from persistence diagrams by using persistence entropy and a broad set of amplitudes mentioned in section <strong><em>TODO</em></strong> above are generated then. Putting it all together yields the following pipeline:</p>
+<p>Inspired by the article by Garin and Tauzin, I extract a wide variety of features over the whole training set. To keep things simple, augment the radial filtration with a height filtration $\mathcal{H}$, defined by choosing a unit vector $v\in\mathbb{R}^2$ in some direction and assigning values $\mathcal{H}(p) = &lt;p,v&gt;$ based on the distance of $p$ to the hyperplane defined by $v$. Also, I pick a uniform set of directions and centers for our filtrations as shown in the figure below. Features from persistence diagrams by using persistence entropy and a broad set of amplitudes mentioned in section 2.2.3 above are generated then. Putting it all together yields the following pipeline:</p>
 
 </div>
 </div>
@@ -14266,8 +14329,25 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, we get 476 topological features for each image, which is significantly reduced from 784, and then I trained a random forest classifier. <strong>Random forests</strong> or random decision forests are an ensemble learning method for classification, regression and other tasks that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean/average prediction (regression) of the individual trees</p>
-<p>on the training set, and achieve accuracies above 96%, which is high enough to conclude that using topological features generated above  reduce the feature</p>
+<p>Then, we get 476 topological features for each image, which is significantly reduced from 784, and then I trained a random forest classifier. <strong>Random forests</strong> or random decision forests are an ensemble learning method for classification, regression and other tasks that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean/average prediction (regression) of the individual trees. More specificaly, the training algorithm for random forests applies the general technique of bootstrap aggregating, or bagging, to tree learners. Given a training set $X=x_{1}, \ldots, x_{n}$ with responses $Y=y_{1}, \ldots, y_{n}$, bagging repeatedly
+(B times) selects a random sample with replacement of the training set and fits trees to these samples:
+For $b=1, \ldots, B:$</p>
+<ol>
+<li>Sample, with replacement, $n$ training examples from $X, Y$; call these $X_{b}, Y_{b}$.</li>
+<li>Train a classification or regression tree $f_{b}$ on $X_{b}, Y_{b}$
+After training, predictions for unseen samples $x^{\prime}$ can be made by averaging the predictions from all the individual regression trees on $x^{\prime}:$
+$$
+\hat{f}=\frac{1}{B} \sum_{b=1}^{B} f_{b}\left(x^{\prime}\right)
+$$
+or by taking the majority vote in the case of classification trees.
+This bootstrapping procedure leads to better model performance because it decreases the variance of the model, without increasing the bias. This means that while the predictions of a single tree are highly sensitive to noise in its training set, the average of many trees is not, as long as the trees are not correlated. Simply training many trees on a single training set would give strongly correlated trees (or even the same tree many times, if the training algorithm is deterministic); bootstrap sampling is a way of de-correlating the trees by showing them different training sets.
+Additionally, an estimate of the uncertainty of the prediction can be made as the standard deviation of the predictions from all the individual regression trees on $x^{\prime}:$
+$$
+\sigma=\sqrt{\frac{\sum_{b=1}^{B}\left(f_{b}\left(x^{\prime}\right)-\hat{f}\right)^{2}}{B-1}}
+$$
+The number of samples/trees, $B$, is a free parameter. Typically, a few hundred to several thousand trees are used, depending on the size and nature of the training set. An optimal number of trees $B$ can be found using cross-validation, or by observing the out-of-bag error. the mean prediction error on each training sample $x_{i}$, using only the trees that did not have $x_{i}$ in their bootstrap sample. The training and test error tend to level off after some number of trees have been fit.  Random forests differ in only one way from this general scheme: they use a modified tree learning algorithm that selects, at each candidate split in the learning process, a random subset of the features. This process is sometimes called "feature bagging". The reason for doing this is the correlation of the trees in an ordinary bootstrap sample: if one or a few features are very strong predictors for the response variable (target output), these features will be selected in many of the B trees, causing them to become correlated [12].</li>
+</ol>
+<p>The experiment below shows how a randome forest classifier is trained on the training set, and achieve accuracies above 96%, which is high enough to conclude that using topological features generated above  reduce the feature</p>
 
 </div>
 </div>
@@ -14310,7 +14390,7 @@ if (outputEl) {{
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is also worth noting that if we only choose 6000 images for training, the accuracy will also achieve 90%, which is better for using some of other classifiers with the same size of training set. Therefore, using topological features will also have the potential to reduce the dimension of datasets for classification tasks; or more intuitively, the classifying agent will "learn" faster. The following figure gives a glance at an example of the wrong prediction of 4 as 9, which is also somewhat hard to recognize by human eyes as well.</p>
 <p><img src="https://cdn.mathpix.com/snip/images/AhF77BJN6kH6gRV5vuaJ7lwgwP5l4mNYSJjQ4Kl7Z2k.original.fullsize.png" alt=""></p>
-<p>In comparison with other works using the same random forest classifier to train a model for digits recognizer at MNIST dataset without extracting the topological features will achieve the accuracy around 94% to 96% [reference code][reference RFT]. I implement the code for this shown below, which achieves an accuracy around 96.6% Therefore, we can conclude that not only my approach in this project reduce the size of the feature sets significantly compared to grayscale pixel value features, but also maintain a high accuracy that is above than most of works using the same classifiers fed grayscale pixel value features.</p>
+<p>In comparison with other works using the same random forest classifier to train a model for digits recognizer at MNIST dataset without extracting the topological features will achieve the accuracy around 94% to 96% [13][14]. I implement the code for this shown below, which achieves an accuracy around 96.6% Therefore, we can conclude that not only my approach in this project reduce the size of the feature sets significantly compared to grayscale pixel value features, but also maintain a high accuracy that is above than most of works using the same classifiers fed grayscale pixel value features.</p>
 
 </div>
 </div>
@@ -14365,9 +14445,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.-Conclusion-and-Future-Steps">3. Conclusion and Future Steps<a class="anchor-link" href="#3.-Conclusion-and-Future-Steps">&#182;</a></h3><p>In this project, <strong><em>TODO: conclusion for mapper</em></strong></p>
-<p>This project combined a wide range of different TDA techniques for images based on different filtrations and diagram features. This project shows that machine learning algorithms feeded by features generated by TDA techniques are able to classify MNIST digits using half less features than the pixel values, while maintaining the accuracy. As a result, TDA techniques provide powerful dimensionality reduction algorithms for images. Combining machine learning and TDA into a generic pipeline which gathers a wide range of TDA techniques was shown to be a powerful approach to understand the underlying characteristic shapes on the images of a dataset, especially using height, radial, and our density filtrations. Moreover, one can easily validate and support one’s choice of topological features for novel datasets as well.</p>
-<p><strong><em>TODO</em></strong></p>
+<h3 id="3.-Conclusion-and-Future-Steps">3. Conclusion and Future Steps<a class="anchor-link" href="#3.-Conclusion-and-Future-Steps">&#182;</a></h3><p>In this project, we discover the shape of the data by the mapper algorithm. Visualising and understanding very high dimensional datasets is vital for further understanding more about the nature, fundamental structure and underlying relationships of the data and preparing the data for machine learning algorithms as the preprocess for classifying tasks. Then, this project combined a wide range of different TDA techniques for images based on different filtrations and diagram features. This project shows that machine learning algorithms feeded by features generated by TDA techniques are able to classify MNIST digits using half less features than the pixel values, while maintaining the accuracy. As a result, TDA techniques provide powerful dimensionality reduction algorithms for images. Combining machine learning and TDA into a generic pipeline which gathers a wide range of TDA techniques was shown to be a powerful approach to understand the underlying characteristic shapes on the images of a dataset, especially using height, radial, and our density filtrations. Moreover, one can easily validate and support one’s choice of topological features for novel datasets as well.</p>
 
 </div>
 </div>
@@ -14385,8 +14463,22 @@ if (outputEl) {{
 constructing discrete Morse complexes from grayscale digital images,”
 IEEE transactions on pattern analysis and machine intelligence, vol. 33,
 May 2011.</p>
-<p>[reference code] vneogi199, Handwritten-Digit-Recognition-Using-Random-Forest, accuracy: 94.2%, <a href="https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest">https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest</a></p>
-<p>[reference random forest] Bernard, Simon, Sébastien Adam, and Laurent Heutte. "Using random forests for handwritten digit recognition." In Ninth International Conference on Document Analysis and Recognition (ICDAR 2007), vol. 2, pp. 1043-1047. IEEE, 2007.</p>
+<p>[8] D. M. Boyer, S. Mukherjee, and K. Turner, “Persistent homology
+transform for modeling shapes and surfaces,” Information and Inference:
+A Journal of the IMA, vol. 3, no. 4, pp. 310–344, Dec 2014.</p>
+<p>[9] L. Kanari, P. Dłotko, M. Scolamiero, R. Levi, J. Shillcock, K. Hess,
+and H. Markram, “A topological representation of branching neuronal
+morphologies,” Neuroinformatics, vol. 16, no. 1, pp. 3–13, Jan 2018.</p>
+<p>[10] J. Reininghaus, S. Huber, U. Bauer, and R. Kwitt, “A stable multi-scale
+kernel for topological machine learning,” in 2015 IEEE Conference on
+Computer Vision and Pattern Recognition (CVPR), June 2015, pp. 4741–
+4748.</p>
+<p>[11] N. Atienza, L. M. Escudero, M. J. Jimenez, and M. Soriano-Trigueros,
+“Persistent entropy: a scale-invariant topological statistic for analyzing
+cell arrangements,” 2019.</p>
+<p>[12] Ho, Tin Kam. "Random decision forests." In Proceedings of 3rd international conference on document analysis and recognition, vol. 1, pp. 278-282. IEEE, 1995.</p>
+<p>[13] vneogi199, Handwritten-Digit-Recognition-Using-Random-Forest, accuracy: 94.2%, <a href="https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest">https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest</a></p>
+<p>[14] Bernard, Simon, Sébastien Adam, and Laurent Heutte. "Using random forests for handwritten digit recognition." In Ninth International Conference on Document Analysis and Recognition (ICDAR 2007), vol. 2, pp. 1043-1047. IEEE, 2007.</p>
 
 </div>
 </div>
