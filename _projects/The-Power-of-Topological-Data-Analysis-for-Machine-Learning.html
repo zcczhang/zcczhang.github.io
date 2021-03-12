@@ -13921,7 +13921,7 @@ if (outputEl) {{
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Then, the result shows transforming the binary image of "0" into a greyscale one, where the pixel values increase as we move from the upper-right to bottom-left of the image. These pixel values can be used to define a filtration of cubical complexes, as shown in the introduction section, and then it will be straightforward to calculate the corresponding persistence diagram, illustrated in the next subsection.</p>
-<h4 id="2.2.3-Persistence-Diagram">2.2.3 Persistence Diagram<a class="anchor-link" href="#2.2.3-Persistence-Diagram">&#182;</a></h4><p>We can clearly see one persistent generators $H_1$ corresponding to the loops in the digit “0”, along with a single $H_0$ generator corresponding to the connected components. And it makes sense by the shape of the "0" a connected loop!</p>
+<h4 id="2.2.3-Persistence-Diagram">2.2.3 Persistence Diagram<a class="anchor-link" href="#2.2.3-Persistence-Diagram">&#182;</a></h4><p>A point (x, y) in the persistence diagram indicates a topological feature born at scale x and persisting until scale y. For example, a 0-dimensional topological feature is a connected component or cluster, a 1- dimensional topological feature is a hole, and so on. The scale y indicates when this hole fills in. We can clearly see one persistent generators $H_1$ corresponding to the loops in the digit “0”, along with a single $H_0$ generator corresponding to the connected components. And it makes sense by the shape of the "0" a connected loop!</p>
 
 </div>
 </div>
@@ -14347,7 +14347,7 @@ $$
 $$
 The number of samples/trees, $B$, is a free parameter. Typically, a few hundred to several thousand trees are used, depending on the size and nature of the training set. An optimal number of trees $B$ can be found using cross-validation, or by observing the out-of-bag error. the mean prediction error on each training sample $x_{i}$, using only the trees that did not have $x_{i}$ in their bootstrap sample. The training and test error tend to level off after some number of trees have been fit.  Random forests differ in only one way from this general scheme: they use a modified tree learning algorithm that selects, at each candidate split in the learning process, a random subset of the features. This process is sometimes called "feature bagging". The reason for doing this is the correlation of the trees in an ordinary bootstrap sample: if one or a few features are very strong predictors for the response variable (target output), these features will be selected in many of the B trees, causing them to become correlated [12].</li>
 </ol>
-<p>The experiment below shows how a randome forest classifier is trained on the training set, and achieve accuracies above 96%, which is high enough to conclude that using topological features generated above  reduce the feature</p>
+<p>The experiment below shows how a randome forest classifier is trained on the training set, and achieve accuracies around 97%, which is high enough to conclude that using topological features generated above.</p>
 
 </div>
 </div>
@@ -14388,9 +14388,9 @@ The number of samples/trees, $B$, is a free parameter. Typically, a few hundred 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is also worth noting that if we only choose 6000 images for training, the accuracy will also achieve 90%, which is better for using some of other classifiers with the same size of training set. Therefore, using topological features will also have the potential to reduce the dimension of datasets for classification tasks; or more intuitively, the classifying agent will "learn" faster. The following figure gives a glance at an example of the wrong prediction of 4 as 9, which is also somewhat hard to recognize by human eyes as well.</p>
+<p>It is also worth noting that if we only choose 6000 images for training, the accuracy will also achieve 90%, which is better for using some of other classifiers with the same size of training set. Therefore, using topological features will also have the potential to reduce the dimension of datasets for classification tasks; or more intuitively, the classifying agent will "learn" faster. The following figure gives a glance at an example of the wrong prediction of 4 as 9, which is also somewhat hard to recognize by human eyes.</p>
 <p><img src="https://cdn.mathpix.com/snip/images/AhF77BJN6kH6gRV5vuaJ7lwgwP5l4mNYSJjQ4Kl7Z2k.original.fullsize.png" alt=""></p>
-<p>In comparison with other works using the same random forest classifier to train a model for digits recognizer at MNIST dataset without extracting the topological features will achieve the accuracy around 94% to 96% [13][14]. I implement the code for this shown below, which achieves an accuracy around 96.6% Therefore, we can conclude that not only my approach in this project reduce the size of the feature sets significantly compared to grayscale pixel value features, but also maintain a high accuracy that is above than most of works using the same classifiers fed grayscale pixel value features.</p>
+<p>In comparison with other works using the same random forest classifier to train a model for digits recognizer at MNIST dataset without extracting the topological features will achieve the accuracy around 94% to 96% [13][14]. I implement the code for this shown below, which achieves an accuracy around 96.6% Therefore, we can conclude that not only my approach in this project reduce the size of the feature sets significantly compared to grayscale pixel value features, but also maintain a high accuracy that is above than most of works using the same classifiers to feed grayscale pixel value features.</p>
 
 </div>
 </div>
