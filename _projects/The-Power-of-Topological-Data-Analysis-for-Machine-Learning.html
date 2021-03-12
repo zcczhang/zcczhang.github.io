@@ -13126,6 +13126,9 @@ $$
 V R(X, \varepsilon)=\left\{\left[v_{0}, \ldots, v_{n}\right] \mid \forall i, j, d\left(v_{i}, v_{j}\right) \leq \varepsilon\right\}
 $$
 It is also worth noting that $VR(X, \varepsilon)\subseteq VR(X, \varepsilon')$ for $\varepsilon \leq \varepsilon'$, which is apparently, as larger set will include vertices with larger pairwise distances.</p>
+<p>As $\varepsilon$ grows, so does the Vietoris-Rips complex of a point cloud. This defines a <strong>filtration</strong> of simplicial complexes i.e. a nested sequence of simplicial complexes $\{V R(X ; \varepsilon)\}_{\varepsilon \geq 0}$ satisfying $V R\left(X, \varepsilon_{1}\right) \subseteq V R\left(X ; \varepsilon_{2}\right)$ if $\varepsilon_{1} \leq \varepsilon_{2} .$ An example
+of a 5 -step filtration of Vietoris-Rips complexes is shown in figure below. Balls are drawn around each point to represent the distance between them: if two balls of radius $\varepsilon$ intersect, the two points are at distance at most $2 \varepsilon$.</p>
+<p><img src="https://cdn.mathpix.com/snip/images/wa6XKV0GAqJs0qxQK0qVS06d0zeAXgUL4iXPZiyCvOk.original.fullsize.png" alt=""></p>
 <p>Two datapoints at most distance $\varepsilon$ apart create a simplex, which can be geometrically described as an edge. These Vietoris-Rips complexes encode geometric features of the data such as connected components, or clusters, and holes. The Vietoris-Rips filtration can also be applied directly
 to images, by seeing the pixels as a point cloud in a two dimensional Euclidean space. However, a point cloud is not the most natural representation of an image. Images are made of pixels, or voxels in higher dimension, and thus have a natural grid structure that we can exploit. Hence, we use cubical complexes in place of simplicial complexes, extending to the context of persistent homology.</p>
 
@@ -13135,11 +13138,7 @@ to images, by seeing the pixels as a point cloud in a two dimensional Euclidean 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In imagery, the standard sampling of an image is achieved via a cubic tessellation. In 2D image case, this leads to a 2D image array. If we associate each entry of the array with a unit square with vertices in an integer lattice, we obtain a complex of unit squares commonly called <strong>pixels</strong>. Any two pixels are either disjoint or intersect through a common edge or a common vertex. This complex is called a 2D cubical complex. If the squares are represented geometrically in the plane, the representation is called the geometric realization of the cubical complexin the plane. The simplicial theory would require subdividing each pixel into union of two triangles and hence increasing the complexity of data. But the approach using <strong>cubical theory will deal directly with this cubical structure</strong>. The same observations can be made for 3D images which lead to a 3D-cubical complexof voxels.
-One need not have to confine himself to 2D and 3D complexes but consider the general setting of a multidimensional
-image array and correspondingly a multidimensional cubical complex. In order to define the algebraic structure of
-a chain complexmentioned in the introduction, we need a more general definition of a cube in a multidimensional
-space [5].</p>
+<p>Many problems from numerical computations, graphics and computer vision lead naturally to cubical grids subdividing the space into cubes with vertices in an integer lattice. This cubical structure has already enough combinatorial properties to define a homology theory. In computer vision, for example, the standard discretization of an image is achieved via a cubic tessellation. This leads to a complex of unit squares commonly called pixels. Any two pixels are either disjoint or intersect through a common edge or a common vertex. The simplicial theory would require subdividing each pixel into union of two triangles and hence increasing the complexity of data. But the approach using cubical homology theory will deal directly with this cubical structure. Another nice feature of the cubical approach is the fact that one does not need to define an orientation on cubes while this notion is essential in the definition of simplicial homology [5]. Indeed, the definition of a cube as a product of intervals in a certain order and the natural order of real numbers imposes an orientation on each coordinate axis and also on the canonical basis of $\mathbb{R}$.</p>
 <p>An elementary interval $I_{a}$ is a subset of $\mathbb{R}$ of the form $[a, a+1]$ or $[a, a]=\{a\}$ for some $a \in \mathbb{R}$. These two types are called respectively <strong>non-degenerate</strong> and <strong>degenerate</strong>. To a non-degenerate elementary interval we assign two degenerate
 elementary intervals
 $$
@@ -13167,7 +13166,38 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Most commonly used on point clouds, persistent homology can also be used on images, using their voxel structure. One can define a filtration based on techniques from image processing, like dilation or erosion for example, and generate features that are intuitive, though otherwise difficult to extract. It has already been successfully applied to classification tasks in [some references]</p>
+<p>Next, we need to define a <strong>chain complex</strong> which is a pair $\left(C_{*}, \partial\right)$ where
+$$
+C_{*}=\bigoplus_{n \in \mathbb{Z}} C_{n} \quad \text { and } \quad \partial=\bigoplus_{n \in \mathbb{Z}} \partial_{n}
+$$
+with $C_{n}$ a $\mathbb{k}$ -vector space and $\partial_{n}: C_{n+1} \rightarrow C_{n}$ is a $\mathbb{k}$ -linear map such that $\partial_{n+1} \partial_{n}=0 .$ We refer to $\partial$ as the boundary map of the chain complex.
+The elements of $C$ are called chains and if $c \in C_{n}$ we say its degree is $n$ or simply that it is an $n$ chain. Elements in the kernel of $\partial$ are called cycles, and elements in the image of $\partial$ are called
+boundaries. Notice that every boundary is a cycle. This fact is central to the definition of homology.
+A chain map is a $\mathbb{k}$ -linear map $f: C \rightarrow C^{\prime}$ between chain complexes such that $f\left(C_{n}\right) \subseteq C_{n}^{\prime}$ and $\partial f=f \partial$
+Given a chain complex $\left(C_{*}, \partial\right)$, its linear dual $C^{*}$ is also a chain complex with $C^{-n}=\operatorname{Hom}_{\mathbb{k}}\left(C_{n}, \mathbb{k}\right)$ and boundary map $\delta$ defined by $\delta(\alpha)(c)=\alpha(\partial c)$ for any $\alpha \in C^{*}$ and
+$c \in C_{*}$</p>
+<p>Then, it is enough to introduce the homology groups which are topological invariants which provide an efficient algebraic tool for determining the global shape properties of a given topological space without visualization.</p>
+<p>The cubical homology is well intrudced in [6]. Given a topological space $X \subset \mathbf{R}^{n}$ in terms of a cubical complex, we define $C_{q}(X)$ to be the free abelian group generated by all the $q$ -dimensional elementary cubes in $X$. Thus the elements of this group, called $q$ -chains are formal linear combinations of elementary $q$ -cubes. We put
+$$
+C_{q}(X)=0 \text { if } q&lt;0 \text { or } q&gt;n
+$$</p>
+<p>The <strong>boundary map</strong> $\partial_{q}: C_{q}(X) \rightarrow C_{q-1}(X)$ is a group homomorphism defined on every elementary $q$ -cube as an altemating sum of its $(q-1)$ -dimensional faces and extended by linearity to all $q$ -chains. Note that $\partial_{0}=0$ since $C_{-1}(X)=0 .$ The boundary map satisfies the very important property
+$$
+\partial^{2}=0
+$$
+i.e., $\partial_{q} \circ \partial_{q+1}=0$ for all $q$. As for a simplicial complex of dimension $n,$ the algebraic information extracted from the given cubical structure can be expressed as a finitely generated free chain complex $(\mathcal{C}, \partial)$
+$$
+\begin{array}{c}
+0 \stackrel{\partial_{n+1}}{\longrightarrow} C_{n}(X) \stackrel{\partial_{n}}{\longrightarrow} \ldots \stackrel{\partial_{k+2}}{\longrightarrow} C_{k+1}(X) \stackrel{\partial_{k+1}}{\longrightarrow} C_{k}(X) \\
+\stackrel{\partial_{k}}{\longrightarrow} C_{k-1}(X) \stackrel{\partial_{k-1}}{\longrightarrow} \ldots C_{0}(X) \stackrel{\partial_{0}}{\longrightarrow} 0
+\end{array}
+$$
+A chain $z \in C_{q}(X)$ is called cycle or, more precisely, $q$ -cycle if $\partial_{q} z=0$. A chain $z \in C_{q}(X)$ is called boundary if there exists $c \in C_{q+1}(X)$ such that $\partial_{q+1} c=z$. The set of all $q$ -cycles is the subgroup $Z_{q}:=\operatorname{Ker} \partial_{q}$ of $C_{q}(X)$ while the set of all boundaries is the subgroup $B_{q}:=\operatorname{Im} \partial_{q+1}$. $\partial^{2}=0$ implies that $\operatorname{Im} \partial_{q+1} \subset \operatorname{Ker} \partial_{q}$ and hence the quotient group $H_{q}(X):=\operatorname{Ker} \partial_{q} / \operatorname{Im} \partial_{q+1},$ called the $q-$ th
+cubical homology group of $X$ is well defined and has the same interpretation as the simplicial homology groups. Moreover, one can remark that the cubical set $X$ considered here can be triangulated and its simplicial homology is isomorphic to the cubical homology of $X$ defined above. Thus, the two theories are equivalent for cubical sets.</p>
+<p>The homology type of $X$ (also of $(\mathcal{C}, \partial))$ is by definition the sequence of abelian groups
+$$
+H(X)=H(\mathcal{C}):=\left\{H_{q}(X)\right\}, \quad q=0,1,2, \ldots
+$$</p>
 
 </div>
 </div>
@@ -13175,20 +13205,19 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>@TODO: fully explanations</em></strong></p>
-<ul>
-<li>introduction of TDA<ul>
-<li>persistent homology, a tool from TDA that extracts features representing the numbers of connected components, cycles, and voids and their birth and death during an iterative process called a filtration</li>
-<li>How to consider images as cubical complexes</li>
-</ul>
-</li>
-<li>introduction of classification methods of machine learning(maybe included deep learning) algorithms</li>
-<li>introduction of dataset<ul>
-<li>MNIST</li>
-<li>maybe something else like dataset of Chinese characters, skin cancers images, etc.</li>
-</ul>
-</li>
-</ul>
+<p>Persistent homology is defined for filtrations of cubical complexes as well. Hence, we now introduce a way to represent images as cubical complexes and then explain how we build filtrations of cubical complexes from binary images. A $d$ -dimensional image is a map $\mathcal{I}: I \subseteq \mathbb{Z}^{d} \longrightarrow \mathbb{R}$. An element $v \in I$ is called a voxel (or pixel when $d=2$ ) and the value $\mathcal{I}(v)$ is called its intensity or greyscale value. In the case of binary images, which are made of only black and white voxels, we consider a map $\mathcal{B}: I \subseteq \mathbb{Z}^{d} \longrightarrow\{0,1\} .$ In a slight abuse of terminology, we call the subset $I \subseteq \mathbb{Z}^{d}$ an image.</p>
+<p>There are several ways to represent images as cubical complexes. In [7], the voxels are represented by vertices and cubes are built between those vertices. Here, we choose the approach in which a voxel is represented by a $d$ -cube and all of its faces (adjacent lower-dimensional cubes) are added. We get a function on the resulting cubical complex $K$ by extending the values of the voxels to all the cubes $\sigma$ in $K$ in the following way:
+$$
+\mathcal{I}^{\prime}(\sigma):=\min _{\sigma \text { face of } \tau} \mathcal{I}(\tau)
+$$
+A grayscale image comes with a natural filtration embedded in the grayscale values of its pixels. Let $K$ be the cubical complex built from the image $I$. Let
+$$
+K_{i}:=\left\{\sigma \in K \mid \mathcal{I}^{\prime}(\sigma) \leq i\right\}
+$$
+be the $i$ -th sublevel set of $K .$ The set $\left\{K_{i}\right\}_{i \in \operatorname{Im}(I)}$ defines a filtration of cubical complexes, indexed by the value of the grayscale function $\mathcal{I}$. The steps we factor through to obtain a filtration from a grayscale image are then:</p>
+<p>Image $\rightarrow$ Cubical complex $\rightarrow$ Sublevel sets $\rightarrow$ Filtration.</p>
+<p>Moreover, the filtrations I used for this project will be introduced in the section 2.2.2.</p>
+<p>Finally, just a breif intruduction about the machine learning. <strong>Machine learning</strong> is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention. And <strong>supervised learning</strong> is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples. To verify the power of TDA techiniques for machine learning, the experiment of this project is conducted in the well-known dataset <strong>MNIST</strong> which consists of 70,000 images of handwritten digits of size 28 $\times$ 28 for classification.</p>
 
 </div>
 </div>
@@ -14237,8 +14266,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, we get 476 topological features for each image, which is significantly reduced from 784, and then I trained a random forest classifier</p>
-<p>(<strong><em>TODO: introduce random forest tree</em></strong>)</p>
+<p>Then, we get 476 topological features for each image, which is significantly reduced from 784, and then I trained a random forest classifier. <strong>Random forests</strong> or random decision forests are an ensemble learning method for classification, regression and other tasks that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean/average prediction (regression) of the individual trees</p>
 <p>on the training set, and achieve accuracies above 96%, which is high enough to conclude that using topological features generated above  reduce the feature</p>
 
 </div>
@@ -14352,6 +14380,11 @@ if (outputEl) {{
 <p>[3] Garin, Adélie, and Guillaume Tauzin. "A Topological" Reading" Lesson: Classification of MNIST using TDA." 2019 18th IEEE International Conference On Machine Learning And Applications (ICMLA). IEEE, 2019.</p>
 <p>[4] H. Edelsbrunner and J. Harer, “Persistent homology—a survey,” in Surveys on discrete and computational geometry, ser. Contemp. Math. Amer. Math. Soc., Providence, RI, 2008, vol. 453, pp. 257–282.</p>
 <p>[5] Ziou, Djemel, and Madjid Allili. "Generating cubical complexes from image data and computation of the Euler number." Pattern Recognition 35, no. 12 (2002): 2833-2839.</p>
+<p>[6] Allili, Madjid, Konstantin Mischaikow, and Allen Tannenbaum. "Cubical homology and the topological classification of 2D and 3D imagery." In Proceedings 2001 international conference on image processing (Cat. No. 01CH37205), vol. 2, pp. 173-176. IEEE, 2001.</p>
+<p>[7] V. Robins, P. Wood, and A. P Sheppard, “Theory and algorithms for
+constructing discrete Morse complexes from grayscale digital images,”
+IEEE transactions on pattern analysis and machine intelligence, vol. 33,
+May 2011.</p>
 <p>[reference code] vneogi199, Handwritten-Digit-Recognition-Using-Random-Forest, accuracy: 94.2%, <a href="https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest">https://github.com/vneogi199/Handwritten-Digit-Recognition-Using-Random-Forest</a></p>
 <p>[reference random forest] Bernard, Simon, Sébastien Adam, and Laurent Heutte. "Using random forests for handwritten digit recognition." In Ninth International Conference on Document Analysis and Recognition (ICDAR 2007), vol. 2, pp. 1043-1047. IEEE, 2007.</p>
 
