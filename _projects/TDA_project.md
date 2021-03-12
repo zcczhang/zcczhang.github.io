@@ -1,5 +1,5 @@
 ---
-title: "The Power of Topological Data Analysis for Machine Learning "
+title: "[The Power of Topological Data Analysis for Machine Learning](https://zcczhang.github.io/projects/The-Power-of-Topological-Data-Analysis-for-Machine-Learning.html) "
 collection: projects
 type: "Projects"
 permalink: /projects/tda_project
@@ -11,6 +11,6 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussing the power of topological data analysis for machine learning. Due to the time limit, the test for methodology was on the MNIST dataset. For more information, please see my project directly or visit [Project Digital Artifact](https://zcczhang.github.io/projects/The-Power-of-Topological-Data-Analysis-for-Machine-Learning.html), [GitHub Repo](https://github.com/zcczhang/TDA-project).(in progress)
+This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussing the power of topological data analysis for machine learning. Due to the time limit, the test for methodology was on the MNIST dataset. For more information, please see my project directly or visit [Project Digital Artifact](https://zcczhang.github.io/projects/The-Power-of-Topological-Data-Analysis-for-Machine-Learning.html), [GitHub Repo](https://github.com/zcczhang/TDA-project).
 
 
