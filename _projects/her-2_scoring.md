@@ -22,6 +22,10 @@ more formal project description would be coming soon!!
 
 #### Method 3
  
+##### Flow Diagram:
+
+![](https://raw.githubusercontent.com/zcczhang/CVintern/main/HER2_mtd3_flow_diagram.png?token=AMSJACVAJL26YXVBLXHH65TAJMR3A)
+
 ##### Result:
 
 ![](/images/her2_mtd3_1.png)
