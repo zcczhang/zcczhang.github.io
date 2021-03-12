@@ -24,11 +24,11 @@ more formal project description would be coming soon!!
  
 ##### Flow Diagram:
 
-![](https://raw.githubusercontent.com/zcczhang/CVintern/main/HER2_mtd3_flow_diagram.png?token=AMSJACVAJL26YXVBLXHH65TAJMR3A)
+![](/images/HER2_mtd3_flow_diagram.png)
 
 ##### Result:
 
-![](/images/her2_mtd3_1.png)
+![](/images/her2_mtd3_ar.png)
 
 in deployment 
 
