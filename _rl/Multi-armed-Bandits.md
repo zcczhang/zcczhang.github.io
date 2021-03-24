@@ -20,7 +20,7 @@ k-armed: k options(actions)
 
 $$
 \begin{array}{l}
-Q_{s}(a) \doteq \frac{\sum_{i=1}^{t-1} R_{i} \cdot \mathbb{1}_{A_{i}=a}}{\sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a}}, \mathbb{1}:=\left\{\begin{array}{l}
+Q_{s}(a) \doteq \displaystyle\frac{\displaystyle\sum_{i=1}^{t-1} R_{i} \cdot \mathbb{1}_{A_{i}=a}}{\displaystyle\sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a}}, \mathbb{1}:=\left\{\begin{array}{l}
 1 \text { if predicate is true } \\
 0 \text { if predicate is false }
 \end{array}\right. \\
