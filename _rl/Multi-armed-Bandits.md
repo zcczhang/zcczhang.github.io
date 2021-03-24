@@ -16,7 +16,7 @@ date: "2020-12-01"
 
 k-armed: k options(actions) 
 
-*Value:* $q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a)  q_*(a)$ estimation.
+*Value:* $q_{*}(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a) \approx  q_*(a)$ estimation.
 
 $$
 \begin{array}{l}
@@ -28,7 +28,7 @@ Q_{s}(a) \doteq \displaystyle\frac{\displaystyle\sum_{i=1}^{t-1} R_{i} \cdot \ma
 \end{array}
 $$
 <br>
-Greedy action: $A_{t} \doteq \arg \max _{a} Q_{t}(a), \epsilon$ -greedy: prevent local optimum
+Greedy action: $A_{t} \doteq \arg \max_{a} Q_{t}(a), \epsilon$ -greedy: prevent local optimum
 
 
 The estimate of its action value after it has been selected $n-1$ times:<br>
