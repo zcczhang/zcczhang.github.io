@@ -330,7 +330,7 @@ $\begin{aligned}\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} 
 &=\mathbb{E}\left[\left(q_{\*}\left(A_{t}\right)-X_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
 \end{aligned}$
 <br><br>
-given $A_t, \mathbb{E}[R_t|A_t] = q_{\*}(A_t) = R_t$, and let arbitary $X_t$ be $\overline{R_t}$$ then:
+given $A_t, \mathbb{E}[R_t|A_t] = q_{\*}(A_t) = R_t$, and let arbitary $X_t$ be $\overline{R_t}$ then:
 <br><br>
 $\displaystyle
 \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} = \mathbb{E}\left[\left(R_t)-\overline{R_t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
