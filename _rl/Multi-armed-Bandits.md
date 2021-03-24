@@ -263,7 +263,7 @@ figure_2_2()
 ### Upper Confidence Bound(UCB)
 
 Action selection:   
-$$ A_t \doteq \arg\max_a\left[Q_t(a)+c\cdot\sqrt{\frac{\ln t}{N_t(a)}}\right]$$
+$$A_t \doteq \arg\max_a\left[Q_t(a)+c\cdot\sqrt{\frac{\ln t}{N_t(a)}}\right]$$
 where $N_t(a)$: number of times "$a$" has been selected before "$t$";<br>
 c>0 controls the degree of exploration;<br>
 $\displaystyle \sqrt{\frac{\ln t}{N_t(a)}}$: uncertainty, or variance(many "action "$\rightarrow$bad$\rightarrow$less this "action")
