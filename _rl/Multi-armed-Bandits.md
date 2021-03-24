@@ -220,11 +220,8 @@ $$\begin{aligned} & (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\al
 \end{aligned} 
 $$
 
-<br>
 $\therefore  (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\alpha)^{k+1-i} = 1, \forall k \in \mathbb{N}$<br>
 $\therefore \forall n\in\mathbb{N}, \text{ }\alpha \in [0,1], \text{ } (1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1$
-
-<br>
 
 Consider $\{\alpha_n\}$ by stochastic approximation theory: P(coverage) = 1:
 <br>
@@ -232,8 +229,6 @@ Consider $\{\alpha_n\}$ by stochastic approximation theory: P(coverage) = 1:
 $$
 \sum_{n=1}^\infty \alpha_n(a) = \infty \text{ }\text{ }\text{ }\text{ and } \text{ }\text{ }\text{ } \sum_{n=1}^\infty \alpha_n(a) < \infty 
 $$
-
-<br>
 
 This means (i)steps are large enough to overcome initial condition or random fluctuations (ii) steps become small enough to coverage.
 <br><br>
@@ -307,7 +302,7 @@ $$
 $$
 H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
 $$
-where $\alpha>0, \overline{R_t} = avr\{R_1...R_{t-1}\}$<br>
+where $\alpha>0, \overline{R_t} = avr(\{R_1...R_{t-1}\})$<br>
 $\overline{R_t}\Rightarrow$ baseline, $R_t>\overline{R_t}, P(A_t)$ in the future increases, vice versa.
 <br>
 Conclusion: it is a stochastic approximation to gradient ascent:
