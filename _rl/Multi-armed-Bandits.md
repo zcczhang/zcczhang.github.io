@@ -16,7 +16,7 @@ date: "2020-12-01"
 
 k-armed: k options(actions) 
 
-*Value:* $q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a) \approx q_*(a)$ estimation.
+*Value:* $q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a)  q_*(a)$ estimation.
 
 $$
 \begin{array}{l}
@@ -216,15 +216,22 @@ $$\begin{aligned} & (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\al
 &= 0
 \end{aligned} 
 $$
+
 <br>
 $\therefore  (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\alpha)^{k+1-i} = 1, \forall k \in \mathbb{N}$<br>
 $\therefore \forall n\in\mathbb{N}, \text{ }\alpha \in [0,1], \text{ } (1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1$
-<br><br>
+
+<br>
+
 Consider $\{\alpha_n\}$ by stochastic approximation theory: P(coverage) = 1:
+<br>
+
 $$
 \sum_{n=1}^\infty \alpha_n(a) = \infty \text{ }\text{ }\text{ }\text{ and } \text{ }\text{ }\text{ } \sum_{n=1}^\infty \alpha_n(a) < \infty 
 $$
+
 <br>
+
 This means (i)steps are large enough to overcome initial condition or random fluctuations (ii) steps become small enough to coverage.
 <br><br>
 As $Q_{n+1}$ more or less dependent on $Q_1(a) \Rightarrow$ biased by initial estimate.<br>
