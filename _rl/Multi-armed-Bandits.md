@@ -14,29 +14,29 @@ date: "2020-12-01"
 
 ### Action-Value Methods
 
-k-armed: k options(actions)<br>
-<i>value: </i> $q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a) \approx q_*(a)$ estimation.<br>
-  $$Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbb{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbb{1}_{A_i = a}}, \mathbb{1} := \left\{\begin{array}{c}
-     & 1 \text{ if predicate is true} \\
-     & 0 \text{ if predicate is false}
-\end{array}\right.$$
-<br>
-when $\displaystyle\sum_{i=1}^{t-1} \mathbb{1}_{A_i=a} \rightarrow \infty$, $Q(a) \rightarrow q_*(a)$
-<br>
-Greedy action: $\displaystyle A_t \doteq \arg\max_a Q_t(a)$, $\epsilon$-greedy: prevent local optimum
-<br><br>
+k-armed: k options(actions) value: $q_{*}(a) \doteq \mathbb{E}\left[R_{t} \mid A_{t}=a\right],$ using $Q_{t}(a) \approx q_{*}(a)$ estimation.
+$$
+\begin{array}{l}
+Q_{s}(a) \doteq \frac{\sum_{i=1}^{t-1} R_{i} \cdot \mathbb{1}_{A_{i}=a}}{\sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a}}, \mathbb{1}:=\left\{\begin{array}{l}
+1 \text { if predicate is true } \\
+0 \text { if predicate is false }
+\end{array}\right. \\
+\text { when } \sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a} \rightarrow \infty, Q(a) \rightarrow q_{*}(a)
+\end{array}
+$$
+Greedy action: $A_{t} \doteq \arg \max _{a} Q_{t}(a), \epsilon$ -greedy: prevent local optimum
 The estimate of its action value after it has been selected $n-1$ times:
 $$
 \begin{aligned}
-Q_n \doteq \frac{\sum_{i=1}^{n-1} R_i}{n-1} &= \frac{1}{n-1}(R_{n-1}+\sum_{i=1}^{n-2} R_i)\\
-  &= \frac{1}{n-1}(R_{n-1}+(n-2)\frac{1}{n-1}\sum_{i=1}^{n-2} R_i)\\
-  &= \frac{1}{n-1}(R_{n-1}+(n-2)Q_{n-1}) \\
-  &= \frac{1}{n-1}(R_{n-1}+(n-1)Q_{n-1}-Q_{n-1}) \\
-  &= Q_{n-1}+\frac{1}{n-1}(R_{n-1}-Q_{n-1})
+Q_{n} \doteq \frac{\sum_{i=1}^{n-1} R_{i}}{n-1} &=\frac{1}{n-1}\left(R_{n-1}+\sum_{i=1}^{n-2} R_{i}\right) \\
+&=\frac{1}{n-1}\left(R_{n-1}+(n-2) \frac{1}{n-1} \sum_{i=1}^{n-2} R_{i}\right) \\
+&=\frac{1}{n-1}\left(R_{n-1}+(n-2) Q_{n-1}\right) \\
+&=\frac{1}{n-1}\left(R_{n-1}+(n-1) Q_{n-1}-Q_{n-1}\right) \\
+&=Q_{n-1}+\frac{1}{n-1}\left(R_{n-1}-Q_{n-1}\right)
 \end{aligned}
 $$
-or more general, $Q_{n+1} = \displaystyle Q_{n}+\frac{1}{n}(R_{n}-Q_{n})$, $n=1 \rightarrow Q_2=R_1$ for arbitrary.
-<br>
+or more general, $Q_{n+1}=Q_{n}+\frac{1}{n}\left(R_{n}-Q_{n}\right), n=1 \rightarrow Q_{2}=R_{1}$ for arbitrary.
+
 General <b>[Update Rule]</b>: NewEstimate $\leftarrow$ StepSize $\cdot$ [Target - OldEstimate], stepsize: $\alpha_t(a)$, Target - OldEstimate: "error" in estimate.
 <br>
 $$\begin{aligned}
