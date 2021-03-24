@@ -12,8 +12,10 @@ date: "2020-12-01"
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
-### Action-Value Methods ss
+### Action-Value Methods
 
+<body>
+<p>
 k-armed: k options(actions)<br>
 <i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
   \[Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbb{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbb{1}_{A_i = a}}, \mathbb{1} := \left\{\begin{array}{c}
@@ -45,6 +47,7 @@ Q_{n+1} &= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) Q_n 
 &= \alpha R_n +(1-\alpha)\alpha R_{n-1} +(1-\alpha)^2\alpha R_{n-2} + ... +(1-\alpha)^n\alpha Q_1 \\
 &= (1-\alpha)^n Q_1 + \sum_{i=1}^n \alpha(1-\alpha)^{n-i}R_i 
 \end{aligned}\]
+<p><body>
 
 
 ### Implementations
