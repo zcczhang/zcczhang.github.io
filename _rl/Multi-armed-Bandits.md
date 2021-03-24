@@ -9643,7 +9643,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror {
   line-height: 1.21429em;
   /* Changed from 1em to our global default */
-  font-size: 14px;
+  font-size: 11px;
   height: auto;
   /* Changed to auto to autogrow */
   background: none;
