@@ -29,7 +29,10 @@ Q_{s}(a) \doteq \frac{\sum_{i=1}^{t-1} R_{i} \cdot \mathbb{1}_{A_{i}=a}}{\sum_{i
 $$
 <br>
 Greedy action: $A_{t} \doteq \arg \max _{a} Q_{t}(a), \epsilon$ -greedy: prevent local optimum
+
+
 The estimate of its action value after it has been selected $n-1$ times:<br>
+
 $$
 \begin{aligned}
 Q_{n} \doteq \frac{\sum_{i=1}^{n-1} R_{i}}{n-1} &=\frac{1}{n-1}\left(R_{n-1}+\sum_{i=1}^{n-2} R_{i}\right) \\
@@ -38,7 +41,8 @@ Q_{n} \doteq \frac{\sum_{i=1}^{n-1} R_{i}}{n-1} &=\frac{1}{n-1}\left(R_{n-1}+\su
 &=\frac{1}{n-1}\left(R_{n-1}+(n-1) Q_{n-1}-Q_{n-1}\right) \\
 &=Q_{n-1}+\frac{1}{n-1}\left(R_{n-1}-Q_{n-1}\right)
 \end{aligned}
-$$<br>
+$$
+<br>
 or more general, $Q_{n+1}=Q_{n}+\frac{1}{n}\left(R_{n}-Q_{n}\right), n=1 \rightarrow Q_{2}=R_{1}$ for arbitrary.<br>
 
 General <b>[Update Rule]</b>: NewEstimate $\leftarrow$ StepSize $\cdot$ [Target - OldEstimate], stepsize: $\alpha_t(a)$, Target - OldEstimate: "error" in estimate.
