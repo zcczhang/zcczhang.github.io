@@ -14,7 +14,10 @@ date: "2020-12-01"
 
 ### Action-Value Methods
 
-k-armed: k options(actions) value: $q_{*}(a) \doteq \mathbb{E}\left[R_{t} \mid A_{t}=a\right]$, using $Q_{t}(a) \approx q_{*}(a)$ estimation.<br>
+k-armed: k options(actions) 
+
+*value*: $q_{*}(a) \doteq \mathbb{E}\left[R_{t} \mid A_{t}=a\right]$, using $Q_{t}(a) \approx q_{*}(a)$ estimation.<br>
+
 $$
 \begin{array}{l}
 Q_{s}(a) \doteq \frac{\sum_{i=1}^{t-1} R_{i} \cdot \mathbb{1}_{A_{i}=a}}{\sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a}}, \mathbb{1}:=\left\{\begin{array}{l}
