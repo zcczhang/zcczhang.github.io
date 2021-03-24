@@ -8,16 +8,15 @@ tags:
   - My Note
 date: "2020-12-01"
 --- 
-***Reinforcement Learning: An Introduction***
+***Reinforcement Learning: An Introductionssss***
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
 ### Action-Value Methods
 
 <body>
-<p>
-k-armed: k options(actions)<br>
-<i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
+  k-armed: k options(actions)<br>
+  <i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
   \[Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbb{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbb{1}_{A_i = a}}, \mathbb{1} := \left\{\begin{array}{c}
      & 1 \text{ if predicate is true} \\
      & 0 \text{ if predicate is false}
@@ -47,8 +46,7 @@ Q_{n+1} &= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) Q_n 
 &= \alpha R_n +(1-\alpha)\alpha R_{n-1} +(1-\alpha)^2\alpha R_{n-2} + ... +(1-\alpha)^n\alpha Q_1 \\
 &= (1-\alpha)^n Q_1 + \sum_{i=1}^n \alpha(1-\alpha)^{n-i}R_i 
 \end{aligned}\]
-<p><body>
-
+<body>
 
 ### Implementations
 
@@ -196,7 +194,7 @@ figure_2_1()
 
 
 
-![png](output_4_1.png)
+![png](./multi-armed-bandits/output_4_1.png)
 
 
 <body>
@@ -427,7 +425,28 @@ figure_2_5()
     100%|██████████| 1000/1000 [00:24<00:00, 41.64it/s]
     100%|██████████| 1000/1000 [00:42<00:00, 23.74it/s]
     100%|██████████| 1000/1000 [00:40<00:00, 24.46it/s]
-     28%|██▊       | 282/1000 [00:11<00:28, 25.12it/s]
+    100%|██████████| 1000/1000 [00:41<00:00, 23.94it/s]
+    100%|██████████| 1000/1000 [00:43<00:00, 23.04it/s]
+    100%|██████████| 1000/1000 [00:43<00:00, 22.83it/s]
+    100%|██████████| 1000/1000 [00:41<00:00, 24.31it/s]
+    100%|██████████| 1000/1000 [00:43<00:00, 23.18it/s]
+    100%|██████████| 1000/1000 [00:32<00:00, 31.07it/s]
+    100%|██████████| 1000/1000 [00:36<00:00, 27.69it/s]
+    100%|██████████| 1000/1000 [00:35<00:00, 28.10it/s]
+    100%|██████████| 1000/1000 [00:33<00:00, 30.23it/s]
+    100%|██████████| 1000/1000 [00:32<00:00, 30.88it/s]
+    100%|██████████| 1000/1000 [00:33<00:00, 29.97it/s]
+    100%|██████████| 1000/1000 [00:38<00:00, 25.89it/s]
+    100%|██████████| 1000/1000 [00:34<00:00, 28.63it/s]
+    100%|██████████| 1000/1000 [00:34<00:00, 29.35it/s]
+    100%|██████████| 1000/1000 [00:30<00:00, 32.29it/s]
+    100%|██████████| 1000/1000 [00:31<00:00, 31.55it/s]
+    100%|██████████| 1000/1000 [00:31<00:00, 31.71it/s]
+
+
+
+![png](output_12_1.png)
+
 
 ***Reference***
 
