@@ -30,7 +30,9 @@ Q_{s}(a) \doteq \displaystyle\frac{\displaystyle\sum_{i=1}^{t-1} R_{i} \cdot \ma
 $$
 
 when
-$\displaystyle \sum_{i=1}^{t-1} \mathbb{1}_{A_i=a} \rightarrow \infty, Q(a) \rightarrow q_{\*}(a)$
+$\displaystyle \sum_{i=1}^{t-1} \mathbb{1}_{A_i=a} \rightarrow \infty$
+,
+ $Q(a) \rightarrow q_{\*}(a)$
 
 
 Greedy action: $A_{t} \doteq \arg \max_{a} Q_{t}(a), \epsilon$ -greedy: prevent local optimum
