@@ -723,7 +723,7 @@ samp {
 }
 code {
   padding: 2px 4px;
-  font-size: 60%;
+  font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 2px;
@@ -746,7 +746,7 @@ pre {
   display: block;
   padding: 8.5px;
   margin: 0 0 9px;
-  font-size: 12px;
+  font-size: 6px;
   line-height: 1.42857143;
   word-break: break-all;
   word-wrap: break-word;
