@@ -225,7 +225,7 @@ $$
 $\therefore  (1-\alpha)^{k+1}+ \displaystyle\sum_{i=1}^{k+1} \alpha(1-\alpha)^{k+1-i} = 1, \forall k \in \mathbb{N}$<br>
 $\therefore \forall n\in\mathbb{N}, \text{ }\alpha \in [0,1], \text{ } (1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1$
 
-Consider $\{\alpha_n\}$ by stochastic approximation theory: P(coverage) = 1:
+Consider {$\alpha_n$} by stochastic approximation theory: P(coverage) = 1:
 <br>
 
 $$
