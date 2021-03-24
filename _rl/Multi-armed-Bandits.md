@@ -26,7 +26,7 @@ when $\displaystyle\sum_{i=1}^{t-1} \mathbb{1}_{A_i=a} \rightarrow \infty$, $Q(a
 Greedy action: $\displaystyle A_t \doteq \arg\max_a Q_t(a)$, $\epsilon$-greedy: prevent local optimum
 <br><br>
 The estimate of its action value after it has been selected $n-1$ times:
-\[
+$$
 \begin{aligned}
 Q_n \doteq \frac{\sum_{i=1}^{n-1} R_i}{n-1} &= \frac{1}{n-1}(R_{n-1}+\sum_{i=1}^{n-2} R_i)\\
   &= \frac{1}{n-1}(R_{n-1}+(n-2)\frac{1}{n-1}\sum_{i=1}^{n-2} R_i)\\
@@ -34,7 +34,7 @@ Q_n \doteq \frac{\sum_{i=1}^{n-1} R_i}{n-1} &= \frac{1}{n-1}(R_{n-1}+\sum_{i=1}^
   &= \frac{1}{n-1}(R_{n-1}+(n-1)Q_{n-1}-Q_{n-1}) \\
   &= Q_{n-1}+\frac{1}{n-1}(R_{n-1}-Q_{n-1})
 \end{aligned}
-\] 
+$$
 or more general, $Q_{n+1} = \displaystyle Q_{n}+\frac{1}{n}(R_{n}-Q_{n})$, $n=1 \rightarrow Q_2=R_1$ for arbitrary.
 <br>
 General <b>[Update Rule]</b>: NewEstimate $\leftarrow$ StepSize $\cdot$ [Target - OldEstimate], stepsize: $\alpha_t(a)$, Target - OldEstimate: "error" in estimate.
