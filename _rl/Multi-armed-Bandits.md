@@ -730,7 +730,7 @@ code {
 }
 kbd {
   padding: 2px 4px;
-  font-size: 90%;
+  font-size: 60%;
   color: #888;
   background-color: transparent;
   border-radius: 1px;
@@ -9643,7 +9643,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror {
   line-height: 1.21429em;
   /* Changed from 1em to our global default */
-  font-size: 11px;
+  font-size: 14px;
   height: auto;
   /* Changed to auto to autogrow */
   background: none;
