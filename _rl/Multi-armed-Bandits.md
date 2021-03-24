@@ -12,11 +12,12 @@ date: "2020-12-01"
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
+111
+
 ### Action-Value Methods
 
-
-  k-armed: k options(actions)<br>
-  <i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
+k-armed: k options(actions)<br>
+<i>value: </i> \(q_*(a) \doteq \mathbb{E}[R_t\mid A_t = a]\), using \(Q_t(a) \approx q_*(a)\) estimation.<br>
   \[Q_s(a)\doteq \displaystyle \frac{\displaystyle\sum_{i=1}^{t-1} R_i \cdot\mathbb{1}_{A_i = a}}{\displaystyle\sum_{i=1}^{t-1}  \mathbb{1}_{A_i = a}}, \mathbb{1} := \left\{\begin{array}{c}
      & 1 \text{ if predicate is true} \\
      & 0 \text{ if predicate is false}
