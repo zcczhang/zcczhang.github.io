@@ -314,24 +314,24 @@ $\overline{R_t}\Rightarrow$ baseline, $R_t>\overline{R_t}, P(A_t)$ in the future
 Conclusion: it is a stochastic approximation to gradient ascent:
 
 $$
-H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_*(x)
+H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_{\*}(x)
 $$
 
 update = gradient of $\mathbb{E}[R_t]\Rightarrow$ stochastic gradient ascent $\Rightarrow$ robust convergence.
 <br>
 <i>Proof:</i>
 <br>
-$\begin{aligned} \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)}\left[\sum_{b} \pi_{t}(b) q_{*}(b)\right] \\ &=\sum_{b} q_{*}(b) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \end{aligned}$
+$\begin{aligned} \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)}\left[\sum_{b} \pi_{t}(b) q_{\*}(b)\right] \\ &=\sum_{b} q_{\*}(b) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \end{aligned}$
 <br>
 Let $\forall X_t$ and $b$ are independent, then $\displaystyle \sum_b\frac{\partial\pi_t(b)}{\partial H_t(b)} = 0$, so we have
 <br>
 $\begin{aligned}\frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &
-=\sum_{b}\left(q_{*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \\
-&=\sum_{b} \pi_{t}(b)\left(q_{*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} / \pi_{t}(b) \\
-&=\mathbb{E}\left[\left(q_{*}\left(A_{t}\right)-X_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
+=\sum_{b}\left(q_{\*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \\
+&=\sum_{b} \pi_{t}(b)\left(q_{\*}(b)-X_{t}\right) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} / \pi_{t}(b) \\
+&=\mathbb{E}\left[\left(q_{\*}\left(A_{t}\right)-X_{t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
 \end{aligned}$
 <br><br>
-given $A_t, \mathbb{E}[R_t|A_t] = q_*(A_t) = R_t$, and let arbitary $X_t$ be $\overline{R_t}$$ then:
+given $A_t, \mathbb{E}[R_t|A_t] = q_{\*}(A_t) = R_t$, and let arbitary $X_t$ be $\overline{R_t}$$ then:
 <br><br>
 $\displaystyle
 \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} = \mathbb{E}\left[\left(R_t)-\overline{R_t}\right) \frac{\partial \pi_{t}\left(A_{t}\right)}{\partial H_{t}(a)} / \pi_{t}\left(A_{t}\right)\right]
