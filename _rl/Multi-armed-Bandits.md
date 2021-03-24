@@ -16,7 +16,10 @@ date: "2020-12-01"
 
 k-armed: k options(actions) 
 
-*Value:* $q_{*}(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using $Q_t(a) \approx  q_*(a)$ estimation.
+<body><p>
+Value: $q_{*}(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using 
+$Q_t(a) \approx q_{*}(a)$ estimation.
+<p><body>
 
 $$
 \begin{array}{l}
