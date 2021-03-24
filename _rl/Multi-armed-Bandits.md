@@ -16,10 +16,10 @@ date: "2020-12-01"
 
 k-armed: k options(actions) 
 
-<body><p>
-Value: $q_{*}(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using 
+
+Value: $q_{\*}(a) \doteq \mathbb{E}[R_t\mid A_t = a]$, using 
 $Q_t(a) \approx q_{*}(a)$ estimation.
-<p><body>
+
 
 $$
 \begin{array}{l}
@@ -27,7 +27,7 @@ Q_{s}(a) \doteq \displaystyle\frac{\displaystyle\sum_{i=1}^{t-1} R_{i} \cdot \ma
 1 \text { if predicate is true } \\
 0 \text { if predicate is false }
 \end{array}\right. \\
-\text { when } \sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a} \rightarrow \infty, Q(a) \rightarrow q_{*}(a)
+\text { when } \sum_{i=1}^{t-1} \mathbb{1}_{A_{i}=a} \rightarrow \infty, Q(a) \rightarrow q_{\*}(a)
 \end{array}
 $$
 <br>
