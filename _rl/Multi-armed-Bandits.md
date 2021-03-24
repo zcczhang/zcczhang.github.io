@@ -71,7 +71,6 @@ Q_{n+1} &amp;= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
@@ -193,7 +192,6 @@ Q_{n+1} &amp;= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">figure_2_1</span><span class="p">(</span><span class="n">runs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -232,10 +230,7 @@ Q_{n+1} &amp;= \displaystyle Q_{n}+\alpha(R_{n}-Q_{n}) = \alpha R_n +(1-\alpha) 
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:26&lt;00:00, 38.10it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 39.72it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 38.98it/s]
-</pre>
+
 </div>
 </div>
 
@@ -289,7 +284,6 @@ Then, for genral stationary case, we encourage exploration optimistic initial va
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">figure_2_2</span><span class="p">(</span><span class="n">runs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -320,9 +314,7 @@ Then, for genral stationary case, we encourage exploration optimistic initial va
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:25&lt;00:00, 39.42it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 40.00it/s]
-</pre>
+
 </div>
 </div>
 
@@ -359,7 +351,6 @@ $\displaystyle \sqrt{\frac{\ln t}{N_t(a)}}$: uncertainty, or variance(many "acti
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">figure_2_3</span><span class="p">(</span><span class="n">runs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -389,9 +380,7 @@ $\displaystyle \sqrt{\frac{\ln t}{N_t(a)}}$: uncertainty, or variance(many "acti
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:34&lt;00:00, 28.75it/s]
-100%|██████████| 1000/1000 [00:24&lt;00:00, 41.00it/s]
-</pre>
+
 </div>
 </div>
 
@@ -478,7 +467,6 @@ which is corresponding with the equation for the gradient ascent.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">figure_2_4</span><span class="p">(</span><span class="n">runs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -514,13 +502,6 @@ which is corresponding with the equation for the gradient ascent.</p>
 
     <div class="prompt"></div>
 
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:39&lt;00:00, 25.06it/s]
-100%|██████████| 1000/1000 [00:39&lt;00:00, 25.38it/s]
-100%|██████████| 1000/1000 [00:38&lt;00:00, 26.15it/s]
-100%|██████████| 1000/1000 [00:38&lt;00:00, 26.20it/s]
-</pre>
 </div>
 </div>
 
@@ -555,7 +536,6 @@ a particular algorithm at a particular setting of its parameter.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">figure_2_5</span><span class="p">(</span><span class="n">runs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -605,32 +585,7 @@ a particular algorithm at a particular setting of its parameter.</p>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:24&lt;00:00, 40.78it/s]
-100%|██████████| 1000/1000 [00:24&lt;00:00, 41.02it/s]
-100%|██████████| 1000/1000 [00:24&lt;00:00, 41.31it/s]
-100%|██████████| 1000/1000 [00:24&lt;00:00, 41.52it/s]
-100%|██████████| 1000/1000 [00:23&lt;00:00, 42.50it/s]
-100%|██████████| 1000/1000 [00:22&lt;00:00, 44.48it/s]
-100%|██████████| 1000/1000 [00:37&lt;00:00, 26.92it/s]
-100%|██████████| 1000/1000 [00:36&lt;00:00, 27.09it/s]
-100%|██████████| 1000/1000 [00:37&lt;00:00, 26.97it/s]
-100%|██████████| 1000/1000 [00:36&lt;00:00, 27.03it/s]
-100%|██████████| 1000/1000 [00:37&lt;00:00, 27.02it/s]
-100%|██████████| 1000/1000 [00:36&lt;00:00, 27.07it/s]
-100%|██████████| 1000/1000 [00:36&lt;00:00, 27.07it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.53it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.61it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.58it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.59it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.54it/s]
-100%|██████████| 1000/1000 [00:31&lt;00:00, 31.52it/s]
-100%|██████████| 1000/1000 [00:33&lt;00:00, 30.19it/s]
-100%|██████████| 1000/1000 [00:26&lt;00:00, 37.93it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 38.57it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 39.29it/s]
-100%|██████████| 1000/1000 [00:26&lt;00:00, 37.80it/s]
-100%|██████████| 1000/1000 [00:25&lt;00:00, 38.72it/s]
-</pre>
+
 </div>
 </div>
 
