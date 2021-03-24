@@ -308,7 +308,7 @@ $$
 H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
 $$
 
-where $\alpha>0, \overline{R_t} = avr(\{R_1...R_{t-1}\})$<br>
+where $\alpha>0, \overline{R_t} = avr\text{\{}R_1...R_{t-1}\text{\}}$<br>
 $\overline{R_t}\Rightarrow$ baseline, $R_t>\overline{R_t}, P(A_t)$ in the future increases, vice versa.
 <br>
 Conclusion: it is a stochastic approximation to gradient ascent:
