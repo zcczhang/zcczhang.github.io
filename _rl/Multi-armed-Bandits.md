@@ -723,14 +723,14 @@ samp {
 }
 code {
   padding: 2px 4px;
-  font-size: 90%;
+  font-size: 60%;
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 2px;
 }
 kbd {
   padding: 2px 4px;
-  font-size: 60%;
+  font-size: 90%;
   color: #888;
   background-color: transparent;
   border-radius: 1px;
