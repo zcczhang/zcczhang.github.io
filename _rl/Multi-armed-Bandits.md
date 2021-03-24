@@ -8,7 +8,7 @@ tags:
   - My Note
 date: "2020-12-01"
 --- 
-***Reinforcement Learning: An Introduction***
+___"Reinforcement Learning: An Introduction"___ *by Richard Sutton & Andrew Barto, 2nd Ed*
 
 
 
@@ -13090,7 +13090,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Author: Charles Zhang  <br><a href="https://zcczhang.github.io/blogs/"><em>All Notes Catelog for</em> <strong><em>Reinforcement Learning: An Introduction</em></strong></a>. This post is created following <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"><em>BY-NC-ND 4.0</em></a> agreement, please follow terms while sharing.</p>
+<blockquote><p>Post Author: Charles Zhang  <br><a href="https://zcczhang.github.io/blogs/"><em>All Notes Catelog for</em> <strong><em>Reinforcement Learning: An Introduction</em></strong></a>. This post is created following <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"><em>BY-NC-ND 4.0</em></a> agreement, please follow terms while sharing.</p>
 </blockquote>
 
 </div>
