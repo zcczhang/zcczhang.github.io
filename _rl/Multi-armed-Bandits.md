@@ -209,7 +209,7 @@ figure_2_1()
 
 
 Note $(1-\alpha)^n+ \displaystyle\sum_{i=1}^n \alpha(1-\alpha)^{n-i} = 1, \alpha \in [0,1]$, $Q_{n+1}$ therefore is called (exponetial recency-)weight average of past $R \text{ and } Q_1$.<br><br>
-<i>Proof</i>:<br>
+*Proof*:<br>
 $n=1, 1-\alpha+\alpha = 1$;<br>
 assume for $n=k, (1-\alpha)^k+ \displaystyle\sum_{i=1}^k \alpha(1-\alpha)^{k-i} = 1$;<br>
 then for $n=k+1$, <br>
@@ -317,9 +317,9 @@ H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\
 $$
 
 update = gradient of $\mathbb{E}[R_t]\Rightarrow$ stochastic gradient ascent $\Rightarrow$ robust convergence.
-<br>
-<i>Proof:</i>
-<br>
+
+*Proof:*
+
 $\begin{aligned} \frac{\partial \mathbb{E}\left[R_{t}\right]}{\partial H_{t}(a)} &=\frac{\partial}{\partial H_{t}(a)}\left[\sum_{b} \pi_{t}(b) q_{\*}(b)\right] \\ &=\sum_{b} q_{\*}(b) \frac{\partial \pi_{t}(b)}{\partial H_{t}(a)} \end{aligned}$
 <br>
 Let $\forall X_t$ and $b$ are independent, then $\displaystyle \sum_b\frac{\partial\pi_t(b)}{\partial H_t(b)} = 0$, so we have
