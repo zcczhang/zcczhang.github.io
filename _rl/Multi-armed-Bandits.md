@@ -296,21 +296,27 @@ figure_2_3()
 
 soft-max distribution(i.e. Gibbs or Boltzmann distribution)<br>
 $$\text{Pr}\{A_t=a\} \doteq \displaystyle \frac{e^{H_t(a)}}{\sum_{b=1}^k e^{H_t(b)}} \doteq \pi_t(a)$$
+
 $H_t(a)\in\mathbb{R}$: preference for each action, initially $H_1(a)=0$
 Natural Learning algorithmm for soft-max action preferences based on the idea of the stochastic gradient ascent(↑). For update: 
+
 $$
 H_{t+1}(A_t) \doteq H_t(A_t) + \alpha(R_t-\overline{R_t})(\mathbb{1}_{a=A_t}-\pi_t(A_t))
 $$
+
 $$
 H_{t+1}(a) \doteq H_t(a) + \alpha(R_t-\overline{R_t})\pi_t(a)
 $$
+
 where $\alpha>0, \overline{R_t} = avr(\{R_1...R_{t-1}\})$<br>
 $\overline{R_t}\Rightarrow$ baseline, $R_t>\overline{R_t}, P(A_t)$ in the future increases, vice versa.
 <br>
 Conclusion: it is a stochastic approximation to gradient ascent:
+
 $$
 H_{t+1}(a)\doteq H_t(a)+\alpha\frac{\partial \mathbb{E}[R_t]}{\partial H_t(a)},\text{ }\text{ }\text{ }\text{ }  \mathbb[E][R_t] = \sum_x\pi_t(x)q_*(x)
 $$
+
 update = gradient of $\mathbb{E}[R_t]\Rightarrow$ stochastic gradient ascent $\Rightarrow$ robust convergence.
 <br>
 <i>Proof:</i>
