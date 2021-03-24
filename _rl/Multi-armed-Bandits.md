@@ -280,7 +280,7 @@ th {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
-}
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../components/bootstrap/fonts/glyphicons-halflings-regular.eot');
