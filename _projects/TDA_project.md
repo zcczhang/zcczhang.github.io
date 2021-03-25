@@ -12,5 +12,3 @@ tool: "/images/python.png"
 ---
 
 This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussing the power of topological data analysis for machine learning. Due to the time limit, the test for methodology was only on the MNIST dataset. [***Digital Artifact Notebook***](https://zcczhang.github.io/projects/The-Power-of-Topological-Data-Analysis-for-Machine-Learning.html), [***GitHub Repo***](https://github.com/zcczhang/TDA-project)
-
-{% include The-Power-of-Topological-Data-Analysis-for-Machine-Learning.html %}
