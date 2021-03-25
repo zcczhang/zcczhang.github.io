@@ -13728,7 +13728,7 @@ a particular algorithm at a particular setting of its parameter.</p>
 <p>[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.</p>
 <p>[2] <a href="https://github.com/ShangtongZhang/reinforcement-learning-an-introduction">https://github.com/ShangtongZhang/reinforcement-learning-an-introduction</a></p>
 
-</div>
+
 </div>
 </div>
     </div>
