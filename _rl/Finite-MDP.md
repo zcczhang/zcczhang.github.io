@@ -131,7 +131,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 button,
 input,
