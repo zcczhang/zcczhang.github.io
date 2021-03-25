@@ -13528,14 +13528,7 @@ Efficiency: search directly: \(O(k^n)\) with n states k actions; dynamic program
 </div>
 
 </div>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    </div>
+   </div>
   </div>
 </body>
 
