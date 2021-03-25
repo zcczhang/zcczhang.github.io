@@ -3,7 +3,7 @@ title: "IHC HER-2 Autonomous Scoring "
 collection: projects
 type: "Projects"
 permalink: /projects/her2_scoring
-date: 2021-01-12
+date: 2021-04-12
 year: 2021
 location: "Beijing, China"
 image: "/images/her2demo.png"
