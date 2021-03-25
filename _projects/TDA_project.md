@@ -11,7 +11,7 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussing the power of topological data analysis for machine learning. Due to the time limit, the test for methodology was only on the MNIST dataset. 
+This is the project for the capstone course ***MATH 471 Topology*** at Macalester College, discussing the power of topological data analysis for machine learning. Due to the time limit, the test for methodology was only on the MNIST dataset([GitHub Repo](https://github.com/zcczhang/TDA-project)).
 
 
 <html>
