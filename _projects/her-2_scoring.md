@@ -45,13 +45,6 @@ right protected by natinal invention patent
 
 ![](https://github.com/zcczhang/zcczhang.github.io/blob/master/images/her2example1.png?raw=true)
 
-### **Visualization for Automated HER-2 Scoring in 4096x4096 slide** 
-
-![](https://github.com/zcczhang/zcczhang.github.io/blob/master/images/her2example2.png?raw=true)
-
-### **Segment, Filter, and Augmented Reality in a Pathological Image**
-
-![](https://github.com/zcczhang/zcczhang.github.io/blob/master/images/her2example3.png?raw=true)
 
 <br><br><br><br><br>
 
