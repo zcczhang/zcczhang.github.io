@@ -7,6 +7,7 @@ tags:
   - Tabular Solution Method
   - My Note
 date: "2020-12-03"
+tool: "/images/nothing.png"
 --- 
 
 ***Reinforcement Learning: An Introduction***

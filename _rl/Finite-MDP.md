@@ -7,6 +7,7 @@ tags:
   - Tabular Solution Method
   - My Note
 date: "2020-12-02"
+tool: "/images/nothing.png"
 --- 
 ___"Reinforcement Learning: An Introduction"___ *by Richard Sutton & Andrew Barto, 2nd Ed*
 
