@@ -29,7 +29,6 @@ comments:
     issue-term: "pathname"
     theme: "github-light"
     crossorigin: "anonymous"
-    async>
   disqus:
     shortname            :
   discourse:
