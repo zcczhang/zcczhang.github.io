@@ -171,3 +171,13 @@ The process and convergence is clearly illustrated in the figure below:
 [1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
 <br>
 [2] Sauer, Timothy. Numerical analysis. Pearson, 2018.
+
+<br><br><br><br><br>
+
+<script src="https://utteranc.es/client.js"
+        repo="zcczhang/zcczhang.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>

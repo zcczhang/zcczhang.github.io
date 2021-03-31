@@ -21,3 +21,13 @@ I built models to determine the required number of Drones and every Drone's init
 
 
 <embed src="/files/2017HiMCM.pdf" height="100%" width="100%">
+
+<br><br><br><br><br>
+
+<script src="https://utteranc.es/client.js"
+        repo="zcczhang/zcczhang.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>

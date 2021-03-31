@@ -52,3 +52,13 @@ right protected by natinal invention patent
 ### **Segment, Filter, and Augmented Reality in a Pathological Image**
 
 ![](https://github.com/zcczhang/zcczhang.github.io/blob/master/images/her2example3.png?raw=true)
+
+<br><br><br><br><br>
+
+<script src="https://utteranc.es/client.js"
+        repo="zcczhang/zcczhang.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>

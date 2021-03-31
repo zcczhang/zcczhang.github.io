@@ -22,13 +22,8 @@ future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
-  provider               : “utterances” # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   utterances:
-    src: "https://utteranc.es/client.js"
-    repo: "zcczhang/zcczhang.github.io"
-    issue-term: "pathname"
-    theme: "github-light"
-    crossorigin: "anonymous"
   disqus:
     shortname            :
   discourse:

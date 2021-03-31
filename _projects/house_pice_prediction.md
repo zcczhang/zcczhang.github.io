@@ -1876,3 +1876,14 @@ Notebooks in kaggle:
 [Stack&Blend LRs XGB LGB {House Prices K} v17](https://www.kaggle.com/itslek/stack-blend-lrs-xgb-lgb-house-prices-k-v17)
 
 [EDA, New Models and Stacking](https://www.kaggle.com/datafan07/top-1-approach-eda-new-models-and-stacking)
+
+
+<br><br><br><br><br>
+
+<script src="https://utteranc.es/client.js"
+        repo="zcczhang/zcczhang.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
