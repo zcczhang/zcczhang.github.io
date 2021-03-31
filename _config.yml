@@ -24,8 +24,12 @@ talkmap_link             : false #change to true to add link to talkmap on talks
 comments:
   provider               : “utterances” # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   utterances:
-    theme: "github-light" # "github-dark"
+    src: "https://utteranc.es/client.js"
+    repo: "zcczhang/zcczhang.github.io"
     issue-term: "pathname"
+    theme: "github-light"
+    crossorigin: "anonymous"
+    async>
   disqus:
     shortname            :
   discourse:
