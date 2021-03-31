@@ -181,9 +181,9 @@ collections:
   honors:
     output: true
     permalink: /:collection/:path/
-  projects:
-    output: true
-    permalink: /:collection/:path/
+  # projects:
+  #   output: true
+  #   permalink: /:collection/:path/
   blogs:
     output: true
     permalink: /:collection/:path/
