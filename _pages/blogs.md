@@ -11,9 +11,11 @@ redirect_from:
 
 ## Reinforcement Learning Notes
 
-> Reading notes and mathematical proofs for *Reinforcement Learning: An Introduction*. My own practicing Code for exercises is private so far.
+> Reading notes, mathematical proofs, and Python implementations for *Reinforcement Learning: An Introduction* (and COMP 394 Reinforcement Learning at Macalester as TA).
 
-  <ul>{% for post in site.rl %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+{% include base_path %}
+
+{% for post in site.rl %}
+   {% include archive-single-cv.html %}
+{% endfor %}
 
