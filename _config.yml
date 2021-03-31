@@ -25,7 +25,7 @@ comments:
   provider               : “utterances” # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   utterances:
     theme: "github-light" # "github-dark"
-    issue_term: "pathname"
+    issue-term: "pathname"
   disqus:
     shortname            :
   discourse:
