@@ -8,7 +8,7 @@ tags:
   - My Note
 date: "2020-12-02"
 --- 
-***Reinforcement Learning: An Introduction***
+___"Reinforcement Learning: An Introduction"___ *by Richard Sutton & Andrew Barto, 2nd Ed*
 
 
 <html>
