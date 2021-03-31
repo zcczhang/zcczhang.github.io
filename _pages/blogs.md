@@ -13,7 +13,7 @@ redirect_from:
 
 > Reading notes, mathematical proofs, and Python implementations for *Reinforcement Learning: An Introduction* (and COMP 394 Reinforcement Learning at Macalester as TA).
 
-{% for post in site.rl %}
-   {% include archive-single-cv.html %}
-{% endfor %}
+  <ul>{% for post in site.rl %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
 
