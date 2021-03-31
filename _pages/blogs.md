@@ -11,7 +11,7 @@ redirect_from:
 
 ## Reinforcement Learning Notes
 
-> Reading notes, mathematical proofs, and Python implementations for *Reinforcement Learning: An Introduction* (and COMP 394 Reinforcement Learning at Macalester as TA).
+> Reading notes, mathematical proofs, and Python implementations for ___Reinforcement Learning: An Introduction___ (and COMP 394 Reinforcement Learning at Macalester as TA).
 
   <ul>{% for post in site.rl %}
     {% include archive-single-cv.html %}
