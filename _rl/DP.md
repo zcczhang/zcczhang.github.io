@@ -13231,9 +13231,9 @@ As for arbitrary \(v_0\), \(\{v_k\}\) is shown to be guaranteed to converge to \
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Implementation-of-Stochastic-GridWorld">Implementation of Stochastic GridWorld<a class="anchor-link" href="#Implementation-of-Stochastic-GridWorld">&#182;</a></h3><p>This also shown in my <a href="https://zcczhang.github.io/rl/Finite-MDP">MDP</a> note.</p>
-<p><img src="https://github.com/zcczhang/zcczhang.github.io/blob/master/images/mdp_figure1.png?raw=true" style="width:50%"/></p>
+<p><img src="https://github.com/zcczhang/zcczhang.github.io/blob/master/images/mdp_figure1.png?raw=true" style="width:70%"/></p>
 <p>Using <strong>Bellman Optimality Equation</strong>: $v*(s) = \max_a \{\sum_{s',r} p(s', r\mid s, a)\cdot [r + \gamma \cdot v(s')]\} = \max q_{\pi*}(s, a)$</p>
-<p><img src="https://github.com/zcczhang/zcczhang.github.io/blob/master/images/mdp_figure2.png?raw=true" style="width:50%"/></p>
+<p><img src="https://github.com/zcczhang/zcczhang.github.io/blob/master/images/mdp_figure2.png?raw=true" style="width:70%"/></p>
 <p>The explanations, use of equations, and details for implementation are all detailed commented in the code below.</p>
 
 </div>
