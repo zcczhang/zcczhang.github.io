@@ -13141,7 +13141,7 @@ The DP algorith:
 </body>
 </html> 
 
-### Policy Improvement
+</html><h3 id="Policy-Improvement">Policy Improvement<a class="anchor-link" href="#Policy-Iteration">&#182;</a></h3><html>
 
 <html>
 <head>
