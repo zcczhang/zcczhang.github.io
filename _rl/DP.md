@@ -13139,7 +13139,7 @@ The DP algorith:
 </p>
 <p><img src="/images/dp1.png" alt=""></p>
 </body>
-</html> 
+
 
 </html><h3 id="Policy-Improvement">Policy Improvement<a class="anchor-link" href="#Policy-Iteration">&#182;</a></h3><html>
 
