@@ -13139,6 +13139,7 @@ The DP algorith:
 </p>
 </body>
 </html> 
+
 ![](/images/dp1.png)
 
 ### Policy Improvement

@@ -23,7 +23,7 @@ tool: "/images/nothing.png"
 </head>
 <body>
 <p>
-<b>First-Visit Monte Carlo(MC) method</b>: estimate \(v_\pi(s)\) as the average of teh returns following the first visit to \(s\). An example of first-visit MC prediction algorithm is shown below:
+<b>First-Visit Monte Carlo(MC) method</b>: estimate \(v_\pi(s)\) as the average of the returns following the first visit to \(s\). An example of first-visit MC prediction algorithm is shown below:
 </p>
 </body>
 </html> 
