@@ -13137,10 +13137,9 @@ Therefore, when \(\gamma \in [0,1)\),<br>
 \end{array}\right]^{k}=\boldsymbol{O}\)<br>
 The DP algorith:
 </p>
+<p><img src="/images/dp1.png" alt=""></p>
 </body>
 </html> 
-
-![](/images/dp1.png)
 
 ### Policy Improvement
 
