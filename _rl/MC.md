@@ -13,7 +13,7 @@ ___"Reinforcement Learning: An Introduction"___ *by Richard Sutton & Andrew Bart
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
-<!DOCTYPE html>
+
 <html>
 <head><meta charset="utf-8" />
 
