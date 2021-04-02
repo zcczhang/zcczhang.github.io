@@ -14088,9 +14088,7 @@ As for arbitrary \(v_0\), \(\{v_k\}\) is shown to be guaranteed to converge to \
 </div>
 </div>
 </div>
-    </div>
-  </div>
-</body>
+    
 
  
 
