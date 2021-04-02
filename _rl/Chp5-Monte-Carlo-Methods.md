@@ -1,7 +1,7 @@
 ---
 title: "Chapter 5 Monte Carlo Methods"
 collection: rl
-permalink: /rl/Chp5-Monte-Carlo-Methods.md
+permalink: /rl/Chp5-Monte-Carlo-Methods
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
