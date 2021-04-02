@@ -14403,8 +14403,11 @@ Efficiency: search directly: \(O(k^n)\) with n states k actions; dynamic program
 
 </html>
 
-[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
+<br><br>
 
+***Reference:***
+
+[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.<br>
 [3] https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
 
 <br><br><br><br><br>
