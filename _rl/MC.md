@@ -13912,7 +13912,7 @@ All episodes under this policy consist of some number (possibly zero) of transit
 to $s$ followed by termination with a reward and return of +1. Thus the value of s under
 the target policy is 1 ($\gamma$ = 1). Suppose we are estimating this value from o↵-policy data
 using the behavior policy that selects <strong>right</strong> and <strong>left</strong> with equal probability.</p>
-<p><img src="/images/mcfigure.png" alt=""></p>
+<p><img src="/images/mcfigure.png" alt="" style="width:40%"></p>
 
 </div>
 </div>
@@ -14104,12 +14104,11 @@ assured by choosing $b$ to be "$\epsilon$-soft.</p>
 
 ***Reference***
 
-[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
-
+[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.<br>
 [2] https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
 
 
-<br><br><br><br><br>
+<br><br><br><br>
 
 <script src="https://utteranc.es/client.js"
         repo="zcczhang/zcczhang.github.io"
