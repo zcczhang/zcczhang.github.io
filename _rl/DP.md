@@ -14081,7 +14081,9 @@ As for arbitrary \(v_0\), \(\{v_k\}\) is shown to be guaranteed to converge to \
 <p><strong><em>Reference</em></strong></p>
 <p>[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
 <br>
-[2] Sauer, Timothy. Numerical analysis. Pearson, 2018.</p>
+[2] Sauer, Timothy. Numerical analysis. Pearson, 2018.
+<br>
+[3] https://github.com/ShangtongZhang/reinforcement-learning-an-introduction</p>
 
 </div>
 </div>
