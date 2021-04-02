@@ -1,7 +1,7 @@
 ---
 title: "Chapter 2 Multi-armed Bandits"
 collection: rl
-permalink: /rl/multi-armed-bandits
+permalink: /rl/chp2-multi-armed-bandits
 tags:
   - Reinforcement Learning
   - Tabular Solution Method

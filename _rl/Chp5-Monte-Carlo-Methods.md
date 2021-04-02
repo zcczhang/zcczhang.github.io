@@ -1,7 +1,7 @@
 ---
 title: "Chapter 5 Monte Carlo Methods"
 collection: rl
-permalink: /rl/MC-methods
+permalink: /rl/Chp5-Monte-Carlo-Methods.md
 tags:
   - Reinforcement Learning
   - Tabular Solution Method
@@ -13912,7 +13912,7 @@ All episodes under this policy consist of some number (possibly zero) of transit
 to $s$ followed by termination with a reward and return of +1. Thus the value of s under
 the target policy is 1 ($\gamma$ = 1). Suppose we are estimating this value from o↵-policy data
 using the behavior policy that selects <strong>right</strong> and <strong>left</strong> with equal probability.</p>
-<p><img src="/images/mcfigure.png" alt="" style="width:40%"></p>
+<p><img src="/images/mcfigure.png" alt="" style="width:55%"></p>
 
 </div>
 </div>
