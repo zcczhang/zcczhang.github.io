@@ -15950,20 +15950,5 @@ The Last RMSE of Q2: 0.064164
 
  
 
-<br><br>
 
-***Reference***
-
-[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.<br>
-[2] https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
-
-
-<br><br><br><br>
-
-<script src="https://utteranc.es/client.js"
-        repo="zcczhang/zcczhang.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+</html>
