@@ -14100,15 +14100,6 @@ assured by choosing $b$ to be "$\epsilon$-soft.</p>
 
 </html>
 
-<br><br>
-
-***Reference***
-
-[1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.<br>
-[2] https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
-
-
-<br><br><br><br>
 
 <script src="https://utteranc.es/client.js"
         repo="zcczhang/zcczhang.github.io"
