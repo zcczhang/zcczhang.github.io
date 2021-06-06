@@ -1,5 +1,5 @@
 ---
-title: "IHC HER-2 Autonomous Scoring "
+title: "IHC HER-2 Automated Scoring "
 collection: projects
 type: "Projects"
 permalink: /projects/her2_scoring
@@ -33,7 +33,7 @@ Full time research internship for learning, understanding, developing, and optim
 
 ![](/images/her2_mtd3_ar.png)
 
-in deployment 
+in deployment for The General Hospital of the People's Liberation Army, China.
 
 #### Method 2
 
