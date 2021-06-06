@@ -11,16 +11,15 @@ language: "Python"
 tool: "/images/python.png"
 ---
 
-Full time research internship for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/).(editing...)
+Full time research internship for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/)(the GitHub Repo is hidden for publication so far).
 
-### [Research Report](https://zcczhang.github.io/files/Automated-Scoring-System-of-HER2-in-Pathological-Images-under-the-Microscope.pdf)
+### [Research Paper](https://zcczhang.github.io/files/Automated-Scoring-System-of-HER2-in-Pathological-Images-under-the-Microscope.pdf)
 
 <embed src="/files/Automated-Scoring-System-of-HER2-in-Pathological-Images-under-the-Microscope.pdf" height="100%" width="100%">
 
 [Weekly Report](https://docs.google.com/document/d/10F--fGvFPijiZacUawUlXw1b1-bKIR5gRwGxpEDQQqE/edit?usp=sharing)
 
 
-more formal project description would be coming soon!!
 
 ### **Flow Diagram** <br>
 
