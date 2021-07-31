@@ -9,11 +9,12 @@ date: "2021-06-01"
 ---
 - ###  Ongoing summer research with professor Lisa Naples at Macalester College.
 
+[***Poster***]()
+
 [***Daily Report***](https://github.com/zcczhang/Graph-Rectifiability/blob/main/DailyNote.pdf)
 
 ### Responsibilities:	
 - Learning and understanding fractal geometry.
-- After answering the Traveling Salesman Problem(TSP), we are solving if we can find a characterization of measures that are carried by rectifiable curves.
-- There are some more new questions related to this field that we are going to research as well.
-- to be continued
+- After answering the Traveling Salesman Problem(TSP), we find the characterization of measures that are carried by rectifiable graphs in dyadic cube system.
+
 
