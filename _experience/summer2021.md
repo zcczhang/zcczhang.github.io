@@ -1,5 +1,5 @@
 ---
-title: "Graph Rectifiability Researcher"
+title: "Geometric Measure Theory Researcher"
 collection: experience
 permalink: /experience/summer2021
 venue: "Mathematics, Statistics and Computer Science Department, Macalester College"
