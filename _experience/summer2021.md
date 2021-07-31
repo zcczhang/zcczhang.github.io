@@ -9,9 +9,12 @@ date: "2021-06-01"
 ---
 - ###  Ongoing summer research with professor Lisa Naples at Macalester College.
 
-[***Poster***](/files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf)
+[***Poster Link***](/files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf)
 
 <embed src="/files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf" height="100%" width="100%">
+
+[***Paper Link(Modifying...)***]()
+
 
 [***Daily Report***](https://github.com/zcczhang/Graph-Rectifiability/blob/main/DailyNote.pdf)
 
