@@ -19,7 +19,6 @@ date: "2021-06-01"
 [***Daily Report***](https://github.com/zcczhang/Graph-Rectifiability/blob/main/DailyNote.pdf)
 
 ### Responsibilities:	
-- Learning and understanding fractal geometry.
-- After answering the Traveling Salesman Problem(TSP), we find the characterization of measures that are carried by rectifiable graphs in dyadic cube system.
-
-
+- Summer Research for the geometric Measure theory and graph rectifiability with professor Lisa Naples at Macalester College
+- After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system
+- Present algorithms for the construction of a rectifiable curve using appropriately chosen $\delta$-neighborhood
