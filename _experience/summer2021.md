@@ -7,7 +7,7 @@ location: "St. Paul, MN"
 term: "Summer "
 date: "2021-06-01"
 ---
-- ###  Ongoing summer research with professor Lisa Naples at Macalester College.
+- ### Summer research with professor Lisa Naples at Macalester College.
 
 [***Poster Link***](/files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf)
 
