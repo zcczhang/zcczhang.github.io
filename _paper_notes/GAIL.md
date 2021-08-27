@@ -1,19 +1,19 @@
 ---
-title: "Chapter 6 Temporal-Difference Learning"
+title: "Notes for *Generative Adversarial Imitation Learning(GAIL)*"
 collection: rl
-permalink: /rl/Chp6-Temporal-Difference-Learning
+permalink: /rl/Notes-for-Generative-Adversarial-Imitation-Learning(GAIL)
 tags:
   - Reinforcement Learning
-  - Tabular Solution Method
-date: "2020-12-05"
+  - Paper Notes
+date: "2021-08-22"
 tool: "/images/nothing.png"
 --- 
 Notes For Paper *Generative Adversarial Imitation Learning(GAIL)*
 
 
-> Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning: An Introduction***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
+> Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
-<!DOCTYPE html>
+
 <html>
 <head><meta charset="utf-8" />
 
@@ -13249,3 +13249,11 @@ $$\Rightarrow \nabla_{\theta} \mathbb{E}_{\pi_{\theta}}\left[-\log \pi_{\theta}(
 
 
 </html>
+
+<script src="https://utteranc.es/client.js"
+        repo="zcczhang/zcczhang.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
