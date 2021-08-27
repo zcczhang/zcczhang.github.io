@@ -1,5 +1,5 @@
 ---
-title: "Notes for Generative Adversarial Imitation Learning(GAIL)"
+title: "Notes for *Generative Adversarial Imitation Learning(GAIL)*"
 collection: rl
 permalink: /rl/Notes-for-Generative-Adversarial-Imitation-Learning(GAIL)
 tags:
@@ -13,7 +13,7 @@ Notes For Paper *Generative Adversarial Imitation Learning(GAIL)*
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
 
-<!DOCTYPE html>
+
 <html>
 <head><meta charset="utf-8" />
 
