@@ -1,7 +1,7 @@
 ---
 title: "Notes for *Generative Adversarial Imitation Learning(GAIL)*"
-collection: rl
-permalink: /rl/Notes-for-Generative-Adversarial-Imitation-Learning(GAIL)
+collection: papernotes
+permalink: /papernotes/Notes-for-Generative-Adversarial-Imitation-Learning(GAIL)
 tags:
   - Reinforcement Learning
   - Paper Notes
