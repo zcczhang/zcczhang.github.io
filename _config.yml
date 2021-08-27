@@ -192,6 +192,9 @@ collections:
   rl:
     output: true
     permalink: /:collection/:path/
+  papernotes:
+    output: true
+    permalink: /:collection/:path/  
 
 
 # Defaults
