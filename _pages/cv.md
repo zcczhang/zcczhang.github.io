@@ -17,7 +17,7 @@ Education
 Skills
 ======
 - **Language:** Mandarin and English
-- **Programming:** R(ggplot, ggmap, plotly, leaflet, gganimate, rvest, shinny), Python(numpy, matplotlib, XGBoost, TensorFlow, PyTorch, Keras, OpenCV, OpenAI, Gym, Baselines), Java, SQL, MATLAB, HTML, CSS, Markdown, TeX, COMSOL
+- **Programming:** R(ggplot, ggmap, plotly, leaflet, gganimate, rvest, shinny), Python(numpy, matplotlib, XGBoost, TensorFlow, PyTorch, Keras, OpenCV, OpenAI, Gym, Baselines, Paddle), Java, MATLAB, C++, SQL, HTML, CSS, Markdown, TEX, COMSOL
 - **Interest:** Calligraphy, Piano, any Sports, Travelling 
 
 
