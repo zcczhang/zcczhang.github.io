@@ -1,7 +1,7 @@
 ---
 title: "Automated Scoring System of HER2 in Pathological Images under the Microscope"
 collection: publications
-permalink: /publication/2021-09-01
+permalink: /publication/Automated-Scoring-System-of-HER2-in-Pathological-Images-under-the-Microscope
 excerpt: 'Paper wrote in my research intern for learning, understanding, developing, and optimizing computer vision models to complete intelligent solutions for pathological images at [***Thorough Images***](http://thorough.ai/).
 '
 date: Sep 2021
