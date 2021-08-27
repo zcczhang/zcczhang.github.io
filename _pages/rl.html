@@ -12,3 +12,6 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
+{% for post in site.paper_notes reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}
