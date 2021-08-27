@@ -12,7 +12,7 @@ redirect_from:
 ## Reinforcement Learning Notes
 
 > Paper reading notes, and related work done in the research mentored by [Luca Weihs](https://lucaweihs.github.io/) in [AI2](https://allenai.org/).
-  <ul>{% for post in site.paper_notes %}
+  <ul>{% for post in site.papernotes %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
