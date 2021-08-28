@@ -1,5 +1,5 @@
 ---
-title: "Baselines experiments and Tutorials of AllenAct"
+title: "Baselines Experiments and Tutorials in AllenAct"
 collection: papernotes
 permalink: /papernotes/Baselines-experiments-and-Tutorials-of-AllenAct
 tags:
@@ -10,10 +10,10 @@ tags:
 date: "2021-08-21"
 tool: "/images/nothing.png"
 --- 
-Tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/).
+Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().
 
 
-> Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().<br>
+> only the tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog. [For More](https://github.com/allenai/allenact/pull/305)<br>
   Author: Charles Zhang 
 
 
