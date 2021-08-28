@@ -1,23 +1,27 @@
 ---
-title: "Notes for *Generative Adversarial Imitation Learning(GAIL)*"
+title: "Baselines experiments and Tutorials of AllenAct"
 collection: papernotes
-permalink: /papernotes/Notes-for-Generative-Adversarial-Imitation-Learning(GAIL)
+permalink: /papernotes/Baselines-experiments-and-Tutorials-of-AllenAct
 tags:
   - Reinforcement Learning
-  - Imitation Learning
-  - Paper Notes
-date: "2021-08-22"
+  - AI2
+  - AllenAct
+  - Codes Contribution
+date: "2021-08-21"
 tool: "/images/nothing.png"
 --- 
-Notes For Paper *Generative Adversarial Imitation Learning(GAIL)*
+Tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/).
 
 
-> Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
+> Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().<br>
+  Author: Charles Zhang 
+
 
 
 <html>
 <head><meta charset="utf-8" />
 
+<title>Tutorial: OpenAI gym MuJoCo environment</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13097,146 +13101,308 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Generative-Adversarial-Imitation-Learning(GAIL)">Generative Adversarial Imitation Learning(GAIL)<a class="anchor-link" href="#Generative-Adversarial-Imitation-Learning(GAIL)">&#182;</a></h1><blockquote><p><a href="https://arxiv.org/pdf/1606.03476.pdf">PAPER LINK</a></p>
-</blockquote>
-<h2 id="Simple-Glance-at-Experiment">Simple Glance at Experiment<a class="anchor-link" href="#Simple-Glance-at-Experiment">&#182;</a></h2><p>Input state $s\Rightarrow$ Policy $\pi_\theta \Rightarrow$ Actions $a\Rightarrow$ Discriminator $D_w\Rightarrow$ Expert Policy $\pi_E$ YES/NO</p>
-<h2 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">&#182;</a></h2><p>Solving by finding the saddle point $(\pi, D)$ of the <a id="expression">expression</a></p>
-$$
-\mathbb{E}_{\pi}[\log (D(s, a))]+\mathbb{E}_{\pi_{E}}[\log (1-D(s, a))]-\lambda H(\pi)
-$$<hr>
-<p><strong>Algorithm</strong> Generative adversarial imitation learning</p>
-<hr>
-<p>1: <strong>Input:</strong> Expert trajectories $\tau_{E} \sim \pi_{E}$, initial policy and discriminator parameters $\theta_{0}, w_{0}$</p>
-<p>2: <strong>for</strong> $i=0,1,2, \ldots$ <strong>do</strong></p>
-<p>3: Sample trajectories $\tau_{i} \sim \pi_{\theta_{i}}$</p>
-<p>4: Update the discriminator parameters from $w_{i}$ to $w_{i+1}$ with the gradient
-$$
-\hat{\mathbb{E}}_{\tau_{i}}\left[\nabla_{w} \log \left(D_{w}(s, a)\right)\right]+\hat{\mathbb{E}}_{\tau_{E}}\left[\nabla_{w} \log \left(1-D_{w}(s, a)\right)\right]
-$$</p>
-<p>5: Take a policy step from $\theta_{i}$ to $\theta_{i+1}$, using the TRPO rule with cost function $\log \left(D_{w_{i+1}}(s, a)\right)$. Specifically, take a KL-constrained natural gradient step with
-$$
-\begin{aligned}
-&amp;\hat{\mathbb{E}}_{\tau_{i}}\left[\nabla_{\theta} \log \pi_{\theta}(a \mid s) Q(s, a)\right]-\lambda \nabla_{\theta} H\left(\pi_{\theta}\right) \\
-&amp;\text { where } Q(\bar{s}, \bar{a})=\hat{\mathbb{E}}_{\tau_{i}}\left[\log \left(D_{w_{i+1}}(s, a)\right) \mid s_{0}=\bar{s}, a_{0}=\bar{a}\right]
-\end{aligned}
-$$</p>
-<p>6: <strong>end for</strong></p>
-<hr>
-<blockquote><p>Specifically, <em>Adam gradient ascent</em> update step on $w$ is applied to $D_w$ network for increasing the <a href="#expression">expression</a>, while a <em>TRPO gradient descent</em> step on $\theta$ is applied for $\pi_\theta$ network for decreasing the <a href="#expression">expression</a>.</p>
-<p>Architecture: $\pi_\theta, D_w$: 2 hidden layers of 100 units each; $\tanh$ nonlinearities in between</p>
-<p>To redue the gradient variance, the experiment in the paper also fits a value network with the same architecture employed GAE with $\gamma = 0.995$ and $\lambda = 0.97$.</p>
-<p>For implementation, the output of $D_w$ is clipped into $(0,1)$. For policy net, it can be used for any RL algorithms($Q(s,a)$ can be used by advantage functions as well). For example, using PPO, advantage loss can derived by calculating the GAE loss by $C(s,a)$ calculated by $D_w$ and $V$ calculated by Critic, for updating the actor and critic networks for policy</p>
-</blockquote>
-<h2 id="Paper-Workflow">Paper Workflow<a class="anchor-link" href="#Paper-Workflow">&#182;</a></h2><p>$*$ <strong>Background</strong>: Two Approaches of Imitation Learning</p>
-<ul>
-<li>Behavioral Cloning(BC)<ul>
-<li>BC learns a policy over SA pairs from "expert" trajectories. </li>
-<li><em>Problems:</em> 1. depend onn a large of training data; 2. not efficient due to compunding error cased by covariant shifts. </li>
-</ul>
-</li>
-<li>Inverse Reinforcement Learning(IRL)<ul>
-<li>IRL learns a cost function(reward) which the expert is uniquly optimal, which explains the expert behavior, but not a policy(how to act).</li>
-<li><em>Problems:</em> 1. based on cost instead of policy; 2. expensive as it is learns RL in an innor loop; 3. diverge for locally optimal RL cost. </li>
-</ul>
-</li>
-</ul>
-<p>$*$ <strong>Typical IRL</strong>(e.g. Apprenticeship Learning): 
-$$\underset{\pi}{\operatorname{minimize}} \max_{c\in\mathcal{C}} \mathbb{E}_\pi[c(s, a)] - \mathbb{E}_{\pi_E}[c(s, a)]$$</p>
-<blockquote><p>Note that $\displaystyle \mathbb{E}_\pi[(s, a)] = \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t c(s_t, a_t)\right]$</p>
-</blockquote>
-<p>$*$ <strong>Adding</strong>:</p>
-<ul>
-<li>convex(make sure only one saddle point) cost function regularizer $\psi(c)$</li>
-<li>$\gamma$-discounted casual entropy $H(\pi) = \mathbb{E}_\pi[-\log \pi(a\mid s)]$</li>
-</ul>
-<p>$\Rightarrow$ $\displaystyle\operatorname{IRL}_{\psi}(\pi_E) = \underset{c\in\mathbb{R}^{\mathcal{S}\times\mathcal{A}}}{\operatorname{argmax}} -\psi(c) + \left( \min_{\pi\in\Pi} -H(\pi) + \mathbb{E}_\pi[c(s, a)] \right) - \mathbb{E}_{\pi_E}[c(s,a)]$</p>
-<blockquote><p>$\left(\min_{\pi\in\Pi} -H(\pi) + \mathbb{E}_\pi[c(s, a)] \right)$ can be considered as a RL process while IRL now is to find the <strong><em>cost that maximize the difference between the cost of the "RL policy derived by corresponding cost function" and the cost of expert trajectory</em></strong></p>
-<p>Therefore, the maximum of the equation above is $0$ (i.e. <em>leans the cost function that has the mimum cost with respect to the cost of expert trajectory</em>).</p>
-</blockquote>
-<p>$*$ $\operatorname{RL}(c) = \displaystyle \underset{\pi}{\operatorname{argmax}}\mathbb{E}_\pi(c)$</p>
-<p>$*$ <em>Occupancy Measure</em>: $\displaystyle \rho_\pi:=\pi(a\mid s)\sum_{t=0}^\infty \gamma^t P(s_t = s\mid \pi)$</p>
-<ul>
-<li>it is the probability of $(s, a)$ pair under $\pi$</li>
-<li>$\pi_\rho(a\mid s) = \rho(s, a)/ \sum_{a^\prime}\rho(s, a^{\prime})$</li>
-</ul>
-<blockquote><p>unnormalized distribution of state-action pairs(similar in TRPO). Correspondingly, $\mathbb{E}_\pi[c(s, a)] = \sum_{s, a}\rho_\pi(s, a)c(s,a)$.</p>
-</blockquote>
-<p><em>Convex conjugate</em>: $\psi^*(x) = \sup_{y\in \mathbb{R}^{\mathcal{S}\times\mathcal{A}}} x^T y - f(y)$</p>
-<p>$*\Rightarrow$  Main Framework: "the policy learned by RL on the cost recovered by IRL":</p>
-$$R L \circ I R L_\psi\left(\pi_{E}\right)=\underset{\pi \in \Pi}{\arg \min }-H(\pi)+\psi^{*}\left(\rho_{\pi}-\rho_{\pi_{E}}\right)$$<p>$*$ <strong>Some Propositions</strong>:</p>
-<ol>
-<li>for any $\pi, \rho$, 
-$$\begin{aligned}H(\pi) &amp;= \mathbb{E}_\pi[-\log \pi(a\mid s)] = \sum_{s,a}\rho_\pi(s, a)\log \pi(a\mid s) \\
-&amp;= -\sum_{s, a}\rho_\pi(s, a)\log \frac{\rho_\pi(s, a)}{\sum_{a^\prime} \rho_\pi(s, a^\prime)} =: \bar{H}(\rho_\pi)
-\end{aligned}$$
-$$\bar{H} = \sum_{s,a}\rho_{\pi_\rho}(s, a)\log \pi_\rho(a\mid s) = \mathbb{E}_{\pi_\rho}[-\log \pi_\rho (a\mid s)] = H(\pi_\rho)$$</li>
-<li>Let $L(\pi, c) = -H(\pi) + \mathbb{E}_\pi[c(s, a)], \bar{L}(\rho,c) = -\bar{H}(\rho)+\sum_{s, a}\rho(s, a)c(s, a)$, then $\forall c\in\mathcal{C}$:</li>
-</ol>
-$$L(\pi, c) = \bar{L}(\rho_\pi, c), \quad \forall \pi\in\Pi$$$$\bar{L}(\rho, c) = L(\pi_\rho, c), \quad \forall \rho$$<ol>
-<li>If $\psi$ is a constant function, $\tilde{c}\in\operatorname{IRL}_\psi(\pi_E)$, and $\tilde{\pi}\in \operatorname{RL}(\tilde{c})$, then $\rho_{\tilde{\pi}} = \rho{\pi_E}$. As:
-$$
-\begin{aligned}
-\tilde{c} &amp; \in \operatorname{IRL}_{\psi}\left(\pi_{E}\right)=\underset{c \in \mathbb{R}^{\mathcal{S} \times \mathcal{A}}}{\arg \max } \min _{\pi \in \Pi}-H(\pi)+\mathbb{E}_{\pi}[c(s, a)]-\mathbb{E}_{\pi_{E}}[c(s, a)]+\text { const. } \\
-&amp;=\underset{c \in \mathbb{R}^{S} \times \mathcal{A}}{\arg \max } \min _{\rho \in \mathcal{D}}-\bar{H}(\rho)+\sum_{s, a} \rho(s, a) c(s, a)-\sum_{s, a} \rho_{E}(s, a) c(s, a)
-\end{aligned}
-$$
-$$\text{so with optimal }\tilde{c}, \text{the optimal solution }\tilde{rho} = \underset{\rho}{\operatorname{argmin}} \sim = \rho_E$$<blockquote><p>This means that without regularization, the occupancy measure of derived policy is exactly same as the expert's. This proposition can be proved by some provided lemma and the dual of the optimization problem(proof is in the appendix of the paper and somewhat straightforward).</p>
-</blockquote>
-</li>
-</ol>
-<p>$*$ <strong>Apprenticeship Learning</strong> $\Rightarrow$ a speciall case of above framework</p>
-<p>As: let $\delta_\mathcal{C}(c) = 0$ if $c\in\mathcal{C}$, $+\infty$ otherwise then</p>
-$$
-\max _{c \in \mathcal{C}} \mathbb{E}_{\pi}[c(s, a)]-\mathbb{E}_{\pi_{E}}[c(s, a)]=\max _{c \in \mathbb{R}^{S\times \mathcal{A}} }-\delta_{\mathcal{C}}(c)+\sum_{s, a}\left(\rho_{\pi}(s, a)-\rho_{\pi_{E}}(s, a)\right) c(s, a)=\delta_{\mathcal{C}}^{*}\left(\rho_{\pi}-\rho_{\pi_{E}}\right)
-$$$$
-\therefore \underset{\pi}{\operatorname{minimize}}-H(\pi)+\max _{c \in \mathcal{C}} \mathbb{E}_{\pi}[c(s, a)]-\mathbb{E}_{\pi_{E}}[c(s, a)]=-H(\pi)+\delta_{C}^{*}
-$$<p>which means $\psi = \delta_\mathcal{C}$</p>
-<p>$*$ <strong>GAIL</strong> $\Rightarrow$ a specical case of above framework</p>
-<p>Given:
-$$
-\begin{aligned}
-&amp;g_{\phi}(x)= \begin{cases}-x+\phi\left(-\phi^{-1}(-x)\right) &amp; \text { if } x \in T \\
-+\infty &amp; \text { otherwise }\end{cases} \\
-&amp;\psi_{\phi}(c)= \begin{cases}\displaystyle\sum_{s, a} \rho_{\pi_{E}}(s, a) g_{\phi}(c(s, a)) &amp; \text { if } c(s, a) \in T \text { for all } s, a \\
-+\infty &amp; \text { otherwise }\end{cases}
-\end{aligned}
-$$
-where $\phi$ is strictly decreasing convex funtion, the range is $-T$
-Let $R_{\phi}\left(\pi, \pi_{E}\right)=\displaystyle\sum \min _{\gamma \in \mathbb{R}} \rho_{\pi}(s, a) \phi(\gamma)+\rho_{\pi_{E}}(s, a) \phi(-\gamma)$, then:
-$$
-\begin{aligned}
-\psi_{\phi}^{*}\left(\rho_{\pi}-\rho_{\pi_{E}}\right) 
-&amp;=\sum_{s, a} \max _{c \in T}\left(\rho_{\pi}(s, a)-\rho_{\pi_{E}}(s, a)\right) c-\rho_{\pi_{E}}(s, a)\left[-c+\phi\left(-\phi^{-1}(-c)\right)\right] \\
-&amp;=\sum_{s, a} \max _{c \in T} \rho_{\pi}(s, a) c-\rho_{\pi_{E}}(s, a) \phi\left(-\phi^{-1}(-c)\right) \\
-&amp;=\sum_{s, a} \max _{\gamma \in \mathbb{R}} \rho_{\pi}(s, a)(-\phi(\gamma))-\rho_{\pi_{E}}(s, a) \phi\left(-\phi^{-1}(\phi(\gamma))\right) \\
-&amp;= -R_\phi (\rho_\pi, \rho_{\pi_E}) \\
-&amp; \text{when }\phi(x) = \log(1+e^{-x}) \\
-&amp;=\sum_{s, a} \max _{\gamma \in \mathbb{R}} \rho_{\pi}(s, a) \log \left(\frac{1}{1+e^{-\gamma}}\right)+\rho_{\pi_{E}}(s, a) \log \left(\frac{1}{1+e^{\gamma}}\right)\\
-&amp;=\sum_{s, a} \max _{\gamma \in \mathbb{R}} \rho_{\pi}(s, a) \log \left(\frac{1}{1+e^{-\gamma}}\right)+\rho_{\pi_{E}}(s, a) \log \left(1-\frac{1}{1+e^{-\gamma}}\right)\\
-&amp;=\sum_{s, a} \max _{d \in(0,1)} \rho_{\pi}(s, a) \log d+\rho_{\pi_{E}}(s, a) \log (1-d) \\
-&amp;= \max_{D\in(0,1)^{\mathcal{S}\times\mathcal{A}}} \sum_{s, a}\rho_\pi(s, a)\log (D(s, a))+ \rho_{\pi_E}(s, a)\log(1-D(s, a)) \\
-&amp;=\max_{D\in(0,1)^{\mathcal{S}\times\mathcal{A}}} \mathbb{E}_\pi[\log(D(s, a))]  +\mathbb{E}_{\pi_E}[\log(1-D(s, a))]
-\end{aligned}
-$$</p>
-<blockquote><p>Meaning: replace the cost function of aprenticeship learnig with discriminator $D$.</p>
-<p>the learner's occupancy measure is the data generated by $G$; the expert's occupancy measure is the true data distribution</p>
-<p>Therefore, GAIL going to find an agent policy $\pi$ and $D$ to discriminate if the state-action pair are generated by expert(true data) or by the policy</p>
-</blockquote>
-<p>$\Rightarrow$ <strong><em>GAIL</em></strong>: $\underset{\pi}{\operatorname{minimize}} \psi_{\mathrm{GA}}^{*}\left(\rho_{\pi}-\rho_{\pi_{E}}\right)-\lambda H(\pi)$</p>
-<p>$*$ <strong>Some further Explanation in the Algorithm</strong></p>
-<p><em>KL-constrained natural gradient step</em>: The casual entropy gradient:</p>
-$$\begin{aligned}
-\nabla_{\theta} \mathbb{E}_{\pi_{\theta}}\left[-\log \pi_{\theta}(a \mid s)\right] &amp;=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(a \mid s) Q_{\log }(s, a)\right] \\
-\text { where } Q_{\log }(\bar{s}, \bar{a}) &amp;=\mathbb{E}_{\pi_{\theta}}\left[-\log \pi_{\theta}(a \mid s) \mid s_{0}=\bar{s}, a_{0}=\bar{a}\right]
-\end{aligned}$$<p>Just in the proof, note that $\sum_{a} \nabla_{\theta} \pi_{\theta}(a \mid s)=\nabla_{\theta} \sum_{a} \pi_{\theta}(a \mid s)=\nabla_{\theta} 1=0$.</p>
-$$\Rightarrow \nabla_{\theta} \mathbb{E}_{\pi_{\theta}}\left[-\log \pi_{\theta}(a \mid s)\right]=\sum_{s, a}\left(\nabla_{\theta} \rho_{\pi_{\theta}}(s, a)\right)\left(-\log \pi_{\theta}(a \mid s)\right)$$<p>$\Rightarrow$ Policy Gradient for RL with fixed cost function $c_{\log}(s, a):= -\log \pi_\theta(a|s)$</p>
-<blockquote><p>Optimize by gradient descent over policy and discriminator parameters. PG guarantees to converge to a local minima and is model free</p>
-<p>To solve the problem that the gradient estimates can have a high variance and small steps are required for PG, the paper uses a TRPO step on $\theta$ to decrease the value with respect to policy $\pi$.</p>
-</blockquote>
-<p>$*$ <strong>Result</strong>: outperform BC, FEM, and GTAL</p>
-<h3 id="Outlook">Outlook<a class="anchor-link" href="#Outlook">&#182;</a></h3><p>Improve learning speed for GAIL by intitialize policy parameters with BC.</p>
-<h2 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h2><p>[1] <a href="https://arxiv.org/pdf/1606.03476.pdf">Generative Adversarial Imitation Learning</a></p>
-<p>[2] <a href="https://github.com/openai/baselines/tree/master/baselines/gail">Implementation by OpenAI Baselines GAIL</a></p>
+<h1 id="Tutorial:-OpenAI-gym-MuJoCo-environment">Tutorial: OpenAI gym MuJoCo environment<a class="anchor-link" href="#Tutorial:-OpenAI-gym-MuJoCo-environment">&#182;</a></h1><p><strong>Note</strong> The provided commands to execute in this tutorial assume you have
+<a href="../installation/installation-allenact.md#full-library">installed the full library</a> and the requirements for the
+<code>gym_plugin</code>. The latter can be installed by</p>
+<div class="highlight"><pre><span></span>pip install -r allenact_plugins/gym_plugin/extra_requirements.txt
+</pre></div>
+<p>The environments for this tutorial use <a href="http://www.mujoco.org/">MuJoCo</a>(<strong>Mu</strong>lti-<strong>Jo</strong>int dynamics in <strong>Co</strong>ntact) 
+physics simulator, which is also required to be installed properly with instructions 
+<a href="https://github.com/openai/mujoco-py">here</a>.</p>
+<h2 id="The-task">The task<a class="anchor-link" href="#The-task">&#182;</a></h2><p>For this tutorial, we'll focus on one of the continuous-control environments under the <code>mujoco</code> group of <code>gym</code>
+environments: <a href="https://gym.openai.com/envs/Ant-v2/">Ant-v2</a>. In this task, the goal
+is to make a four-legged creature, "ant", walk forward as fast as possible. A random agent of "Ant-v2" is shown below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://i.imgur.com/kwQVEEK.gif" width="200"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To achieve the goal, we need to provide continuous control for the agent moving forward with four legs with the 
+<code>x</code> velocity as high as possible for at most 1000 episodes steps. The agent is failed, or done, if the <code>z</code> position 
+is out of the range [0.2, 1.0]. The dimension of the action space is 8 and 111 for the dimension of the observation 
+space that maps to different body parts, including 3D position <code>(x,y,z)</code>, orientation(quaternion <code>x</code>,<code>y</code>,<code>z</code>,<code>w</code>) 
+of the torso, and the joint angles, 3D velocity <code>(x,y,z)</code>, 3D angular velocity <code>(x,y,z)</code>, and joint velocities. 
+The rewards for the agent "ant" are composed of the forward rewards, healthy rewards, control cost, and contact cost.</p>
+<h2 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h2><p>For this tutorial, we'll use the readily available <code>gym_plugin</code>, which includes a
+<a href="../api/allenact_plugins/gym_plugin/gym_environment.md#gymenvironment">wrapper for <code>gym</code> environments</a>, a
+<a href="../api/allenact_plugins/gym_plugin/gym_tasks.md#gymtasksampler">task sampler</a> and
+<a href="../api/allenact_plugins/gym_plugin/gym_tasks.md#gymcontinuousbox2dtask">task definition</a>, a
+<a href="../api/allenact_plugins/gym_plugin/gym_sensors.md#gymbox2dsensor">sensor</a> to wrap the observations provided by the <code>gym</code>
+environment, and a simple <a href="../api/allenact_plugins/gym_plugin/gym_models.md#memorylessactorcritic">model</a>.
+The experiment config, similar to the one used for the
+<a href="../tutorials/minigrid-tutorial.md">Navigation in MiniGrid tutorial</a>, is defined as follows:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">gym</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">from</span> <span class="nn">torch.optim.lr_scheduler</span> <span class="kn">import</span> <span class="n">LambdaLR</span>
+
+<span class="kn">from</span> <span class="nn">allenact.algorithms.onpolicy_sync.losses.ppo</span> <span class="kn">import</span> <span class="n">PPO</span>
+
+<span class="kn">from</span> <span class="nn">allenact.base_abstractions.experiment_config</span> <span class="kn">import</span> <span class="n">ExperimentConfig</span><span class="p">,</span> <span class="n">TaskSampler</span>
+<span class="kn">from</span> <span class="nn">allenact.base_abstractions.sensor</span> <span class="kn">import</span> <span class="n">SensorSuite</span>
+<span class="kn">from</span> <span class="nn">allenact_plugins.gym_plugin.gym_models</span> <span class="kn">import</span> <span class="n">MemorylessActorCritic</span>
+<span class="kn">from</span> <span class="nn">allenact_plugins.gym_plugin.gym_sensors</span> <span class="kn">import</span> <span class="n">GymMuJoCoSensor</span>
+
+<span class="kn">from</span> <span class="nn">allenact_plugins.gym_plugin.gym_tasks</span> <span class="kn">import</span> <span class="n">GymTaskSampler</span>
+<span class="kn">from</span> <span class="nn">allenact.utils.experiment_utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TrainingPipeline</span><span class="p">,</span>
+    <span class="n">Builder</span><span class="p">,</span>
+    <span class="n">PipelineStage</span><span class="p">,</span>
+    <span class="n">LinearDecay</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">allenact.utils.viz_utils</span> <span class="kn">import</span> <span class="n">VizSuite</span><span class="p">,</span> <span class="n">AgentViewViz</span>
+
+
+<span class="k">class</span> <span class="nc">HandManipulateTutorialExperimentConfig</span><span class="p">(</span><span class="n">ExperimentConfig</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">tag</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;GymMuJoCoTutorial&quot;</span>
+</pre></div>
+<h3 id="Sensors-and-Model">Sensors and Model<a class="anchor-link" href="#Sensors-and-Model">&#182;</a></h3><p>As mentioned above, we'll use a <a href="../api/allenact_plugins/gym_plugin/gym_sensors.md#gymbox2dsensor">GymBox2DSensor</a> to provide
+full observations from the state of the <code>gym</code> environment to our model.</p>
+<div class="highlight"><pre><span></span><span class="n">SENSORS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">GymMuJoCoSensor</span><span class="p">(</span><span class="s2">&quot;Ant-v2&quot;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;gym_mujoco_data&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+</pre></div>
+<p>We define our <code>ActorCriticModel</code> agent using a lightweight implementation with separate MLPs for actors and critic,
+<a href="../api/allenact_plugins/gym_plugin/gym_models.md#memorylessactorcritic">MemorylessActorCritic</a>. Since
+this is a model for continuous control, note that the superclass of our model is <code>ActorCriticModel[GaussianDistr]</code>
+instead of <code>ActorCriticModel[CategoricalDistr]</code>, since we'll use a
+<a href="../api/allenact_plugins/gym_plugin/gym_distributions.md#gaussiandistr">Gaussian distribution</a> to sample actions.</p>
+<div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;We define our `ActorCriticModel` agent using a lightweight</span>
+<span class="sd">        implementation with separate MLPs for actors and critic,</span>
+<span class="sd">        MemorylessActorCritic.</span>
+
+<span class="sd">        Since this is a model for continuous control, note that the</span>
+<span class="sd">        superclass of our model is `ActorCriticModel[GaussianDistr]`</span>
+<span class="sd">        instead of `ActorCriticModel[CategoricalDistr]`, since we&#39;ll use</span>
+<span class="sd">        a Gaussian distribution to sample actions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">MemorylessActorCritic</span><span class="p">(</span>
+            <span class="n">input_uuid</span><span class="o">=</span><span class="s2">&quot;gym_mujoco_data&quot;</span><span class="p">,</span>
+            <span class="n">action_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span>
+                <span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,),</span> <span class="s2">&quot;float32&quot;</span>
+            <span class="p">),</span>  <span class="c1"># 8 actors, each in the range [-3.0, 3.0]</span>
+            <span class="n">observation_space</span><span class="o">=</span><span class="n">SensorSuite</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">SENSORS</span><span class="p">)</span><span class="o">.</span><span class="n">observation_spaces</span><span class="p">,</span>
+            <span class="n">action_std</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="p">)</span>
+</pre></div>
+<h3 id="Task-samplers">Task samplers<a class="anchor-link" href="#Task-samplers">&#182;</a></h3><p>We use an available <code>TaskSampler</code> implementation for <code>gym</code> environments that allows to sample
+<a href="../api/allenact_plugins/gym_plugin/gym_tasks.md#gymtask">GymTasks</a>:
+<a href="../api/allenact_plugins/gym_plugin/gym_tasks.md#gymtasksampler">GymTaskSampler</a>. Even though it is possible to let the task
+sampler instantiate the proper sensor for the chosen task name (by passing <code>None</code>), we use the sensors we created
+above, which contain a custom identifier for the actual observation space (<code>gym_mujoco_data</code>) also used by the model.</p>
+<div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">make_sampler_fn</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TaskSampler</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">GymTaskSampler</span><span class="p">(</span><span class="n">gym_env_type</span><span class="o">=</span><span class="s2">&quot;Ant-v2&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+<p>For convenience, we will use a <code>_get_sampler_args</code> method to generate the task sampler arguments for all three
+modes, <code>train, valid, test</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_task_sampler_args</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">process_ind</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">total_processes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">devices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">seeds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">deterministic_cudnn</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sampler_args</span><span class="p">(</span>
+            <span class="n">process_ind</span><span class="o">=</span><span class="n">process_ind</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="n">seeds</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">valid_task_sampler_args</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">process_ind</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">total_processes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">devices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">seeds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">deterministic_cudnn</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sampler_args</span><span class="p">(</span>
+            <span class="n">process_ind</span><span class="o">=</span><span class="n">process_ind</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="n">seeds</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_task_sampler_args</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">process_ind</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">total_processes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">devices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">seeds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">deterministic_cudnn</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sampler_args</span><span class="p">(</span><span class="n">process_ind</span><span class="o">=</span><span class="n">process_ind</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="n">seeds</span><span class="p">)</span>
+</pre></div>
+<p>Similarly to what we do in the Minigrid navigation tutorial, the task sampler samples random tasks for ever, while,
+during testing (or validation), we sample a fixed number of tasks.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_get_sampler_args</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">process_ind</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">seeds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Generate initialization arguments for train, valid, and test</span>
+<span class="sd">        TaskSamplers.</span>
+
+<span class="sd">        # Parameters</span>
+<span class="sd">        process_ind : index of the current task sampler</span>
+<span class="sd">        mode:  one of `train`, `valid`, or `test`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">:</span>
+            <span class="n">max_tasks</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># infinite training tasks</span>
+            <span class="n">task_seeds_list</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># no predefined random seeds for training</span>
+            <span class="n">deterministic_sampling</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># randomly sample tasks in training</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">max_tasks</span> <span class="o">=</span> <span class="mi">4</span>
+
+            <span class="c1"># one seed for each task to sample:</span>
+            <span class="c1"># - ensures different seeds for each sampler, and</span>
+            <span class="c1"># - ensures a deterministic set of sampled tasks.</span>
+            <span class="n">task_seeds_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="nb">range</span><span class="p">(</span><span class="n">process_ind</span> <span class="o">*</span> <span class="n">max_tasks</span><span class="p">,</span> <span class="p">(</span><span class="n">process_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_tasks</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="n">deterministic_sampling</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="kc">True</span>  <span class="c1"># deterministically sample task in validation/testing</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">gym_env_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Ant-v2&quot;</span><span class="p">],</span>
+            <span class="n">sensors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">SENSORS</span><span class="p">,</span>  <span class="c1"># sensors used to return observations to the agent</span>
+            <span class="n">max_tasks</span><span class="o">=</span><span class="n">max_tasks</span><span class="p">,</span>  <span class="c1"># see above</span>
+            <span class="n">task_seeds_list</span><span class="o">=</span><span class="n">task_seeds_list</span><span class="p">,</span>  <span class="c1"># see above</span>
+            <span class="n">deterministic_sampling</span><span class="o">=</span><span class="n">deterministic_sampling</span><span class="p">,</span>  <span class="c1"># see above</span>
+            <span class="n">seed</span><span class="o">=</span><span class="n">seeds</span><span class="p">[</span><span class="n">process_ind</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+<p>Note that we just sample 4 tasks for validation and testing in this case, which suffice to illustrate the model's
+success.</p>
+<h3 id="Machine-parameters">Machine parameters<a class="anchor-link" href="#Machine-parameters">&#182;</a></h3><p>In this tutorial, we just train the model on the CPU. We allocate a larger number of samplers for training (8) than 
+for validation or testing (just 1), and we default to CPU usage by returning an empty list of <code>devices</code>. We also 
+include a video visualizer (<code>AgentViewViz</code>) in test mode.</p>
+<div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">machine_params</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">visualizer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span>
+            <span class="n">visualizer</span> <span class="o">=</span> <span class="n">VizSuite</span><span class="p">(</span>
+                <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+                <span class="n">video_viz</span><span class="o">=</span><span class="n">AgentViewViz</span><span class="p">(</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;episode_vid&quot;</span><span class="p">,</span>
+                    <span class="n">max_clip_length</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                    <span class="n">vector_task_source</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;rgb_array&quot;</span><span class="p">}),</span>
+                    <span class="n">fps</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;nprocesses&quot;</span><span class="p">:</span> <span class="mi">8</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span> <span class="k">else</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># rollout</span>
+            <span class="s2">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;visualizer&quot;</span><span class="p">:</span> <span class="n">visualizer</span><span class="p">,</span>
+        <span class="p">}</span>
+</pre></div>
+<h3 id="Training-pipeline">Training pipeline<a class="anchor-link" href="#Training-pipeline">&#182;</a></h3><p>The last definition is the training pipeline. In this case, we use a PPO stage with linearly decaying learning rate
+and 10 single-batch update repeats per rollout. The reward should exceed 4,000
+in 20M steps in the test. In order to make the "ant" run with an obvious fast speed, we train the agents using PPO
+with 3e7 steps.</p>
+<div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">training_pipeline</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TrainingPipeline</span><span class="p">:</span>
+        <span class="n">lr</span> <span class="o">=</span> <span class="mf">3e-4</span>
+        <span class="n">ppo_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3e7</span><span class="p">)</span>
+        <span class="n">clip_param</span> <span class="o">=</span> <span class="mf">0.2</span>
+        <span class="n">value_loss_coef</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">entropy_coef</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">num_mini_batch</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># optimal 64</span>
+        <span class="n">update_repeats</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">max_grad_norm</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">num_steps</span> <span class="o">=</span> <span class="mi">2048</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.99</span>
+        <span class="n">use_gae</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">gae_lambda</span> <span class="o">=</span> <span class="mf">0.95</span>
+        <span class="n">advance_scene_rollout_period</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">save_interval</span> <span class="o">=</span> <span class="mi">200000</span>
+        <span class="n">metric_accumulate_interval</span> <span class="o">=</span> <span class="mi">50000</span>
+        <span class="k">return</span> <span class="n">TrainingPipeline</span><span class="p">(</span>
+            <span class="n">named_losses</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">ppo_loss</span><span class="o">=</span><span class="n">PPO</span><span class="p">(</span>
+                    <span class="n">clip_param</span><span class="o">=</span><span class="n">clip_param</span><span class="p">,</span>
+                    <span class="n">value_loss_coef</span><span class="o">=</span><span class="n">value_loss_coef</span><span class="p">,</span>
+                    <span class="n">entropy_coef</span><span class="o">=</span><span class="n">entropy_coef</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">),</span>  <span class="c1"># type:ignore</span>
+            <span class="n">pipeline_stages</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">PipelineStage</span><span class="p">(</span><span class="n">loss_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ppo_loss&quot;</span><span class="p">],</span> <span class="n">max_stage_steps</span><span class="o">=</span><span class="n">ppo_steps</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">optimizer_builder</span><span class="o">=</span><span class="n">Builder</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">optim</span><span class="o">.</span><span class="n">Optimizer</span><span class="p">,</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)),</span>
+            <span class="n">num_mini_batch</span><span class="o">=</span><span class="n">num_mini_batch</span><span class="p">,</span>
+            <span class="n">update_repeats</span><span class="o">=</span><span class="n">update_repeats</span><span class="p">,</span>
+            <span class="n">max_grad_norm</span><span class="o">=</span><span class="n">max_grad_norm</span><span class="p">,</span>
+            <span class="n">num_steps</span><span class="o">=</span><span class="n">num_steps</span><span class="p">,</span>
+            <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span>
+            <span class="n">use_gae</span><span class="o">=</span><span class="n">use_gae</span><span class="p">,</span>
+            <span class="n">gae_lambda</span><span class="o">=</span><span class="n">gae_lambda</span><span class="p">,</span>
+            <span class="n">advance_scene_rollout_period</span><span class="o">=</span><span class="n">advance_scene_rollout_period</span><span class="p">,</span>
+            <span class="n">save_interval</span><span class="o">=</span><span class="n">save_interval</span><span class="p">,</span>
+            <span class="n">metric_accumulate_interval</span><span class="o">=</span><span class="n">metric_accumulate_interval</span><span class="p">,</span>
+            <span class="n">lr_scheduler_builder</span><span class="o">=</span><span class="n">Builder</span><span class="p">(</span>
+                <span class="n">LambdaLR</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;lr_lambda&quot;</span><span class="p">:</span> <span class="n">LinearDecay</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="n">ppo_steps</span><span class="p">,</span> <span class="n">startp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">endp</span><span class="o">=</span><span class="mi">0</span><span class="p">)},</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+</pre></div>
+<h2 id="Training-and-validation">Training and validation<a class="anchor-link" href="#Training-and-validation">&#182;</a></h2><p>We have a complete implementation of this experiment's configuration class in <code>projects/tutorials/gym_mujoco_tutorial.py</code>.
+To start training from scratch, we just need to invoke</p>
+<div class="highlight"><pre><span></span><span class="nv">PYTHONPATH</span><span class="o">=</span>. python allenact/main.py gym_mujoco_tutorial -b projects/tutorials -m <span class="m">8</span> -o /PATH/TO/gym_mujoco_output -s <span class="m">0</span> -e
+</pre></div>
+<p>from the <code>allenact</code> root directory. Note that we include <code>-e</code> to enforce deterministic evaluation. Please refer to the
+<a href="../tutorials/minigrid-tutorial.md">Navigation in MiniGrid tutorial</a> if in doubt of the meaning of the rest of parameters.</p>
+<p>If we have Tensorboard installed, we can track progress with</p>
+<div class="highlight"><pre><span></span>tensorboard --logdir /PATH/TO/gym_mujoco_output
+</pre></div>
+<p>which will default to the URL <a href="http://localhost:6006/">http://localhost:6006/</a>.</p>
+<p>After 30,000,000 steps, the script will terminate. If everything went well, the <code>valid</code> success rate should be 1 
+and the mean reward to above 4,000 in 20,000,000 steps, while the average episode length should stay or a 
+little below 1,000.</p>
+<h2 id="Testing">Testing<a class="anchor-link" href="#Testing">&#182;</a></h2><p>The training start date for the experiment, in <code>YYYY-MM-DD_HH-MM-SS</code> format, is used as the name of one of the
+subfolders in the path to the checkpoints, saved under the output folder.
+In order to evaluate (i.e. test) a collection of checkpoints, we need to pass the <code>--eval</code> flag and specify the 
+directory containing the checkpoints with the <code>--checkpoint CHECKPOINT_DIR</code> option:</p>
+<div class="highlight"><pre><span></span><span class="nv">PYTHONPATH</span><span class="o">=</span>. python allenact/main.py gym_mujoco_tutorial <span class="se">\</span>
+    -b projects/tutorials <span class="se">\</span>
+    -m <span class="m">1</span> <span class="se">\</span>
+    -o /PATH/TO/gym_mujoco_output <span class="se">\</span>
+    -s <span class="m">0</span> <span class="se">\</span>
+    -e <span class="se">\</span>
+    --eval <span class="se">\</span>
+    --checkpoint /PATH/TO/gym_mujoco_output/checkpoints/GymMuJoCoTutorial/YOUR_START_DATE
+</pre></div>
+<p>If everything went well, the <code>test</code> success rate should converge to 1, the <code>test</code> success rate should be 1 
+and the mean reward to above 4,000 in 20,000,000 steps, while the average episode length should stay or a 
+little below 1,000. The <code>gif</code> results can be seen in the image tab of Tensorboard while testing. 
+The output should be something like this:</p>
+<p><img src="https://cdn.mathpix.com/snip/images/BSb5whMxMXXbpxzNSvnUwZCoNrFMrnHLp3XleGbzQaI.original.fullsize.png" alt=""></p>
+<p>And the <code>gif</code> results can be seen in the image tab of Tensorboard while testing, something like:</p>
+<p><img src="https://i.imgur.com/8iLlpcH.gif"/></p>
+<p>If the test command fails with <code>pyglet.canvas.xlib.NoSuchDisplayException: Cannot connect to "None"</code>, e.g. when running
+remotely, try prepending <code>DISPLAY=:0.0</code> to the command above, assuming you have an xserver running with such display
+available:</p>
+<div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="o">=</span>:0.0 <span class="nv">PYTHONPATH</span><span class="o">=</span>. python allenact/main.py gym_mujoco_tutorial <span class="se">\</span>
+    -b projects/tutorials <span class="se">\</span>
+    -m <span class="m">1</span> <span class="se">\</span>
+    -o /PATH/TO/gym_mujoco_output <span class="se">\</span>
+    -s <span class="m">0</span> <span class="se">\</span>
+    -e <span class="se">\</span>
+    --eval <span class="se">\</span>
+    --checkpoint /PATH/TO/gym_mujoco_output/checkpoints/GymMuJoCoTutorial/YOUR_START_DATE
+</pre></div>
 
 </div>
 </div>
@@ -13249,6 +13415,8 @@ $$\Rightarrow \nabla_{\theta} \mathbb{E}_{\pi_{\theta}}\left[-\log \pi_{\theta}(
 
 
 </html>
+
+
 
 <script src="https://utteranc.es/client.js"
         repo="zcczhang/zcczhang.github.io"
