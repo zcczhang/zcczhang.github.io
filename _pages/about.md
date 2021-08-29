@@ -7,11 +7,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-### Hi, this is Charles! I am a highly passionate third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) with a solid background in both pure mathematics and applied mathematics involved with computer and data science. My primary research interest lies in designing, developing, optimizing, and deploying deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, sovling real-world puzzles for common good. Recently, I am researching about reset-free models for reinforcement learning mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in <i>Python, R, Java, MATLAB, SQL, HTML, CSS</i>, I love using mathematical thinking to solve practical problems as well.
-<br>
-In my spare time, I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
+Hi, this is Charles! I am a highly passionate third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) with a solid background in both pure mathematics and applied mathematics involved with computer and data science. My primary research interest lies in designing, developing, optimizing, and deploying deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, sovling real-world puzzles for common good. Recently, I am researching about reset-free models for reinforcement learning mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in <i>Python, R, Java, MATLAB, SQL, HTML, CSS</i>, I love using mathematical thinking to solve practical problems as well.
 
-<br>
+ In my spare time, I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
+
+To know more about me, you could see my [Publications(scripts)](https://zcczhang.github.io/publications/), [Projects](https://zcczhang.github.io/projects/), [Experience](https://zcczhang.github.io/experience/), [Honors](https://zcczhang.github.io/honors/), and an one-page CV could be found [**HERE**](https://zcczhang.github.io/files/CV.pdf). I am also making some notes, especially based on detailed mathematical proofs and my understanding, while lerning and researching about reinforcement learning in [Blog](https://zcczhang.github.io/blogs/).
+
 <!-- 
 <details>
 <summary>Okay, for more...</summary>
@@ -19,7 +20,6 @@ In my spare time, I love to see the aurora driving four hours away from my schoo
 I am a highly passionate third-year Mathematics and Computer Science student at Macalester College with a solid background in both pure mathematics and applied mathematics involved with computer and data science. My primary research interest lies in designing, developing, optimizing, and deploying deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous agents that can perform in dynamic environments, sovling real-world puzzles for social good. Recently, I am researching about reset-free models for reinforcement learning. I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. With proficient skills in <i>Python, R, Java, MATLAB, SQL, HTML, CSS</i>, I love using mathematical thinking to solve practical problems as well.
 <br>
 I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c. in my spare time. 
-
  </details> -->
  
   
