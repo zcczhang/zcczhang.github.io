@@ -11,7 +11,7 @@ Hi, this is Charles! I am a highly passionate third-year student majoring mathem
 
  In my spare time, I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
 
-To know more about me, you could see my [Publications(scripts)](https://zcczhang.github.io/publications/), [Projects](https://zcczhang.github.io/projects/), [Experience](https://zcczhang.github.io/experience/), [Honors](https://zcczhang.github.io/honors/), and an one-page CV could be found [**HERE**](https://zcczhang.github.io/files/CV.pdf). I am also making some notes, especially based on detailed mathematical proofs and my understanding, while lerning and researching about reinforcement learning in [Blog](https://zcczhang.github.io/blogs/).
+To know more about me, you could see my [Publications(scripts)](https://zcczhang.github.io/publications/), [Projects](https://zcczhang.github.io/projects/), [Experience](https://zcczhang.github.io/experience/), [Honors](https://zcczhang.github.io/honors/), and an one-page CV could be found [**HERE**](https://zcczhang.github.io/files/CV.pdf). I am also making some notes, especially based on detailed mathematical proofs and my understanding, while lerning and researching about reinforcement learning in [Blogs](https://zcczhang.github.io/blogs/).
 
 <!-- 
 <details>
