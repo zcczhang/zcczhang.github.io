@@ -7,9 +7,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by [Andrew Beveridge](https://mathbeveridge.github.io/), [Esra Kadioglu](https://scholar.google.com/citations?user=XQq8t4sAAAAJ&hl=en&oi=ao), and [Diane Michelfelder](https://www.macalester.edu/~michelfelder/). 
+Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), Prof. [Esra Kadioglu](https://scholar.google.com/citations?user=XQq8t4sAAAAJ&hl=en&oi=ao), and Prof. [Diane Michelfelder](https://www.macalester.edu/~michelfelder/). 
 
-[[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf). 
+[[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf)
 
 My primary research interest lies in designing, developing, optimizing, and deploying deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, sovling real-world puzzles for common good. Recently, I am researching about reset-free models for reinforcement learning mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). 
 
