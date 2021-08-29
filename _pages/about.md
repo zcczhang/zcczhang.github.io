@@ -24,6 +24,6 @@ I love to see the aurora driving four hours away from my school, and I am indulg
  
   
 <br><br>
-<br><br><br><br><br><br><br><br><br><br>
+
 
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=5ee2ff&w=400&t=tt&d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw&co=ffffff&cmo=d99cff&cmn=ffa3b9&ct=808080"></script>
