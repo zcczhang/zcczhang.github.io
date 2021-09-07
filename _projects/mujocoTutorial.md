@@ -7,6 +7,7 @@ date: 2021-8-12
 year: 2021
 location: Seattle, WA
 image: "https://i.imgur.com/8iLlpcH.gif"
+language: "Python"
 tool: "/images/python.png"
 --- 
 Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().
