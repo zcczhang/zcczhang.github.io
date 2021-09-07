@@ -1,10 +1,13 @@
 ---
 title: "Baselines Experiments and Tutorials in AllenAct"
 collection: projects
-permalink: /projects/Baselines-experiments-and-Tutorials-of-AllenAct
+type: "Projects"
+permalink: /projects/Baselines-experiments-and-Tutorials-in-AllenAct
 date: 2021-8-12
 year: 2021
-tool: "https://i.imgur.com/8iLlpcH.gif"
+location: Seattle, WA
+image: "https://i.imgur.com/8iLlpcH.gif"
+tool: "/images/python.png"
 --- 
 Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().
 
