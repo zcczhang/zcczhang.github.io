@@ -10,7 +10,7 @@ image: "https://i.imgur.com/8iLlpcH.gif"
 language: "Python"
 tool: "/images/python.png"
 --- 
-Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().
+Contribute codes for baseline experiments and pretrained models of various of tasks from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/)environments to the project of [**AllenAct**](https://github.com/allenai/allenact), and provide a [Tutorial]().
 
 
 > only the tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog. [For More](https://github.com/allenai/allenact/pull/305)<br>
@@ -13415,6 +13415,22 @@ available:</p>
 
 
 </html>
+
+## Results
+
+In our experiments, the rewards for MuJoCo environments we obtained after training using PPO are similar to those reported by OpenAI Gym Baselines(1M steps). The Humanoid environment is compared with the original PPO paper where training 50M steps using PPO. Due to the time constraint, we only tested our baseline across two seeds so far. 
+
+
+| Environment           | Gym Baseline Reward | Ours Reward |
+| -----------           | ------------------- | ----------- |
+|[Ant-v2](https://gym.openai.com/envs/Ant-v2/)| 1083.2 |1098.6(reached 4719 in 25M steps)  | 
+| [HalfCheetah-v2](https://gym.openai.com/envs/HalfCheetah-v2/) | 1795.43             |  1741(reached 4019 in 18M steps)           |
+|[Hopper-v2](https://gym.openai.com/envs/Hopper-v2/)|2316.16|2266|
+|[Humanoid-v2](https://gym.openai.com/envs/Humanoid-v2/)|4000+|4500+(reached 6500 in 70M steps)|
+| [InvertedPendulum-v2](https://gym.openai.com/envs/InvertedPendulum-v2/) | 809.43              |  1000       |
+|[Reacher-v2](https://gym.openai.com/envs/Reacher-v2/)|-6.71|-7.045|
+|[Swimmer-v2](https://gym.openai.com/envs/Swimmer-v2/)|111.19|124.7|
+|[Walker2d](https://gym.openai.com/envs/Walker2d-v2/)|3424.95|2723 in 10M steps|
 
 
 
