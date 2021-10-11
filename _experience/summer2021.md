@@ -13,10 +13,8 @@ date: "2021-06-01"
 
 <embed src="/files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf" height="100%" width="100%">
 
-[***Paper Link(Modifying...)***]()
+[***Paper Link(in submission)***]()
 
-
-[***Daily Report***](https://github.com/zcczhang/Graph-Rectifiability/blob/main/DailyNote.pdf)
 
 ### Responsibilities:	
 - Summer Research for the geometric Measure theory and graph rectifiability with professor Lisa Naples at Macalester College

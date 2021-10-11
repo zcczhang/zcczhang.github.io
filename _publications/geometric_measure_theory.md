@@ -7,11 +7,11 @@ excerpt: 'Paper wrote in summer research with Lisa Naples about geometric measur
 date: Sep 2021
 venue: 'Preprint'
 paperurl: ''
-image: "/images/nothing.png"
+image: "/images/GMS.png"
 ---
 **Abstract:** One crucial question after solving the Analysts' Traveling Salesman Problem is to finding the characterization of measures carried by the rectifiable graph. In the previous works, we managed to use balls to find the characterization of the graph rectifiable measures in the continuous space. To further elaborate this work to discrete space, in this paper we work on find and prove the geometric lemma, sufficient and the necessary condition of the graph rectifiable measure using dyadic cubes. We also prove that the doubling measure property of Borel measures holds under dyadic cube regime. These works elaborate the characterization of Lipschitz graph rectifiable measure from continuous to discrete space. 
 
-### [Download Here in the future(still modifying)]()
+### [Download Here in the future(in submission)]()
 
 <!-- <embed src="/files/Automated-Scoring-System-of-HER2-in-Pathological-Images-under-the-Microscope.pdf" height="100%" width="100%"> -->
 
