@@ -62,7 +62,7 @@ Honors
 </p>
  
     
- Publications
+Scripts
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
@@ -73,5 +73,3 @@ Honors
  [One-Page CV](/files/CV.pdf)
 =====
   
-
-![](https://raw.githubusercontent.com/zcczhang/MyResume/master/CVpic.png)	
