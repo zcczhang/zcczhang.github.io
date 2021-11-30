@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), Prof. [Esra Kadioglu](https://scholar.google.com/citations?user=XQq8t4sAAAAJ&hl=en&oi=ao), and Prof. [Diane Michelfelder](https://www.macalester.edu/~michelfelder/). 
+Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), and Prof. [Susan Fox](https://www.macalester.edu/~fox/).
 
 [[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf)
 
