@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), and Prof. [Susan Fox](https://www.macalester.edu/~fox/). Recently, I am researching adversarial reset-free reinforcement learning with sink states mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). 
+Hi, this is Charles (张子晨)! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), and Prof. [Susan Fox](https://www.macalester.edu/~fox/). Recently, I am researching adversarial reset-free reinforcement learning with sink states mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI (AI2)](https://allenai.org/). 
 
 [[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf)
 
