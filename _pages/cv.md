@@ -10,14 +10,14 @@ redirect_from:
 
 Education
 ======
-* B.A., B.S. in Mathematics and Computer Science, Macalester, 2023(expected)
+* B.A. in Mathematics and Computer Science, Macalester, Dec 2022 (expected)
 * Shandong Experimental High School, China, 2016-2019
 * Renmin University of China, Calligraphy and Painting Art Program, 2016-2017
   
 Skills
 ======
 - **Language:** Mandarin and English
-- **Programming:** R(ggplot, ggmap, plotly, leaflet, gganimate, rvest, shinny), Python(numpy, matplotlib, XGBoost, TensorFlow, PyTorch, Keras, OpenCV, OpenAI, Gym, Baselines, Paddle), Java, MATLAB, C++, SQL, HTML, CSS, Markdown, TEX, COMSOL
+- **Programming:** R (ggplot, ggmap, plotly, leaflet, gganimate, rvest, shinny), Python (numpy, matplotlib, XGBoost, TensorFlow, PyTorch, Keras, OpenCV, OpenAI, Gym, Baselines, Paddle, nltk), Java, MATLAB, C++, C, SQL, HTML, CSS, Markdown, TEX, COMSOL
 - **Interest:** Calligraphy, Piano, any Sports, Travelling 
 
 
