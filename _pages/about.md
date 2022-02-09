@@ -11,7 +11,7 @@ Hi, this is Charles (张子晨)! I am a third-year student majoring mathematics 
 
 [[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf)
 
-My primary research interest lies in designing, developing, optimizing, and deploying *SAFE* deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, solving real-world puzzles for common good. 
+My primary research interest lies in designing, developing, optimizing, and deploying *SAFE* deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi) agents that can perform in dynamic environments, solving real-world puzzles for common good. 
 
 I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. In my spare time, I love to see the aurora driving four hours away from my school, and I indulge in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
 
