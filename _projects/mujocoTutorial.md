@@ -10,10 +10,10 @@ image: "https://i.imgur.com/8iLlpcH.gif"
 language: "Python"
 tool: "/images/python.png"
 --- 
-Contribute codes for baseline experiments and pretrained models of various of tasks from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/)environments to the project of [**AllenAct**](https://github.com/allenai/allenact), and provide a [Tutorial]().
+Contribute codes for baseline experiments and pretrained models of various of tasks from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/#mujoco)environments to the [project](https://allenact.org/projects/gym_baselines/) of [**AllenAct**](https://github.com/allenai/allenact), and provide a [Tutorial](https://allenact.org/tutorials/gym-mujoco-tutorial/).
 
 
-> The tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog. <br>
+> The tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/#mujoco) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog. <br>
   Author: Charles Zhang 
 
 

@@ -10,7 +10,7 @@ tags:
 date: "2021-08-21"
 tool: "/images/nothing.png"
 --- 
-Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the project of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial]().
+Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the [project](https://allenact.org/projects/gym_baselines/) of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial](https://allenact.org/tutorials/gym-mujoco-tutorial/).
 
 
 > only the tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog.<br>

@@ -7,13 +7,13 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), and Prof. [Susan Fox](https://www.macalester.edu/~fox/).
+Hi, this is Charles! I am a third-year student majoring mathematics and computer science at [Macalester College](https://www.macalester.edu/) advised by Prof. [Andrew Beveridge](https://mathbeveridge.github.io/), and Prof. [Susan Fox](https://www.macalester.edu/~fox/). Recently, I am researching adversarial reset-free reinforcement learning with sink states mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). 
 
 [[Curriculum Vitae]](https://zcczhang.github.io/files/CV.pdf)
 
-My primary research interest lies in designing, developing, optimizing, and deploying *SAFE* deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, solving real-world puzzles for common good. Recently, I am researching about reset-free models for reinforcement learning mentored by [Luca Weihs](https://lucaweihs.github.io/) from [Allen Institute for AI(AI2)](https://allenai.org/). 
+My primary research interest lies in designing, developing, optimizing, and deploying *SAFE* deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi)agents that can perform in dynamic environments, solving real-world puzzles for common good. 
 
-I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. In my spare time, I love to see the aurora driving four hours away from my school, and I am indulged in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
+I also love competing in mathematical competitions to unveil the elegant beauty of the mathematics. In my spare time, I love to see the aurora driving four hours away from my school, and I indulge in Chinese calligraphy, playing basketball, golf, ping-pong, soccer, going fishing, e.t.c.. 
 
 To know more about me, you could see my [Publications(scripts)](https://zcczhang.github.io/publications/), [Projects](https://zcczhang.github.io/projects/), [Experience](https://zcczhang.github.io/experience/), and [Honors](https://zcczhang.github.io/honors/). I am also making some notes, especially based on detailed mathematical proofs and my understanding, while lerning and researching about reinforcement learning in [Blogs](https://zcczhang.github.io/blogs/).
 

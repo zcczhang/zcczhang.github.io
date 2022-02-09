@@ -1,26 +1,11 @@
 ---
-title: "Deep Reinforcement Learning Researcher"
+title: "DRL Research Intern"
 collection: experience
-permalink: /experience/summer2020
-venue: "Mathematics, Statistics and Computer Science Department, Macalester College"
+permalink: /experience/AI2
+venue: "PRIOR Group, Allen Institute for Artificial Intelligence (AI2)"
 location: "St. Paul, MN"
-term: "Summer "
-date: "2020-06-01"
+term: "Fall 2021 - Spring"
+date: "2022-05-14"
 ---
-- ###  Summer research with professor Esra Kadioglu at Macalester College.
+- ###  Research Intern at [AI2](https://allenai.org/) mentored by [Luca Weihs](https://lucaweihs.github.io/)
 
-### Responsibilities:	
-- Implement the hexagonal tessellation area coverage approach on unmanned aerial vehicles(UAVs) in Python
-- Develop Q learning based algorithms with simulations for UAVs coverage building in Gym or by graph.
-- Create a gym environment for implementing the coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region (ACKTR) method provided by Stable Baselines in Python.
-
-### Project funding
-
-MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund,
-Anderson-Grossheusch Summer Research Collaboration Fund, Mac/Faculty Collaboration Summer Research Funds 
-
-### My Research Report
-
-<embed src="/files/Research_Report.pdf" height="100%" width="100%">
-
-### Project: [Link](https://zcczhang.github.io/projects/uav)
