@@ -32,7 +32,7 @@
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.cv %}
-      <li><a href="{{ author.cv }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> CV</a></li>
+        <li><a href="{{ author.cv }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> CV</a></li>
       {% endif %}
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
@@ -121,8 +121,15 @@
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}
+
+        <style>
+          .green-color {
+            color: rgb(50, 189, 37);
+          }
+       </style>
+
       {% if author.im %}
-      <li><a href="{{ author.im }}"><i class="fa fa-weixin" aria-hidden="true"></i> IM</a></li>
+        <li><a href="{{ author.im }}"><i class="fa fa-wechat green-color" aria-hidden="true"></i> IM</a></li>
       {% endif %}
     </ul>
   </div>
