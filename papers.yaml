@@ -1,0 +1,113 @@
+papers:
+  - name: rf
+    title:
+      name: Adversarial Reset Free Reinforcement Learning with Sink States
+    authors:
+      - me: true
+      - name: Luca Weihs
+        href: https://lucaweihs.github.io/
+    conference:
+      name: PrePrint (under submission)
+      year: 2022
+    links:
+      - name: in progress
+    description: Current Research about Adversarial Reset Free Reinforcement Learning with Sink States
+    highlighted: true
+
+  - name: her2
+    title:
+      link: https://arxiv.org/pdf/2110.12900.pdf
+      name: Characterization of Rectifiable Measures that are Carried by Lipschitz Curves
+    authors:
+      - me: true
+      - name: Lang Wang
+      - name: Shuhao Wang
+        href: https://scholar.google.com/citations?user=X3u_rXYAAAAJ&hl=en/
+    conference:
+      name: arXiv (under submission)
+      year: 2021
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2110.12900
+      - name: code (comming soon)
+    description: Automatically recognizing and classifying HER2 status under pathological images with interpretable procedures strictly followed the HER2 scoring guidelines. Firstly include the consideration of the positive control along with the flexible interactive adjustion in demand substantially assists pathologists to finish the HER2 diagnosis faster and improves the robustness and accuracy.
+    highlighted: true
+    nogif: true
+
+  - name: gmt
+    title:
+      link: https://charleszzzzz.github.io/
+      name: Characterization of Rectifiable Measures that are Carried by Lipschitz Curves
+    authors:
+      - me: true
+      - name: Yutong Wu
+        href: https://www.linkedin.com/in/yutong-wu-a5a575209/?trk=public_profile_browsemap
+      - name: Lisa Naples
+        href: https://sites.google.com/view/lisa-n-math/home
+    conference:
+      name: Joint Mathematics Meeting (JMM)
+      year: 2022 </br> <i>JMM AMS</i> contributed paper session, <i>JMM AMS-PME</i> poster session, 2022
+    links:
+      - name: paper
+      - name: poster
+        href: materials/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
+    description: After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
+    highlighted: true
+    nogif: true
+
+  - name: uav
+    title:
+      link: materials/uav.pdf
+      name: Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning
+    authors:
+      - me: true
+      - name: Fan Zhang
+      - name: Elisabeth Landgren
+      - name: Aaron Gould
+      - name: Esra Kadioglu Urtis
+    conference:
+      name: PrePrint
+      year: 2020 
+    links:
+      - name: technical report
+        href: https://zcczhang.github.io/files/Research_Report.pdf
+      - name: poster
+        href: materials/uavposter.png
+      - name: code
+        href: https://github.com/zcczhang/UAV_Coverage
+    description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
+    highlighted: true
+  
+  - name: mems
+    title:
+      link: https://www.scirp.org/pdf/MME_2018011616360611.pdf
+      name: Design and Optimization of Comb Drive Accelerator for High Frequency Oscillation
+    authors:
+      - me: true
+      - name: Cai (Albert) Chen
+        href: https://aml.seas.ucla.edu/people/chen_cai.html
+    conference:
+      name: Modern Mechanical Engineering Vol.8 No.1
+      year: Jan 2018
+    links:
+      - name: paper
+        href: https://www.scirp.org/pdf/MME_2018011616360611.pdf
+      - name: code
+        href: https://github.com/zcczhang/Design-and-Optimization-of-Comb-Drive-Accelerator-for-High-Frequency-Oscillation
+    description: In this work, a finite element code was used for the design, optimization and visualization of a comb drive accelerator. In the simulation results, the post-optimization design has high performance in high frequency oscillation operating environment. The optimization is based on the ideal eigenfre-quency and Nelder-Mead method. The 3-D working conditions are realized by testing and comparing the time and frequency domain of pre-optimized and optimized design whose frequency ranges from 2000 Hz to 5000 Hz. Finally, the electric potential and capacitance in comb drive are visualized, which shows the better electric signals and displacements.
+
+  - name: geo
+    title:
+      link: materials/geometry_paper.pdf
+      name: Generalized Trajectory Problems of Fixed-Point and Fixed-Line with Motion Scaling
+
+    authors:
+      - me: true
+    conference:
+      name: Mathematical Study and Research Vol 19
+      year: Jan 2017
+    links:
+      - name: paper (in Chinese)
+        href: materials/geometry_paper.pdf
+    description: (Euclidean geometry) was as dazzling as first love. — Bertrand Russell. This Euclidean geometry paper (in Chinese) is for mathematical Olympics competitions published in Chinese periodical Mathematical Study and Research, generalized series of problems of locus by an elegant method and visualized by Geometer Sketchpad.
+    nogif: true

@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <!-- <meta name=viewport content="width=device-width">
+  <meta name=viewport content="width=900"> -->
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/profile.png">
+  <title>Zichen "Charles" Zhang. Personal Webpage</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116311994-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116311994-1');
+  </script>
+
+  <!-- Not sure what this is for, maybe the gif toggles? -->
+  <script type="text/javascript">
+     function visibility_on(id) {
+          var e = document.getElementById(id+"_text");
+          if(e.style.display == 'none')
+              e.style.display = 'block';
+          var e = document.getElementById(id+"_img");
+          if(e.style.display == 'none')
+              e.style.display = 'block';
+     }
+     function visibility_off(id) {
+          var e = document.getElementById(id+"_text");
+          if(e.style.display == 'block')
+              e.style.display = 'none';
+          var e = document.getElementById(id+"_img");
+          if(e.style.display == 'block')
+              e.style.display = 'none';
+     }
+     function toggle_visibility(id) {
+         var e = document.getElementById(id+"_text");
+         if(e.style.display == 'inline')
+            e.style.display = 'block';
+         else
+            e.style.display = 'inline';
+         var e = document.getElementById(id+"_img");
+         if(e.style.display == 'inline')
+            e.style.display = 'block';
+         else
+            e.style.display = 'inline';
+     }
+     function toggle_vis(id) {
+         var e = document.getElementById(id);
+         if (e.style.display == 'none')
+             e.style.display = 'inline';
+         else
+             e.style.display = 'none';
+     }
+  </script>
+  <!-- Gif toggles -->
+  <script>
+  function gif_start(image, gif) {
+    document.getElementById(image).style.opacity = "1";
+    document.getElementById(gif).style.opacity = "0";
+  }
+  function gif_stop(image, gif) {
+    document.getElementById(image).style.opacity = "0";
+    document.getElementById(gif).style.opacity = "1";
+  }
+  </script>
+
+  <!-- Selected publications toggle -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  function pubs_off_start() {
+    $('.hiddenPubs').hide();
+    var e = document.getElementById('sel_pub_button');
+    e.classList.add("toggled");
+    var e = document.getElementById('all_pub_button');
+    e.classList.remove("toggled");
+  }
+  function pubs_off() {
+    $('.hiddenPubs').slideUp();
+    var e = document.getElementById('sel_pub_button');
+    e.classList.add("toggled");
+    var e = document.getElementById('all_pub_button');
+    e.classList.remove("toggled");
+  }
+  function pubs_on() {
+    $('.hiddenPubs').slideDown();
+    var e = document.getElementById('all_pub_button');
+    e.classList.add("toggled");
+    var e = document.getElementById('sel_pub_button');
+    e.classList.remove("toggled");
+  };
+  </script>
+
+  <!-- Dynamic generation -->
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script type="text/javascript" src="data/js-yaml.min.js"></script>
+  <script type="text/javascript">
+  function renderHello() {
+    var template = document.getElementById('template').innerHTML;
+    $.get("./papers.yaml").done(function(data) {
+      try {
+      papers = jsyaml.load(data)
+      var rendered = Handlebars.compile(template)(papers);
+      document.getElementById('mustache_target').innerHTML = rendered;
+      pubs_off_start()
+      }
+      catch(err) {
+      }
+    });
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- Dark mode -->
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+  <script>
+  var options = {
+    autoMatchOsTheme: false // default: true
+  }
+
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+  </script>
+
+  <!-- body -->
+  <div style="max-width:900; width:100%; margin:0 auto">
+
+      <!-- Intro & photo -->
+      <div class="table-like" style="width:100%; text-align=left;">
+        <div style="flex: 1 0 300px;margin-right:50px">
+          <p align="center">
+            <name>Zichen "Charles" Zhang</name>
+          </p>
+          <p>Hi! I am  Charles (张子晨)! I am a third-year student majoring mathematics and computer science at <a href="https://www.macalester.edu/">Macalester College</a> advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>. I am also doing a research intern at <a href="https://allenai.org/">Allen Institute for AI (AI2)</a> advised by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.</p>
+          
+          <p>My primary research interest lies in designing, developing, optimizing, and deploying safe vision-based deep reinforcement learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi) agents that can perform in dynamic environments, solving real-world puzzles. Recently, I've been working on adversarial reset-free reinforcement learning with sink states.</p>
+        
+          </p>
+          <p align=center>
+            <!-- <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=CQEyVPMAAAAJ">Google Scholar</a> &nbsp/&nbsp -->
+            <a href="materials/CV.pdf">CV</a> &nbsp|&nbsp
+            <a href="https://github.com/zcczhang">GitHub</a> &nbsp|&nbsp
+            <a href="linkedin.com/in/charleszzz/"> LinkedIn </a> &nbsp|&nbsp
+            <a href="mailto:zzhang4@macalester.edu">Email</a> &nbsp|&nbsp
+            <a href="images/Wechat.jpeg">IM</a> 
+          </p>
+        </div>
+
+        <div style="flex: 0 0 250px;">
+          <img src="images/profile.png" style="width:100%">
+        </div>
+      </div>
+
+      <!-- News -->
+      <div style="width:100%; text-align=left;">
+        <heading>News</heading>
+      </div>
+
+      <div style="width:100%; text-align=left;margin-top:10; ">
+          <li> <strong> Nov 2021</strong>: One math paper was accepted by AMS contributed paper session, and AMS-PME poster session<a href="https://www.jointmathematicsmeetings.org//jmm">, JMM 2022</a></li>
+          <li> <strong> Sep 2021</strong>: <a href="https://allenact.org/projects/gym_baselines/">Baseline models</a> and <a href="https://allenact.org/tutorials/gym-mujoco-tutorial/">Tutorials</a> in the learning framework <a href="https://allenact.org/">AllenAct</a> for <a href="https://gym.openai.com/envs/#mujoco">MuJoCo, Gym</a> are released! </li>
+          <li> <strong> May 2021</strong>: Join <a href="https://prior.allenai.org/">PRIOR</a> team within <a href="https://allenai.org/">AI2</a> as a research intern</li>
+          <li> <strong> Jan 2021</strong>: Join <a href="http://thorough.ai//">Thourough Images</a> mentored by <a href="https://scholar.google.com/citations?user=X3u_rXYAAAAJ&hl=en">Shuhao Wang</a> as a research intern</li>
+      </ul>
+    </div>
+
+    <div style="width:100%; text-align=left; margin-top:20; ">
+      <heading>Publications / Preprints</heading>
+      (<a style="font-size:17px" id='sel_pub_button' href="javascript:pubs_off()">Highlighted</a> /
+      <a style="font-size:17px" id='all_pub_button' href="javascript:pubs_on()">All</a>)
+    </div>
+
+    <div id="mustache_target">Loading...</div>
+    <script id="template" type="text/x-handlebars-template">
+      {{#papers}}
+      <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px; flex-wrap:wrap-reverse; " class="table-like {{#unless highlighted}}hiddenPubs{{/unless}}" onmouseout="gif_stop('{{name}}_image', '{{name}}_gif')" onmouseover="gif_start('{{name}}_image', '{{name}}_gif')">
+        <div class="zero" style="flex: 1 0 170px;margin-top:0px;margin-right:20px;max-width:270px">
+          <div class="one">
+            {{#unless nogif}}
+            <div class="two" id='{{name}}_image'><img src='images/{{name}}_after.gif' class="paper_img"></div>
+            {{/unless}}
+            <img id='{{name}}_gif' src='images/{{name}}_before.png' class="paper_img">
+          </div>
+            <!-- {{#unless nogif}}
+            <p style="text-align: center;margin-top:0.4em;margin-bottom:0em;color:Gray;"><i> Hover/tap to play the gif</i></p> -->
+            <!-- {{/unless}} -->
+        </div>
+        <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
+          <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a  href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a></br>
+          {{#authors}}
+          {{#if me}}
+            <strong><u>Zichen Zhang</u></strong>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
+          {{else}}
+            {{#if href}}
+              <a class="black_link" href={{href}}>{{name}}</a>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
+            {{else}}
+              <a class="black_link">{{name}}</a>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
+            {{/if}}
+          {{/if}}
+          {{/authors}}</br>
+          <font color="Gray"><i>{{{conference.name}}}</i>, {{{conference.year}}}</font><br>
+          {{#links}}
+          {{#if href}}
+            <a href={{href}}>{{name}}</a>{{#unless @last}} | {{/unless}}
+          {{else}}
+            <a class="black_link">{{name}}</a>{{#unless @last}} | {{/unless}}
+          {{/if}}
+          {{/links}}</p>
+
+          <p style="margin-bottom:0em;">{{description}}</p>
+        </div>
+      </div>
+      {{/papers}}
+    </script>
+    <script type="text/javascript">
+    renderHello()
+    </script>
+
+    <!-- This <i> tag was for some reason necessary for the publication list switch to work -->
+    <!-- <i> -->
+
+    <!-- Teaching -->
+    <div style="width:100%; text-align=left; margin-top:20;">
+    <heading>Teaching</heading> <br>
+    </div>
+    <div style="width:100%; text-align=left; margin-top:10;"> 
+      <strong>Teaching Assistant at Macalester College</strong>
+      <li> <strong> Spring 2022</strong>: MATH 378 Complex Analysis</li>
+      <li> <strong> Fall 2021</strong>: STAT/COMP 112 Intro to Data Science</li>
+      <li> <strong> Spring 2021</strong>: COMP 394 Reinforcement Learning (design and write code implementations for homework and class materials)</li>
+      <li> <strong> Fall 2020</strong>: COMP 128 Data Structure</li>
+      <li> <strong> Spring 2020</strong>: STAT/COMP 112 Intro to Data Science</li>
+    </div>
+
+    <!-- Personal @TODO -->
+    <!--
+    <div style="width:100%; text-align=left; margin-top:20;">
+      <heading>Personal</heading>
+    </div>
+    <div class="two", style="flex: 1 0 170px;width:10%;">
+      <img src="images/1.jpeg">
+    </div>  -->
+
+    <div style="width:100%; text-align=left; margin-top:20;">
+      <heading>Projects / Posts</heading>
+
+    </div>
+    <hr>
+    <div style="margin:auto">
+        <center>
+        Inspired by <a href="https://jonbarron.info/">this</strong></a> and <a href="https://www.seas.upenn.edu/~oleh/">this</strong></a>.
+        </center>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Color scheme stolen from https://www.seas.upenn.edu/~oleh/ */
+a {
+color: #1772d0;
+text-decoration:none;
+}
+.black_link {
+color: Black;
+text-decoration:none;
+}
+a:focus, a:hover {
+color: #a723d3;
+text-decoration:none;
+}
+/* toggling stuff */
+.toggled:hover, .toggled:active, .toggled:link, .toggled:visited  {
+color: black;
+text-decoration:underline;
+cursor: text;
+}
+body,td,th,tr,p,a {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+/* font-family: 'Titillium Web', Verdana, Helvetica, sans-serif; */
+font-size: 15px;
+font-weight: 400;
+/* this fixes text size on mobile */
+/* text-size-adjust: 200%; */
+/* text-size-adjust: none; */
+}
+oral {
+  font-weight: bold;
+  color: red;
+}
+heading {
+  font-size: 22px;
+}
+papertitle {
+  font-size: 16.5px;
+  font-weight: 700
+}
+name {
+  font-size: 30px;
+}
+.zero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 190px; */
+}
+.one
+{
+  /* width: 160px; */
+  /* height: 160px; */
+  position: relative;
+  /* display: table-cell;
+  vertical-align: middle; */
+}
+.two
+{
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.paper_img {
+  /* width: 160px; */
+  max-width: 100%;
+}
+/* @media only screen and (max-width: 590px) {
+  .paper_title {
+    text-align: center;
+  }
+} */
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+span.highlight {
+  background-color: #ffffd0;
+}
+img {
+  border-radius: 15px;
+}
+.table-like {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+hr
+{
+  border: 0;
+  height: 1px;
+  max-width: 1100px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
