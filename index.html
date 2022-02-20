@@ -115,6 +115,9 @@
     });
   }
   </script>
+  <link href="css/smoothness/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="jquery-1.8.2.js"></script>
+  <script src="js/jquery-ui-1.9.0.custom.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -147,7 +150,12 @@
           </p>
           <p align=center>
             <!-- <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=CQEyVPMAAAAJ">Google Scholar</a> &nbsp/&nbsp -->
-            <a href="files/CV.pdf">CV</a> &nbsp|&nbsp
+            <a href="#">CV</a> &nbsp|&nbsp
+            <div id="dialog" style="display:none">
+              <div>
+              <iframe src="files/CV.pdf"></iframe>
+              </div>
+          </div> 
             <a href="https://github.com/zcczhang">GitHub</a> &nbsp|&nbsp
             <a href="https://www.linkedin.com/in/charleszzz/"> LinkedIn </a> &nbsp|&nbsp
             <a href="mailto:zzhang4@macalester.edu">Email</a> &nbsp|&nbsp
@@ -188,7 +196,16 @@
         span.onclick = function() { 
             modal.style.display = "none";
         }
-        </script> 
+      </script> 
+
+      <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+          $('#trigger').click(function(){
+            $("#dialog").dialog();
+          }); 
+        });                  
+      </script>
+
 
       <!-- News -->
       <div style="width:100%; text-align=left;">
