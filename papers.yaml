@@ -50,14 +50,14 @@ papers:
     links:
       - name: paper
       - name: poster
-        href: materials/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
+        href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
     description: After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
     highlighted: true
     nogif: true
 
   - name: uav
     title:
-      link: materials/uav.pdf
+      link: files/uav.pdf
       name: Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning
     authors:
       - me: true
@@ -72,7 +72,7 @@ papers:
       - name: technical report
         href: https://zcczhang.github.io/files/Research_Report.pdf
       - name: poster
-        href: materials/uavposter.png
+        href: files/uavposter.png
       - name: code
         href: https://github.com/zcczhang/UAV_Coverage
     description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
@@ -98,7 +98,7 @@ papers:
 
   - name: geo
     title:
-      link: materials/geometry_paper.pdf
+      link: files/geometry_paper.pdf
       name: Generalized Trajectory Problems of Fixed-Point and Fixed-Line with Motion Scaling
 
     authors:
@@ -108,6 +108,6 @@ papers:
       year: Jan 2017
     links:
       - name: paper (in Chinese)
-        href: materials/geometry_paper.pdf
+        href: files/geometry_paper.pdf
     description: (Euclidean geometry) was as dazzling as first love. — Bertrand Russell. This Euclidean geometry paper (in Chinese) is for mathematical Olympics competitions published in Chinese periodical Mathematical Study and Research, generalized series of problems of locus by an elegant method and visualized by Geometer Sketchpad.
     nogif: true

@@ -87,6 +87,7 @@ author:
   location         : "St. Paul, MN"
   employer         :
   email            : "zzhang4@macalester.edu "
+  cv               : "/files/cv.pdf"
   researchgate     : 
   uri              : 
   bitbucket        :
@@ -101,7 +102,7 @@ author:
   instagram        : "charleszhang_________"
   impactstory      : 
   lastfm           :
-  linkedin         : 'charleszzz'
+  linkedin         : "charleszzz"
   orcid            : 
   pinterest        :
   soundcloud       :
@@ -114,6 +115,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  im               : "/images/Wechat.jpeg"
 
 
 # Reading Files
