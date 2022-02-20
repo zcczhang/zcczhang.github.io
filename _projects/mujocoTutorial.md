@@ -13119,7 +13119,7 @@ is to make a four-legged creature, "ant", walk forward as fast as possible. A ra
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://i.imgur.com/kwQVEEK.gif" width="200"/></p>
+<p><img src="https://ai2-prior-allenact-public-assets.s3.us-west-2.amazonaws.com/tutorials/gym-mujoco/ant_random.gif" width="200"/></p>
 
 </div>
 </div>
@@ -13388,9 +13388,9 @@ directory containing the checkpoints with the <code>--checkpoint CHECKPOINT_DIR<
 and the mean reward to above 4,000 in 20,000,000 steps, while the average episode length should stay or a 
 little below 1,000. The <code>gif</code> results can be seen in the image tab of Tensorboard while testing. 
 The output should be something like this:</p>
-<p><img src="https://cdn.mathpix.com/snip/images/BSb5whMxMXXbpxzNSvnUwZCoNrFMrnHLp3XleGbzQaI.original.fullsize.png" alt=""></p>
+<p><img src="https://ai2-prior-allenact-public-assets.s3.us-west-2.amazonaws.com/tutorials/gym-mujoco/ant_test.png" alt=""></p>
 <p>And the <code>gif</code> results can be seen in the image tab of Tensorboard while testing, something like:</p>
-<p><img src="https://i.imgur.com/8iLlpcH.gif"/></p>
+<p><img src="https://ai2-prior-allenact-public-assets.s3.us-west-2.amazonaws.com/tutorials/gym-mujoco/ant_test.gif"/></p>
 <p>If the test command fails with <code>pyglet.canvas.xlib.NoSuchDisplayException: Cannot connect to "None"</code>, e.g. when running
 remotely, try prepending <code>DISPLAY=:0.0</code> to the command above, assuming you have an xserver running with such display
 available:</p>
