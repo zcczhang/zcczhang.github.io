@@ -151,8 +151,13 @@
             <a href="https://github.com/zcczhang">GitHub</a> &nbsp|&nbsp
             <a href="https://www.linkedin.com/in/charleszzz/"> LinkedIn </a> &nbsp|&nbsp
             <a href="mailto:zzhang4@macalester.edu">Email</a> &nbsp|&nbsp
-            <a href="images/Wechat.jpeg" onclick="window.open('img.png','targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1090px, height=550px, top=25px left=120px'); return false;">IM</a> 
-            <!-- <a href="images/Wechat.jpeg">IM</a>  -->
+            <a id="myImg" href="images/Wechat.jpeg">IM</a> 
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <span class="close">×</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
           </p>
         </div>
 
@@ -160,6 +165,30 @@
           <img src="images/profile_cz.png" style="width:100%">
         </div>
       </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        }
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+        </script> 
 
       <!-- News -->
       <div style="width:100%; text-align=left;">
