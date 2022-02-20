@@ -1,6 +1,6 @@
 # main links links
 main:
-  - title: "Home"
+  - title: "Research"
     url: / 
 
   - title: "Projects"
@@ -16,5 +16,8 @@ main:
   #   url: /cv/
 
   - title: "Posts"
-    url: /blogs/
+    url: /posts/
+
+  - title: "Personal"
+    url: /
     

@@ -9,7 +9,7 @@ tags:
 date: "2021-08-22"
 tool: "/images/nothing.png"
 --- 
-Notes For Paper *Generative Adversarial Imitation Learning(GAIL)*
+Notes For Paper *Generative Adversarial Imitation Learning (GAIL)*
 
 
 > Author: Charles Zhang  <br>[*All Notes Catelog for* ***Reinforcement Learning***](https://zcczhang.github.io/blogs/). This post is created following [*BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) agreement, please follow terms while sharing. 
@@ -13097,7 +13097,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Generative-Adversarial-Imitation-Learning(GAIL)">Generative Adversarial Imitation Learning(GAIL)<a class="anchor-link" href="#Generative-Adversarial-Imitation-Learning(GAIL)">&#182;</a></h1><blockquote><p><a href="https://arxiv.org/pdf/1606.03476.pdf">PAPER LINK</a></p>
+<h1 id="Generative-Adversarial-Imitation-Learning(GAIL)">Generative Adversarial Imitation Learning (GAIL)<a class="anchor-link" href="#Generative-Adversarial-Imitation-Learning(GAIL)">&#182;</a></h1><blockquote><p><a href="https://arxiv.org/pdf/1606.03476.pdf">PAPER LINK</a></p>
 </blockquote>
 <h2 id="Simple-Glance-at-Experiment">Simple Glance at Experiment<a class="anchor-link" href="#Simple-Glance-at-Experiment">&#182;</a></h2><p>Input state $s\Rightarrow$ Policy $\pi_\theta \Rightarrow$ Actions $a\Rightarrow$ Discriminator $D_w\Rightarrow$ Expert Policy $\pi_E$ YES/NO</p>
 <h2 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">&#182;</a></h2><p>Solving by finding the saddle point $(\pi, D)$ of the <a id="expression">expression</a></p>

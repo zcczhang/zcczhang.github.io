@@ -1,17 +1,17 @@
 ---
 layout: archive
-title: "Blogs"
-permalink: /blogs/
+title: "Posts"
+permalink: /posts/
 author_profile: true
 redirect_from: 
-  - /blogs
+  - /posts
 ---
 
 {% include base_path %}
 
-## Reinforcement Learning Notes
+May need to refresh for the math $\LaTex$ mode. 
 
-> Paper reading notes, and related work done in the research mentored by [**Luca Weihs**](https://lucaweihs.github.io/) at [**Allen Institute for AI(AI2)**](https://allenai.org/).
+> Paper reading notes, and open-source contribution. 
   <ul>{% for post in site.papernotes %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>

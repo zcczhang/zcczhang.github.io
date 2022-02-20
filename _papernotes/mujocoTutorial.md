@@ -10,10 +10,10 @@ tags:
 date: "2021-08-21"
 tool: "/images/nothing.png"
 --- 
-Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the [project](https://allenact.org/projects/gym_baselines/) of [AllenAct](https://github.com/allenai/allenact), and provide a [tutorial](https://allenact.org/tutorials/gym-mujoco-tutorial/).
+Contribute codes for baseline experiments and pretrained models of various of MuJoCo environments to the [project](https://allenact.org/projects/gym_baselines/) of [AllenAct](https://github.com/allenai/allenact), and provide a [***Tutorial***](https://allenact.org/tutorials/gym-mujoco-tutorial/).
 
 
-> only the tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog.<br>
+> Only the tutorial for training agents to complete the `Ant-v2` task from the *MuJoCo* group under [OpenAI gym](https://gym.openai.com/envs/Ant-v2/) using the modular and flexible learning framework [**AllenAct**](https://allenact.org/) is shown in this blog.<br>
   Author: Charles Zhang 
 
 
@@ -140,7 +140,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 button,
 input,
@@ -13106,7 +13106,7 @@ div#notebook {
 <code>gym_plugin</code>. The latter can be installed by</p>
 <div class="highlight"><pre><span></span>pip install -r allenact_plugins/gym_plugin/extra_requirements.txt
 </pre></div>
-<p>The environments for this tutorial use <a href="http://www.mujoco.org/">MuJoCo</a>(<strong>Mu</strong>lti-<strong>Jo</strong>int dynamics in <strong>Co</strong>ntact) 
+<p>The environments for this tutorial use <a href="http://www.mujoco.org/">MuJoCo</a> (<strong>Mu</strong>lti-<strong>Jo</strong>int dynamics in <strong>Co</strong>ntact) 
 physics simulator, which is also required to be installed properly with instructions 
 <a href="https://github.com/openai/mujoco-py">here</a>.</p>
 <h2 id="The-task">The task<a class="anchor-link" href="#The-task">&#182;</a></h2><p>For this tutorial, we'll focus on one of the continuous-control environments under the <code>mujoco</code> group of <code>gym</code>
