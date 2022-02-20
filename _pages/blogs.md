@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p>May need to refresh for the math <img src="/images/latex.png" style="vertical-align:middle; display:inline;"/> mode.</p>
+<p>May need to refresh for the math <img src="../images/latex.png" style="vertical-align:middle; display:inline;"/> mode.</p>
 
 > Paper reading notes, and open-source contribution. 
   <ul>{% for post in site.papernotes %}
