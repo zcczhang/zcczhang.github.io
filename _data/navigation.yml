@@ -1,7 +1,7 @@
 # main links links
 main:
   - title: "Home"
-    url: /index.html  
+    url: / 
 
   - title: "Projects"
     url: /projects/
@@ -9,12 +9,12 @@ main:
   # - title: "Experience"
   #   url: /experience/    
 
-  - title: "Honors"
-    url: /honors/
+  # - title: "Honors"
+  #   url: /honors/
     
   # - title: "CV"
   #   url: /cv/
 
-  - title: "Blogs"
+  - title: "Posts"
     url: /blogs/
     
