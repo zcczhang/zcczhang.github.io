@@ -17,7 +17,7 @@ papers:
   - name: her2
     title:
       link: https://arxiv.org/pdf/2110.12900.pdf
-      name: Characterization of Rectifiable Measures that are Carried by Lipschitz Curves
+      name: Automated Scoring System of HER2 in Pathological Images under the Microscope
     authors:
       - me: true
       - name: Lang Wang
