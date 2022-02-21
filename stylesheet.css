@@ -20,7 +20,7 @@ cursor: text;
 body,td,th,tr,p,a {
 font-family: 'Lato', Verdana, Helvetica, sans-serif;
 /* font-family: 'Titillium Web', Verdana, Helvetica, sans-serif; */
-font-size: 15px;
+font-size: 14.5px;
 font-weight: 400;
 /* this fixes text size on mobile */
 /* text-size-adjust: 200%; */
@@ -41,10 +41,6 @@ name {
   font-size: 30px;
 }
 
-strong {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15.5px;
-}
 
 .zero {
   display: flex;
