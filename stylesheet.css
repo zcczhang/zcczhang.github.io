@@ -187,3 +187,17 @@ hr
         width: 100%;
     }
 }
+
+ul {
+  list-style: none;
+  display: table;
+}
+
+li {
+  display: table-row;
+}
+
+b {
+  display: table-cell;
+  padding-right: 0em;
+}
