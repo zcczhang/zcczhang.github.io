@@ -1,17 +1,17 @@
 papers:
   - name: rf
     title:
-      name: Adversarial Reset Free Reinforcement Learning with Sink States
+      name: Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
     authors:
       - me: true
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: PrePrint (under submission)
+      name: PrePrint (in progress)
       year: 2022
     links:
       - name: in progress
-    description: Current Research about Adversarial Reset Free Reinforcement Learning with Sink States
+    description: Current Research about Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
     highlighted: true
 
   - name: her2
@@ -48,7 +48,7 @@ papers:
       name: Joint Mathematics Meeting (JMM)
       year: 2022 </br> <i>JMM AMS</i> contributed paper session, <i>JMM AMS-PME</i> poster session, 2022
     links:
-      - name: paper
+      - name: paper (under submission)
       - name: poster
         href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
     description: After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
