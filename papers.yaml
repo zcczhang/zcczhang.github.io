@@ -37,7 +37,7 @@ papers:
   - name: gmt
     title:
       link: https://charleszzzzz.github.io/
-      name: Characterization of Rectifiable Measures that are Carried by Lipschitz Curves
+      name: Characterization of Rectifiable Measures Carried by Lipschitz Curves
     authors:
       - me: true
       - name: Yutong Wu
