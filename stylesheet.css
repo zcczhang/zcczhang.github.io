@@ -20,7 +20,7 @@ cursor: text;
 body,td,th,tr,p,a {
 font-family: 'Lato', Verdana, Helvetica, sans-serif;
 /* font-family: 'Titillium Web', Verdana, Helvetica, sans-serif; */
-font-size: 12.5px;
+font-size: 14px;
 font-weight: 400;
 /* this fixes text size on mobile */
 /* text-size-adjust: 200%; */
@@ -53,16 +53,14 @@ name {
 {
   /* width: 160px; */
   /* height: 160px; */
-  width: 145px;
-  height: 145px;
   position: relative;
   /* display: table-cell;
   vertical-align: middle; */
 }
 .two
 {
-  width: 145px;
-  height: 145px;
+  width: 160px;
+  height: 160px;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
