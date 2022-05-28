@@ -194,7 +194,7 @@ collections:
   rl:
     output: true
     permalink: /:collection/:path/
-  papernotes:
+  notes:
     output: true
     permalink: /:collection/:path/  
 
@@ -212,10 +212,10 @@ defaults:
       comments: true
       share: true
       related: true
-  # _papernotes
+  # _notes
   - scope:
       path: ""
-      type: papernotes
+      type: notes
     values:
       layout: single
       author_profile: true

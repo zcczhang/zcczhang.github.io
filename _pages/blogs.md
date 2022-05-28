@@ -11,8 +11,8 @@ redirect_from:
 
 <p>May need to refresh for the math <img src="../images/latex.png" alt="LaTeX" height="46" width="46"/> mode.</p>
 
-> Paper reading notes, and open-source contribution. 
-  <ul>{% for post in site.papernotes %}
+> Personal (typed) notes, and open-source contribution. 
+  <ul>{% for post in site.notes %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
