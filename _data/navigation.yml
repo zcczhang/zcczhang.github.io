@@ -18,6 +18,6 @@ main:
   - title: "Posts"
     url: /posts/
 
-  - title: "Personal"
-    url: /
+  # - title: "Personal"
+  #   url: /
     
