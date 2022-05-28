@@ -6,11 +6,11 @@ papers:
       - me: true
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
-    # conference:
-    #   name: Under submission to NeurIPS
-    #   year: 2022
-    links:
-      - name: in progress
+    conference:
+      name: In Progress
+      year: 2022
+    # links:
+    #   - name: in progress
     description: Current Research about Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
     highlighted: true
 
