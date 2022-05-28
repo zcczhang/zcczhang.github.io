@@ -67,7 +67,7 @@ It is crazy to configure Linux to a latest released laptop, especially for a new
 <li><a href="#ssh">SSH</a></li>
 <li><a href="#personal-configuration">Personal Configuration</a></li>
 </ul>
-<h3 id="machine-info">Machine Info</h3>
+<h2 id="machine-info">Machine Info</h2>
 <ul>
 <li>System
 <ul>
@@ -103,7 +103,7 @@ It is crazy to configure Linux to a latest released laptop, especially for a new
 </ul>
 </li>
 </ul>
-<h3 id="basic-installation-and-configuration">Basic Installation and Configuration</h3>
+<h2 id="basic-installation-and-configuration">Basic Installation and Configuration</h2>
 <ul>
 <li>Download Manjaro iso image: <a href="https://manjaro.org/download/">here</a>
 <ul>
@@ -260,7 +260,7 @@ sudo mhwd-kernel -i linux517  <span class="hljs-comment"># install 5.17</span>
 </ul>
 </li>
 </ul>
-<h3 id="python-environment--mujoco">Python Environment (&amp; MuJoCo)</h3>
+<h2 id="python-environment--mujoco">Python Environment (&amp; MuJoCo)</h2>
 <ul>
 <li>Miniconda
 <ul>
@@ -353,7 +353,7 @@ rm ~/miniconda3/envs/&lt;env_name&gt;/lib/libstdc++*
 </ul>
 </li>
 </ul>
-<h3 id="ssh">SSH</h3>
+<h2 id="ssh">SSH</h2>
 <ul>
 <li>
 <pre><code class="language-bash"><div>sudo pacman -S openssh
@@ -403,7 +403,7 @@ chmod 600 ~/.ssh/config
 </ul>
 </li>
 </ul>
-<h3 id="personal-configuration">Personal Configuration</h3>
+<h2 id="personal-configuration">Personal Configuration</h2>
 <ul>
 <li><em>AUR</em>, <em>Snap</em> for extension</li>
 <li>Hot key command for terminal
