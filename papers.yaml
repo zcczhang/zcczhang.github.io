@@ -29,7 +29,6 @@ papers:
     links:
       - name: arXiv
         href: https://arxiv.org/abs/2110.12900
-      - name: code (comming soon)
     description: Automatically recognizing and classifying HER2 status under pathological images with interpretable procedures strictly followed the HER2 scoring guidelines. Firstly include the consideration of the positive control along with the flexible interactive adjustion in demand substantially assists pathologists to finish the HER2 diagnosis faster and improves the robustness and accuracy.
     highlighted: true
     nogif: true
