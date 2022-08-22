@@ -240,6 +240,11 @@ sudo mhwd-kernel -i linux517  <span class="hljs-comment"># install 5.17</span>
 <li>Username &amp; password</li>
 </ul>
 </li>
+<li>WiFi needs login/register with redirected portal
+<ul>
+<li>try <a href=http://neverssl.com>http://neverssl.com</a> for a page that does not use TLS helps for portal login page. </li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Troubleshooting
