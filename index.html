@@ -147,9 +147,9 @@
           <p align="center" style="font-family:'Courier New">
             zzhang4 at macalester dot edu
           </p>
-          <p>Hi! I am  Charles! I am a third-year student majoring mathematics and computer science at <a href="https://www.macalester.edu/">Macalester College</a> advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>. I am also a research intern at <a href="https://allenai.org/">Allen Institute for AI (AI2)</a> advised by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.</p>
+          <p>Hi! I am  Charles! I am a senior student majoring mathematics and computer science at <a href="https://www.macalester.edu/">Macalester College</a> advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>. I am an incoming Predoctoral Young Investigators (PYI) on the <a href="http://prior.allenai.org/">PRIOR</a> team at <a href="https://allenai.org/">AI2</a> mentored by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.</p>
           
-          <p>My primary research interest lies in designing, developing, optimizing, and deploying elegant learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi) agents that can perform in dynamic environments, solving real-world puzzles for social good. I am especially interested in the safety, generalizability, and sample efficiency for vision-based reinforcement learning in the real world.</p>
+          <p>My primary research interest lies in designing, developing, optimizing, and deploying elegant learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi) agents that can perform in dynamic environments, solving real-world puzzles for social good. I am both interested in Generalist and Specialist agents.</p>
         
           </p>
           <p align=center>
@@ -202,14 +202,15 @@
         <heading>News</heading>
       </div>
 
-      <div style="width:100%; text-align=left;margin-top:10; ">  
+      <div style="width:100%; text-align=left;margin-top:10; ">
+        <li> <b> 10/2022:</b> <a href="https://vimalabs.github.io/"> VIMA</a> has been released.</li>
         <li> <b> 05/2022: </b> Join the research with people from <a href="https://svl.stanford.edu/">SVL</a> and <a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>, supervised by <a href="https://scholar.google.com/citations?hl=en&user=sljtWIUAAAAJ">Jim Fan</a> (<a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>) and <a href="https://www.cs.utexas.edu/~yukez/">Yuke Zhu</a> (<a href="https://rpl.cs.utexas.edu/">UT-Austin</a> and <a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>).</li>
         <li> <b> 03/2022:</b> One paper was accepted by 18th <a href="https://www.jointmathematicsmeetings.org//jmm">ECDP</a>, 2022</li>
         <li> <b> 11/2021:</b> One math paper was accepted by AMS contributed paper session and AMS-PME poster session<a href="https://www.jointmathematicsmeetings.org//jmm">, JMM 2022</a></li>
         <li> <b> 08/2021:</b> <a href="https://allenact.org/projects/gym_baselines/">Baseline models</a> and <a href="https://allenact.org/tutorials/gym-mujoco-tutorial/">Tutorials</a> in the learning framework <a href="https://allenact.org/">AllenAct</a> for <a href="https://gym.openai.com/envs/#mujoco">Gym MuJoCo</a> are released! </li>
-        <li> <b> 08/2021:</b> Join <a href="https://prior.allenai.org/">PRIOR</a> team within <a href="https://allenai.org/">AI2</a> mentored by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.</li>
-        <li> <b> 03/2021:</b> The automated HER2 Scoring system has applied for the national invention patent (China) and planned to deplopy in <a href="https://www.301hospital.com.cn/index.html">People's Liberation Army General Hospital</a></li>
-        <li> <b> 01/2021:</b> Join <a href="http://thorough.ai//">Thorough Images</a> mentored by <a href="https://scholar.google.com/citations?user=X3u_rXYAAAAJ&hl=en">Shuhao Wang</a> as a research intern</li>
+        <li> <b> 08/2021:</b> Start collaboration mentored by <a href="https://lucaweihs.github.io/">Luca Weihs</a> on the <a href="https://prior.allenai.org/">PRIOR</a> team within <a href="https://allenai.org/">AI2</a>.</li>
+        <li> <b> 03/2021:</b> The automated HER2 Scoring system has applied for the national invention patent (China) and planned to deplopy in <a href="https://www.301hospital.com.cn/index.html">People's Liberation Army General Hospital</a>.</li>
+<!--        <li> <b> 01/2021:</b> Join <a href="http://thorough.ai//">Thorough Images</a> mentored by <a href="https://scholar.google.com/citations?user=X3u_rXYAAAAJ&hl=en">Shuhao Wang</a> as a research intern</li>-->
       </ul>
     </div>
     <a name="re"></a>
@@ -217,6 +218,8 @@
       <heading>Research</heading>
       <a style="font-size: 17px; color: black;">(</a><a style="font-size:17px" id='sel_pub_button' href="javascript:pubs_off()">Highlighted</a> <a style="font-size: 17px; color: black;">/</a>
       <a style="font-size:17px" id='all_pub_button' href="javascript:pubs_on()">All</a><a style="font-size: 17px; color: black;">)</a>
+      <br>
+      (* indicates equal contribution, <sup><span>&#8224;</span></sup>  indicates equal advising)
     </div>
 
     <div id="mustache_target">Loading...</div>
@@ -235,15 +238,15 @@
             <!-- {{/unless}} -->
         </div>
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
-          <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a  href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a></br>
+          <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a></br>
           {{#authors}}
           {{#if me}}
             <strong><u>Zichen Zhang</u></strong>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
           {{else}}
             {{#if href}}
-              <a class="black_link" href={{href}}>{{name}}</a>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
+              <a class="black_link" href={{href}}>{{name}}</a>{{#if star}}*{{/if}}{{#if star2}}<sup>&#8224;</sup> {{/if}}{{#unless @last}}, {{/unless}}
             {{else}}
-              <a class="black_link">{{name}}</a>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
+            <a class="black_link">{{name}}</a>{{#if star}}*{{/if}}{{#if star2}}<sup>&#8224;</sup>{{/if}}{{#unless @last}}, {{/unless}}
             {{/if}}
           {{/if}}
           {{/authors}}</br>
@@ -254,8 +257,8 @@
           {{else}}
             <a class="black_link">{{name}}</a>{{#unless @last}} | {{/unless}}
           {{/if}}
-          {{/links}}</p>
-
+          {{/links}}
+          </p>
           <p style="margin-bottom:0em;">{{description}}</p>
         </div>
       </div>

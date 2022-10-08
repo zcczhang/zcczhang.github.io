@@ -1,18 +1,60 @@
 papers:
-  - name: rf
+  - name: vima
     title:
-      name: Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
+      name: "VIMA: General Robot Manipulation with Multimodal Prompts"
+      link: https://vimalabs.github.io/
     authors:
+      - name: Yunfan Jiang
+        href: https://yunfanj.com/
+      - name: Agrim Gupta
+        href: http://web.stanford.edu/~agrim/
+        star: true
       - me: true
-      - name: Luca Weihs
-        href: https://lucaweihs.github.io/
+        star: true
+      - name: Guanzhi Wang
+        href: https://guanzhi.me/
+        star: true
+      - name: Yongqiang Dou
+        href: https://github.com/DeeDive
+      - name: Yanjun Chen
+        href: https://www.linkedin.com/in/yanjun-anthony-chen
+      - name: Li Fei-Fei
+        href: https://profiles.stanford.edu/fei-fei-li
+      - name: Anima Anandkumar
+        href: http://tensorlab.cms.caltech.edu/users/anima/
+      - name: Yuke Zhu
+        href: https://www.cs.utexas.edu/~yukez/
+        star2: true
+      - name: Linxi "Jim" Fan
+        href: https://jimfan.me/
+        star2: true
     conference:
-      name: In Progress
+      name: under review
       year: 2022
-    # links:
-    #   - name: in progress
-    description: Current Research about Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2210.03094
+      - name: website
+        href: https://minedojo.org/
+      - name: code
+        href: https://github.com/vimalabs
+    description: We proposed VIMA, a foundation model that uses **multimodal prompts** to cast diverse robot manipulation tasks into one sequence modeling problem.
     highlighted: true
+
+#  - name: rf
+#    title:
+#      name: Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
+#    authors:
+#      - me: true
+#      - name: Luca Weihs
+#        href: https://lucaweihs.github.io/
+#    conference:
+#      name: In Progress
+#      year: 2022
+#    # links:
+#    #   - name: in progress
+#    description: Current Research about Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
+#    highlighted: true
 
   - name: her2
     title:
@@ -47,7 +89,7 @@ papers:
       name: Joint Mathematics Meeting (JMM)
       year: 2022 </br> <i>JMM AMS</i> contributed paper session, <i>JMM AMS-PME</i> poster session, 2022
     links:
-      - name: paper (under submission)
+      - name: paper
       - name: poster
         href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
     description: After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
