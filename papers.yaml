@@ -92,7 +92,7 @@ papers:
       - name: paper
       - name: poster
         href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
-    description: After answering the Traveling Salesman Problem(TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
+    description: After answering the Traveling Salesman Problem (TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
     highlighted: true
     nogif: true
 
