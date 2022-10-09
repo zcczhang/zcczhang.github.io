@@ -51,15 +51,15 @@ name {
 }
 .one
 {
-  /* width: 160px; */
-  /* height: 160px; */
+  width: 270px;
+  height: 160px;
   position: relative;
-  /* display: table-cell;
-  vertical-align: middle; */
+  /* display: table-cell; */
+  vertical-align: middle;
 }
 .two
 {
-  width: 160px;
+  width: 270px;
   height: 160px;
   position: absolute;
   transition: opacity .2s ease-in-out;
