@@ -38,7 +38,7 @@ papers:
         href: https://vimalabs.github.io/
       - name: code
         href: https://github.com/vimalabs
-    description: We trained a transformer called VIMA that ingests *multimodal* prompt and outputs controls for a robot arm. A single agent is able to solve visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc. Strong scaling with model capacity and data!
+    description: We trained a transformer called VIMA that ingests multimodal prompt and outputs controls for a robot arm. A single agent is able to solve visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc. Strong scaling with model capacity and data!
     highlighted: true
 
 #  - name: rf
