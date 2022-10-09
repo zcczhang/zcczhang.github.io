@@ -54,7 +54,7 @@ name {
   width: 270px;
   height: 160px;
   position: relative;
-  /* display: table-cell; */
+  display: table-cell;
   vertical-align: middle;
 }
 .two
