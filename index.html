@@ -10,44 +10,6 @@
   <title>Zichen "Charles" Zhang. Personal Webpage</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 
-  <!-- Not sure what this is for, maybe the gif toggles? -->
-  <script type="text/javascript">
-     function visibility_on(id) {
-          var e = document.getElementById(id+"_text");
-          if(e.style.display == 'none')
-              e.style.display = 'block';
-          var e = document.getElementById(id+"_img");
-          if(e.style.display == 'none')
-              e.style.display = 'block';
-     }
-     function visibility_off(id) {
-          var e = document.getElementById(id+"_text");
-          if(e.style.display == 'block')
-              e.style.display = 'none';
-          var e = document.getElementById(id+"_img");
-          if(e.style.display == 'block')
-              e.style.display = 'none';
-     }
-     function toggle_visibility(id) {
-         var e = document.getElementById(id+"_text");
-         if(e.style.display == 'inline')
-            e.style.display = 'block';
-         else
-            e.style.display = 'inline';
-         var e = document.getElementById(id+"_img");
-         if(e.style.display == 'inline')
-            e.style.display = 'block';
-         else
-            e.style.display = 'inline';
-     }
-     function toggle_vis(id) {
-         var e = document.getElementById(id);
-         if (e.style.display == 'none')
-             e.style.display = 'inline';
-         else
-             e.style.display = 'none';
-     }
-  </script>
   <!-- Gif toggles -->
   <script>
   function gif_start(image, gif) {
@@ -149,7 +111,7 @@
           </p>
           <p>Hi! I am  Charles! I am a senior student majoring mathematics and computer science at <a href="https://www.macalester.edu/">Macalester College</a> advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>. I am an incoming Predoctoral Young Investigators (PYI) on the <a href="http://prior.allenai.org/">PRIOR</a> team at <a href="https://allenai.org/">AI2</a> mentored by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.</p>
           
-          <p>My primary research interest lies in designing, developing, optimizing, and deploying elegant learning algorithms as well as their underlying mathematical principles to build autonomous (embodied, multi) agents that can perform in dynamic environments, solving real-world puzzles for social good. I am both interested in Generalist and Specialist agents.</p>
+          <p>My primary research interest lies in designing, developing, optimizing, and deploying elegant learning algorithms as well as their underlying mathematical principles to build autonomous agents that can perform in dynamic environments, solving real-world puzzles for social good. I am both interested in Generalist and Specialist agents.</p>
         
           </p>
           <p align=center>
@@ -160,8 +122,8 @@
             <a href="mailto:zzhang4@macalester.edu">Email</a> &nbsp/&nbsp
             <a id="myImg">IM</a> 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <span class="close">×</span>
+            <div id="popup-img" class="modal">
+              <span class="close">x</span>
               <img class="modal-content" id="img01">
               <div id="caption"></div>
             </div>
@@ -175,7 +137,7 @@
 
       <script>
         // Get the modal
-        var modal = document.getElementById('myModal');
+        var modal = document.getElementById('popup-img');
         
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img = document.getElementById('myImg');
@@ -195,7 +157,7 @@
         span.onclick = function() { 
             modal.style.display = "none";
         }
-        </script> 
+      </script> 
 
       <!-- News -->
       <div style="width:100%; text-align=left;">
@@ -203,7 +165,7 @@
       </div>
 
       <div style="width:100%; text-align=left;margin-top:10; ">
-        <li> <b> 10/2022:</b> <a href="https://vimalabs.github.io/"> VIMA</a> has been released.</li>
+        <li> <b> 10/2022:</b> Release <a href="https://vimalabs.github.io/"> VIMA</a>, a single agent can solve visual goal, one-shot video imitation, novel concept grounding, visual constraint, etc. </li>
         <li> <b> 05/2022: </b> Join the research with people from <a href="https://svl.stanford.edu/">SVL</a> and <a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>, supervised by <a href="https://scholar.google.com/citations?hl=en&user=sljtWIUAAAAJ">Jim Fan</a> (<a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>) and <a href="https://www.cs.utexas.edu/~yukez/">Yuke Zhu</a> (<a href="https://rpl.cs.utexas.edu/">UT-Austin</a> and <a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">Nvidia</a>).</li>
         <li> <b> 03/2022:</b> One paper was accepted by 18th <a href="https://www.jointmathematicsmeetings.org//jmm">ECDP</a>, 2022</li>
         <li> <b> 11/2021:</b> One math paper was accepted by AMS contributed paper session and AMS-PME poster session<a href="https://www.jointmathematicsmeetings.org//jmm">, JMM 2022</a></li>
@@ -234,11 +196,12 @@
             <img id='{{name}}_gif' src='images/{{name}}_before.png' class="paper_img">
           </div>
             <!-- {{#unless nogif}}
-            <p style="text-align: center;margin-top:0.4em;margin-bottom:0em;color:Gray;"><i> Hover/tap to play the gif</i></p> -->
-            <!-- {{/unless}} -->
+            <p style="text-align: center;margin-top:0.4em;margin-bottom:0em;color:Gray;"><i> Hover/tap to play the gif</i></p>
+            {{/unless}} -->
         </div>
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
-          <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a></br>
+          <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a>
+          <br>
           {{#authors}}
           {{#if me}}
             <strong><u>Zichen Zhang</u></strong>{{#if star}}*{{/if}}{{#unless @last}}, {{/unless}}
@@ -249,8 +212,10 @@
             <a class="black_link">{{name}}</a>{{#if star}}*{{/if}}{{#if star2}}<sup>&#8224;</sup>{{/if}}{{#unless @last}}, {{/unless}}
             {{/if}}
           {{/if}}
-          {{/authors}}</br>
-          <font color="Gray"><i>{{{conference.name}}}</i>, {{{conference.year}}}</font><br>
+          {{/authors}}
+          <br>
+          <font color="Gray"><i>{{{conference.name}}}</i>, {{{conference.year}}}</font>
+          <br>
           {{#links}}
           {{#if href}}
             <a href={{href}}>{{name}}</a>{{#unless @last}} | {{/unless}}
@@ -302,7 +267,7 @@
           <tr>
           <p align="center">
               <a href="#top"><strong>Home</strong></a>&nbsp&nbsp/&nbsp 
-              <a href=/projects><strong>Projects</strong></a>&nbsp&nbsp/&nbsp 
+              <!-- <a href=/projects><strong>Projects</strong></a>&nbsp&nbsp/&nbsp  -->
               <a href=/posts><strong>Posts</strong></a>
               <!-- <a><strong>Personal (Comming Soon)</strong></a> -->
           </p>

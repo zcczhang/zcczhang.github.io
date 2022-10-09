@@ -35,10 +35,10 @@ papers:
       - name: arXiv
         href: https://arxiv.org/abs/2210.03094
       - name: website
-        href: https://minedojo.org/
+        href: https://vimalabs.github.io/
       - name: code
         href: https://github.com/vimalabs
-    description: We proposed VIMA, a foundation model that uses **multimodal prompts** to cast diverse robot manipulation tasks into one sequence modeling problem.
+    description: We trained a transformer called VIMA that ingests *multimodal* prompt and outputs controls for a robot arm. A single agent is able to solve visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc. Strong scaling with model capacity and data!
     highlighted: true
 
 #  - name: rf
@@ -112,8 +112,8 @@ papers:
     links:
       - name: technical report
         href: https://zcczhang.github.io/files/Research_Report.pdf
-      - name: poster
-        href: files/uavposter.png
+      # - name: poster
+      #   href: files/uavposter.png
       - name: code
         href: https://github.com/zcczhang/UAV_Coverage
     description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
@@ -141,7 +141,6 @@ papers:
     title:
       link: files/geometry_paper.pdf
       name: Generalized Trajectory Problems of Fixed-Point and Fixed-Line with Motion Scaling
-
     authors:
       - me: true
     conference:
