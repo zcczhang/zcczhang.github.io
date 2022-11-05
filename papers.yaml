@@ -29,7 +29,7 @@ papers:
         href: https://jimfan.me/
         star2: true
     conference:
-      name: under review
+      name: NeurIPS workshop on Foundation Models for Decision Making (<oral>oral presentation</oral>)
       year: 2022
     links:
       - name: arXiv
