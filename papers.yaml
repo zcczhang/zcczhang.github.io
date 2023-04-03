@@ -1,4 +1,27 @@
 papers:
+  - name: rmrl
+    title:
+      name: "When Learning Is Out of Reach, Reset: Generalization in Autonomous Visuomotor Reinforcement Learning"
+    authors:
+      - me: true
+      - name: Luca Weihs
+        href: https://lucaweihs.github.io/
+    conference:
+      name: in submission
+      year: 2023
+    links:
+      - name: arXiv
+        href: https://arxiv.org/pdf/2303.17600.pdf
+      - name: website
+        href: https://zcczhang.github.io/rmrl
+      - name: code
+        href: https://zcczhang.github.io/rmrl
+    description: "We propose general and effective unsupervised irreversible transition measurements and a \
+                  single-policy random-goal training framework, allowing agents to learn with much fewer resets \
+                  and better generalize in positional, cosmetic, and structural variations in both (mobile, \
+                  continuous) manipulation and navigation domains."
+    highlighted: true
+
   - name: vima
     title:
       name: "VIMA: General Robot Manipulation with Multimodal Prompts"
@@ -38,23 +61,8 @@ papers:
         href: https://vimalabs.github.io/
       - name: code
         href: https://github.com/vimalabs
-    description: We trained a transformer called VIMA that ingests multimodal prompt and outputs controls for a robot arm. A single agent is able to solve visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc. Strong scaling with model capacity and data!
+    description: A transformer that ingests multimodal prompt and controls a robot arm for a wide range of manipulation tasks including visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc.
     highlighted: true
-
-#  - name: rf
-#    title:
-#      name: Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
-#    authors:
-#      - me: true
-#      - name: Luca Weihs
-#        href: https://lucaweihs.github.io/
-#    conference:
-#      name: In Progress
-#      year: 2022
-#    # links:
-#    #   - name: in progress
-#    description: Current Research about Reset Free Reinforcement Learning with Sink States via Adversarial Gameplay
-#    highlighted: true
 
   - name: her2
     title:
@@ -119,7 +127,7 @@ papers:
       - name: code
         href: https://github.com/zcczhang/UAV_Coverage
     description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
-    highlighted: true
+    highlighted: false
     nogif: true
   
   - name: mems
