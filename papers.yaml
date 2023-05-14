@@ -52,7 +52,9 @@ papers:
         href: https://jimfan.me/
         star2: true
     conference:
-      name: under review, 2022 <br>NeurIPS workshop on Foundation Models for Decision Making (<oral>oral presentation</oral>)
+      name: 'ICML, 2023 <br>
+      covered by <a href="https://www.nvidia.com/gtc/">NVIDIA GTC Jensen Huang Keynote</a>, 2023 <br>
+      NeurIPS workshop on <a href="https://sites.google.com/view/fmdm-neurips/">Foundation Models for Decision Making</a> (<oral>oral presentation</oral>)'
       year: 2022
     links:
       - name: arXiv
@@ -60,8 +62,10 @@ papers:
       - name: website
         href: https://vimalabs.github.io/
       - name: code
-        href: https://github.com/vimalabs
-    description: A transformer that ingests multimodal prompt and controls a robot arm for a wide range of manipulation tasks including visual goal, one-shot imitation from video, novel concept grounding, visual constraint, etc.
+        href: https://github.com/vimalabs <br>
+    description: "A transformer agent that ingests multimodal prompt and controls a robot arm 
+      for a wide range of manipulation tasks including visual goal, one-shot imitation from video, 
+      novel concept grounding, visual constraint, etc."
     highlighted: true
 
   - name: her2
