@@ -7,7 +7,7 @@ papers:
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: in submission
+      name: "in submission, 2023 <br> <a href='https://embodied-ai.org/'>Embodied AI</a> workshop at CVPR"
       year: 2023
     links:
       - name: arXiv
@@ -52,7 +52,7 @@ papers:
         href: https://jimfan.me/
         star2: true
     conference:
-      name: 'ICML, 2023 <br>
+      name: 'International Conference on Machine Learning (ICML), 2023 <br>
       covered by <a href="https://www.nvidia.com/gtc/">NVIDIA GTC Jensen Huang Keynote</a>, 2023 <br>
       NeurIPS workshop on <a href="https://sites.google.com/view/fmdm-neurips/">Foundation Models for Decision Making</a> (<oral>oral presentation</oral>)'
       year: 2022
