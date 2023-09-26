@@ -1,4 +1,46 @@
 papers:
+  - name: uvd
+    title:
+      name: "Universal Visual Decomposer: Long-Horizon Manipulation Made Easy"
+    authors:
+      - me: true
+        star: true
+      - name: Yunshuang Li
+        href: https://li-yunshuang.github.io/
+        star: true
+      - name: Osbert Bastani
+        href: https://obastani.github.io/
+      - name: Abhishek Gupta
+        href: https://homes.cs.washington.edu/~abhgupta/
+      - name: Dinesh Jayaraman
+        href: https://www.seas.upenn.edu/~dineshj/
+      - name: Yecheng "Jason" Ma
+        href: https://www.seas.upenn.edu/~jasonyma/
+        star2: true
+      - name: Luca Weihs
+        href: https://lucaweihs.github.io/
+        star2: true
+    conference:
+      name: "in submission"
+      year: 2023
+    links:
+      - name: arXiv
+        href: https://zcczhang.github.io/UVD/
+      - name: website
+        href: https://zcczhang.github.io/UVD/
+      - name: code
+        href: https://zcczhang.github.io/UVD/
+      - name: video
+        href: https://zcczhang.github.io/UVD/assets/videos/ICRA24_3197_VI_i.mp4
+    description: "We present Universal Visual Decomposer, an *off-the-shelf* task decomposition method that effectively produces semantically meaning subgoals
+                  across both simulated and real-robot environments for long-horizon visual manipulation tasks, without any task-specific knowledge or training. 
+                  UVD discovered subgoals enable effective reward shaping for
+                  solving challenging multi-stage tasks using RL, and policies
+                  trained with IL exhibit significantly superior compositional
+                  generalization at test time."
+    highlighted: true
+
+
   - name: rmrl
     title:
       name: "When Learning Is Out of Reach, Reset: Generalization in Autonomous Visuomotor Reinforcement Learning"
