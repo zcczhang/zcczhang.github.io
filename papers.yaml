@@ -21,7 +21,8 @@ papers:
         href: https://lucaweihs.github.io/
         star2: true
     conference:
-      name: "in submission"
+      name: '<a href="https://leap-workshop.github.io/">Learning Effective Abstractions for Planning (LEAP)</a> at CoRL (<oral>oral presentation</oral>), 2023<br>
+      in submission'
       year: 2023
     links:
       - name: arXiv
@@ -47,7 +48,8 @@ papers:
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: "in submission, 2023 <br> <a href='https://embodied-ai.org/'>Embodied AI</a> workshop at CVPR"
+      name: "in submission, 2023 <br>
+      <a href='https://embodied-ai.org/'>Embodied AI</a> workshop at CVPR"
       year: 2023
     links:
       - name: arXiv
