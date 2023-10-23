@@ -1,4 +1,20 @@
 papers:
+  - name: uio2
+    title:
+      name: "Unified-IO 2: (Take a guess for the title!)"
+    authors:
+      - name: co-leading (co-first) author
+    conference:
+      name: in-progress
+      year: 2023
+    # links:
+    #   - name: 
+    #     href: 
+    description: Can a single model unify understanding & generation across vision, language, audio, and action? Imagine one that comprehends text, video, and audio; performs 2D/3D detection, referring expression, pose estimation, point tracking; generates or edits images and audio/music; predicts segmentation, depth, surface normal, optical flow; navigates and manipulates in embodied space with multimodal prompts; view synthesis in 3D... and so much more! Thrilled to soon unveil a large multimodal generation model trained from scratch, mastering 200+ tasks with emergent capabilities. We'll be open-sourcing EVERYTHING, model, training code, data, and all our tricks. Stay tuned! 🚀
+    highlighted: true
+    nogif: true
+
+
   - name: uvd
     title:
       name: "Universal Visual Decomposer: Long-Horizon Manipulation Made Easy"
