@@ -1,7 +1,7 @@
 papers:
   - name: uio2
     title:
-      name: "Unified-IO 2: (Take a guess for the title!)"
+      name: "Unified-IO 2: Multi-Modal Reentry for Vision, Language, Audio, and Action"
     authors:
       - name: co-leading (co-first) author
     conference:
@@ -45,6 +45,8 @@ papers:
         href: https://arxiv.org/abs/2310.08581
       - name: website
         href: https://zcczhang.github.io/UVD/
+      - name: poster
+        href: https://zcczhang.github.io/UVD/assets/pdf/UVD-poster.pdf
       - name: code
         href: https://github.com/zcczhang/UVD
     description: "We present Universal Visual Decomposer, an *off-the-shelf* task decomposition method that effectively produces semantically meaning subgoals
@@ -72,6 +74,8 @@ papers:
         href: https://arxiv.org/pdf/2303.17600.pdf
       - name: website
         href: https://zcczhang.github.io/rmrl
+      - name: poster
+        href: files/RMRL-posters.pdf
       - name: code
         href: https://zcczhang.github.io/rmrl
     description: "We propose general and effective unsupervised irreversible transition measurements and a \
@@ -119,6 +123,8 @@ papers:
         href: https://arxiv.org/abs/2210.03094
       - name: website
         href: https://vimalabs.github.io/
+      - name: poster
+        href: https://icml.cc/media/PosterPDFs/ICML%202023/24632.png?t=1687101393.8214157
       - name: code
         href: https://github.com/vimalabs <br>
     description: "A transformer agent that ingests multimodal prompt and controls a robot arm 
