@@ -30,6 +30,19 @@ oral {
   font-weight: bold;
   color: red;
 }
+
+bestpaper {
+  font-weight: bold;
+  background: linear-gradient(to right, red, orange, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+spotlight {
+  font-weight: bold;
+  color: darkgreen;
+}
+
 heading {
   font-size: 22px;
 }
