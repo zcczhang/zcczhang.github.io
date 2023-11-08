@@ -1,7 +1,7 @@
 papers:
   - name: uio2
     title:
-      name: "Unified-IO 2: Multi-Modal Reentry for Vision, Language, Audio, and Action"
+      name: "Unified-IO 2: Scaling Autoregressive Multimodal Model with Vision, Language, Audio, and Action"
     authors:
       - name: co-leading (co-first) author
     conference:
@@ -37,7 +37,8 @@ papers:
         href: https://lucaweihs.github.io/
         star2: true
     conference:
-      name: '<a href="https://leap-workshop.github.io/">Learning Effective Abstractions for Planning (LEAP)</a> worshop, CoRL (<oral>oral</oral>, <bestpaper>Best Paper Award</bestpaper>), 2023<br>
+      name: '<a href="https://leap-workshop.github.io/">Learning Effective Abstractions for Planning (LEAP)</a> worshop (<bestpaper>Best Paper Award</bestpaper>), CoRL 2023<br>
+      <a href="https://sites.google.com/view/fmdm-neurips23">Foundation Models for Decision Making (FMDM)</a> workshop  (<oral>oral presentation, 6 / 112</oral>), NeurIPS 2023<br>
       in submission'
       year: 2023
     links:
@@ -67,7 +68,7 @@ papers:
         href: https://lucaweihs.github.io/
     conference:
       name: "in submission, 2023 <br>
-      <a href='https://embodied-ai.org/'>Out-of-Distribution Generalization in Robotics</a> workshop, CoRL (<spotlight>Lightining Talk</spotlight>) 2023<br>
+      <a href='https://embodied-ai.org/'>Out-of-Distribution Generalization in Robotics</a> workshop (<spotlight>Lightining Talk</spotlight>), CoRL 2023<br>
       <a href='https://embodied-ai.org/'>Embodied AI</a> workshop, CVPR"
       year: 2023
     links:
@@ -117,7 +118,7 @@ papers:
     conference:
       name: 'International Conference on Machine Learning (ICML), 2023 <br>
       covered by <a href="https://www.nvidia.com/gtc/">NVIDIA GTC Jensen Huang Keynote</a>, 2023 <br>
-      NeurIPS workshop on <a href="https://sites.google.com/view/fmdm-neurips/">Foundation Models for Decision Making</a> (<oral>oral presentation</oral>)'
+      <a href="https://sites.google.com/view/fmdm-neurips22">Foundation Models for Decision Making (FMDM)</a> workshop (<oral>oral presentation</oral>), NeurIPS'
       year: 2022
     links:
       - name: arXiv
