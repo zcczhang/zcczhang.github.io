@@ -1,6 +1,7 @@
 papers:
   - name: uio2
     title:
+      link: 
       name: "Unified-IO 2: Scaling Autoregressive Multimodal Model with Vision, Language, Audio, and Action"
     authors:
       - name: co-leading (co-first) author
@@ -17,6 +18,7 @@ papers:
 
   - name: uvd
     title:
+      link: https://zcczhang.github.io/UVD/
       name: "Universal Visual Decomposer: Long-Horizon Manipulation Made Easy"
     authors:
       - me: true
@@ -61,6 +63,7 @@ papers:
 
   - name: rmrl
     title:
+      link: https://zcczhang.github.io/rmrl
       name: "When Learning Is Out of Reach, Reset: Generalization in Autonomous Visuomotor Reinforcement Learning"
     authors:
       - me: true
@@ -156,7 +159,6 @@ papers:
 
   - name: gmt
     title:
-      link: https://charleszzzzz.github.io/
       name: Characterization of Rectifiable Measures Carried by Lipschitz Curves
     authors:
       - me: true
@@ -169,6 +171,7 @@ papers:
       year: 2022 </br> <i>JMM AMS</i> contributed paper session, <i>JMM AMS-PME</i> poster session, 2022
     links:
       - name: paper
+        href: files/Geometric_Measure_Theory_Research.pdf
       - name: poster
         href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
     description: After answering the Traveling Salesman Problem (TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
@@ -200,35 +203,35 @@ papers:
     highlighted: false
     nogif: true
   
-  - name: mems
-    title:
-      link: https://www.scirp.org/pdf/MME_2018011616360611.pdf
-      name: Design and Optimization of Comb Drive Accelerator for High Frequency Oscillation
-    authors:
-      - me: true
-      - name: Cai (Albert) Chen
-        href: https://aml.seas.ucla.edu/people/chen_cai.html
-    conference:
-      name: Modern Mechanical Engineering Vol.8 No.1
-      year: Jan 2018
-    links:
-      - name: paper
-        href: https://www.scirp.org/pdf/MME_2018011616360611.pdf
-      - name: code
-        href: https://github.com/zcczhang/Design-and-Optimization-of-Comb-Drive-Accelerator-for-High-Frequency-Oscillation
-    description: In this work, a finite element code was used for the design, optimization and visualization of a comb drive accelerator. In the simulation results, the post-optimization design has high performance in high frequency oscillation operating environment. The optimization is based on the ideal eigenfre-quency and Nelder-Mead method. The 3-D working conditions are realized by testing and comparing the time and frequency domain of pre-optimized and optimized design whose frequency ranges from 2000 Hz to 5000 Hz. Finally, the electric potential and capacitance in comb drive are visualized, which shows the better electric signals and displacements.
+  # - name: mems
+  #   title:
+  #     link: https://www.scirp.org/pdf/MME_2018011616360611.pdf
+  #     name: Design and Optimization of Comb Drive Accelerator for High Frequency Oscillation
+  #   authors:
+  #     - me: true
+  #     - name: Cai (Albert) Chen
+  #       href: https://aml.seas.ucla.edu/people/chen_cai.html
+  #   conference:
+  #     name: Modern Mechanical Engineering Vol.8 No.1
+  #     year: Jan 2018
+  #   links:
+  #     - name: paper
+  #       href: https://www.scirp.org/pdf/MME_2018011616360611.pdf
+  #     - name: code
+  #       href: https://github.com/zcczhang/Design-and-Optimization-of-Comb-Drive-Accelerator-for-High-Frequency-Oscillation
+  #   description: In this work, a finite element code was used for the design, optimization and visualization of a comb drive accelerator. In the simulation results, the post-optimization design has high performance in high frequency oscillation operating environment. The optimization is based on the ideal eigenfre-quency and Nelder-Mead method. The 3-D working conditions are realized by testing and comparing the time and frequency domain of pre-optimized and optimized design whose frequency ranges from 2000 Hz to 5000 Hz. Finally, the electric potential and capacitance in comb drive are visualized, which shows the better electric signals and displacements.
 
-  - name: geo
-    title:
-      link: files/geometry_paper.pdf
-      name: Generalized Trajectory Problems of Fixed-Point and Fixed-Line with Motion Scaling
-    authors:
-      - me: true
-    conference:
-      name: Mathematical Study and Research Vol 19
-      year: Jan 2017
-    links:
-      - name: paper (in Chinese)
-        href: files/geometry_paper.pdf
-    description: (Euclidean geometry) was as dazzling as first love. — Bertrand Russell. This Euclidean geometry paper (in Chinese) is for mathematical Olympics competitions published in Chinese periodical Mathematical Study and Research, generalized series of problems of locus by an elegant method and visualized by Geometer Sketchpad.
-    nogif: true
+  # - name: geo
+  #   title:
+  #     link: files/geometry_paper.pdf
+  #     name: Generalized Trajectory Problems of Fixed-Point and Fixed-Line with Motion Scaling
+  #   authors:
+  #     - me: true
+  #   conference:
+  #     name: Mathematical Study and Research Vol 19
+  #     year: Jan 2017
+  #   links:
+  #     - name: paper (in Chinese)
+  #       href: files/geometry_paper.pdf
+  #   description: (Euclidean geometry) was as dazzling as first love. — Bertrand Russell. This Euclidean geometry paper (in Chinese) is for mathematical Olympics competitions published in Chinese periodical Mathematical Study and Research, generalized series of problems of locus by an elegant method and visualized by Geometer Sketchpad.
+  #   nogif: true
