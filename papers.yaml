@@ -153,7 +153,7 @@ papers:
       - name: arXiv
         href: https://arxiv.org/abs/2110.12900
     description: Automatically recognizing and classifying HER2 status under pathological images with interpretable procedures strictly followed the HER2 scoring guidelines. Firstly include the consideration of the positive control along with the flexible interactive adjustion in demand. # substantially assists pathologists to finish the HER2 diagnosis faster and improves the robustness and accuracy.
-    highlighted: true
+    highlighted: false
     nogif: true
     img2: true
 
@@ -175,7 +175,7 @@ papers:
       - name: poster
         href: files/Poster_Characterization_of_Rectifiable_Measures_that_are_Carried_by_Lipschitz_Graphs.pdf
     description: After answering the Traveling Salesman Problem (TSP) in mathematics, develop and prove theorems and lemmas to extend the characterization of measures that are carried by rectifiable curves in the dyadic cube system.
-    highlighted: true
+    highlighted: false
     nogif: true
     img2: true
 
