@@ -2,16 +2,45 @@ papers:
   - name: uio2
     title:
       link: 
-      name: "Unified-IO 2: Scaling Autoregressive Multimodal Model with Vision, Language, Audio, and Action"
+      name: "Unified-IO 2: Scaling Autoregressive Multimodal Modelswith Vision, Language, Audio, and Action"
     authors:
-      - name: co-leading (co-first) author
+      - name: Jiasen Lu
+        href:
+        star: true
+      - name: Christopher Clark
+        href:
+        star: true
+      - name: Sangho Lee
+        href:
+        star: true
+      - name: Zichen Zhang
+        star: true
+        me: true
+      - name: Savya Khosla
+        href:
+      - name: Ryan Marten
+        href:
+      - name: Derek Hoiem
+        href:
+      - name: Aniruddha Kembhavi
+        href: 
     conference:
-      name: in-progress
+      name: under review
       year: 2023
-    # links:
-    #   - name: 
-    #     href: 
-    description: Can a single model unify understanding & generation across vision, language, audio, and action? Imagine one that comprehends text, video, and audio; performs 2D/3D detection, referring expression, pose estimation, point tracking; generates or edits images and audio/music; predicts segmentation, depth, surface normal, optical flow; navigates and manipulates in embodied space with multimodal prompts; view synthesis in 3D... and so much more! Thrilled to soon unveil a large multimodal generation model trained from scratch, mastering 200+ tasks with emergent capabilities. We'll be open-sourcing EVERYTHING, model, training code, data, and all our tricks. Stay tuned! 🚀
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2312.17172
+      - name: website
+        href: https://unified-io-2.allenai.org/
+      - name: code
+        href: https://github.com/allenai/unified-io-2
+      - name: model
+        href: https://github.com/allenai/unified-io-2
+      - name: data
+        href: https://github.com/allenai/unified-io-2
+      - name: demo
+        href: https://github.com/allenai/unified-io-2/blob/main/demo.ipynb
+    description: We present Unified-IO 2, the first autoregressive multimodal model that is capable of understanding and generating images, text, audio, and action. A single model trained from scratch that comprehends text, video, and audio; performs 2D/3D detection, referring expression, pose estimation, point tracking; generates or edits images and audio/music; predicts segmentation, depth, surface normal, optical flow; navigates and manipulates in embodied space with multimodal prompts; view synthesis in 3D... and so much more!
     highlighted: true
     nogif: true
 
