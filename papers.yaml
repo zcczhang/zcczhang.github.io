@@ -5,25 +5,25 @@ papers:
       name: "Unified-IO 2: Scaling Autoregressive Multimodal Modelswith Vision, Language, Audio, and Action"
     authors:
       - name: Jiasen Lu
-        href:
+        href: https://scholar.google.com/citations?user=zP9K32EAAAAJ&hl=en
         star: true
       - name: Christopher Clark
-        href:
+        href: https://chrisc36.github.io/
         star: true
       - name: Sangho Lee
-        href:
+        href: https://sangho-vision.github.io/
         star: true
       - name: Zichen Zhang
         star: true
         me: true
       - name: Savya Khosla
-        href:
+        href: https://savya08.github.io/
       - name: Ryan Marten
-        href:
+        href: https://www.ryanmarten.com/
       - name: Derek Hoiem
-        href:
+        href: https://dhoiem.cs.illinois.edu/
       - name: Aniruddha Kembhavi
-        href: 
+        href: https://anikem.github.io/
     conference:
       name: under review
       year: 2023
