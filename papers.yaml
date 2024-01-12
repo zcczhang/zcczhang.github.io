@@ -42,7 +42,6 @@ papers:
         href: https://github.com/allenai/unified-io-2/blob/main/demo.ipynb
     description: We present Unified-IO 2, the first autoregressive multimodal model that is capable of understanding and generating images, text, audio, and action. A single model trained from scratch that comprehends text, video, and audio; performs 2D/3D detection, referring expression, pose estimation, point tracking; generates or edits images and audio/music; predicts segmentation, depth, surface normal, optical flow; navigates and manipulates in embodied space with multimodal prompts; view synthesis in 3D... and so much more!
     highlighted: true
-    nogif: true
 
 
   - name: uvd
