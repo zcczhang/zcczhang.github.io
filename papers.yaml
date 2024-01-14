@@ -2,7 +2,7 @@ papers:
   - name: uio2
     title:
       link: https://unified-io-2.allenai.org/
-      name: "Unified-IO 2: Scaling Autoregressive Multimodal Modelswith Vision, Language, Audio, and Action"
+      name: "Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action"
     authors:
       - name: Jiasen Lu
         href: https://scholar.google.com/citations?user=zP9K32EAAAAJ&hl=en
