@@ -25,7 +25,7 @@ papers:
       - name: Aniruddha Kembhavi
         href: https://anikem.github.io/
     conference:
-      name: <mainconf> Computer Vision and Pattern Recognition Conference (CVPR), <oral>Highlight (2.8%)</oral></mainconf>
+      name: <mainconf><oral>Highlight (2.8%)</oral>, Computer Vision and Pattern Recognition Conference (CVPR) 2024</mainconf> <br>covered by <a class='wsLink' href="https://rsipvision.com/CVPR2024-Friday/8/">CVPR Daily</a>
       year: 2024
     links:
       - name: arXiv
@@ -35,11 +35,11 @@ papers:
       - name: code
         href: https://github.com/allenai/unified-io-2
       - name: model
-        href: https://github.com/allenai/unified-io-2
-      - name: data
-        href: https://github.com/allenai/unified-io-2
-      - name: demo
-        href: https://github.com/allenai/unified-io-2/blob/main/demo.ipynb
+        href: https://github.com/allenai/unified-io-2?tab=readme-ov-file#checkpoints
+      # - name: data
+      #   href: https://github.com/allenai/unified-io-2
+      # - name: demo
+      #   href: https://github.com/allenai/unified-io-2/blob/main/demo.ipynb
     description: We present Unified-IO 2, the first autoregressive multimodal model that is capable of understanding and generating images, text, audio, and action. A single model trained from scratch that comprehends text, video, and audio; performs 2D/3D detection, referring expression, pose estimation, point tracking; generates or edits images and audio/music; predicts segmentation, depth, surface normal, optical flow; navigates and manipulates in embodied space with multimodal prompts; view synthesis in 3D... and so much more!
     highlighted: true
 
@@ -50,10 +50,8 @@ papers:
       name: "Universal Visual Decomposer: Long-Horizon Manipulation Made Easy"
     authors:
       - me: true
-        star: true
       - name: Yunshuang Li
         href: https://li-yunshuang.github.io/
-        star: true
       - name: Osbert Bastani
         href: https://obastani.github.io/
       - name: Abhishek Gupta
@@ -67,8 +65,9 @@ papers:
         href: https://lucaweihs.github.io/
         star2: true
     conference:
-      name: '<oral>Best Paper Award in Robot Vision Finalist</oral>, <mainconf>IEEE International Conference on Robotics and Automation (ICRA) 2024</mainconf><br><a href="https://leap-workshop.github.io/">Learning Effective Abstractions for Planning (LEAP)</a> workshop (<bestpaper>Best Paper Award</bestpaper>), CoRL 2023<br>
-      <a href="https://sites.google.com/view/fmdm-neurips23">Foundation Models for Decision Making (FMDM)</a> workshop  (<oralws>oral presentation, 6 / 112</oralws>), NeurIPS'
+      name: '<oral>Best Paper Award in Robot Vision Finalist</oral>, <mainconf>ICRA 2024</mainconf><br>
+      CoRL <a class="wsLink" href="https://leap-workshop.github.io/">Learning Effective Abstractions for Planning</a> workshop (<oralws>Best Paper Award</oralws>), 2023<br>
+      NeurIPS <a class="wsLink" href="https://sites.google.com/view/fmdm-neurips23">Foundation Models for Decision Making</a> workshop  (<oralws>oral presentation</oralws>), '
       year: 2023
     links:
       - name: arXiv
@@ -97,8 +96,8 @@ papers:
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: "      <a href='https://embodied-ai.org/'>Out-of-Distribution Generalization in Robotics</a> workshop (<spotlightws>Lightning Talk</spotlightws>), CoRL 2023<br>
-      <a href='https://embodied-ai.org/'>Embodied AI</a> workshop, CVPR<br>Preprint"
+      name: "CoRL <a class='wsLink' href='https://embodied-ai.org/'>Out-of-Distribution Generalization in Robotics</a> workshop (<spotlightws>Lightning Talk</spotlightws>), 2023<br>
+      CVPR <a class='wsLink' href='https://embodied-ai.org/' >Embodied AI</a> workshop, "
       year: 2023
     links:
       - name: arXiv
@@ -145,9 +144,9 @@ papers:
         href: https://jimfan.me/
         star2: true
     conference:
-      name: '<mainconf>International Conference on Machine Learning (ICML), 2023, </mainconf><br>
-      covered by <a href="https://www.nvidia.com/gtc/">NVIDIA GTC Jensen Huang Keynote</a>, 2023 <br>
-      <a href="https://sites.google.com/view/fmdm-neurips22">Foundation Models for Decision Making (FMDM)</a> workshop (<oralws>oral presentation</oralws>), NeurIPS'
+      name: '<mainconf>International Conference on Machine Learning (ICML), 2023 </mainconf><br>
+      covered by <a class="wsLink" href="https://www.nvidia.com/gtc/">NVIDIA GTC Jensen Huang Keynote</a>, 2023 <br>NeurIPS
+      <a class="wsLink" href="https://sites.google.com/view/fmdm-neurips22">Foundation Models for Decision Making (FMDM)</a> workshop (<oralws>oral presentation</oralws>), '
       year: 2022
     links:
       - name: arXiv
