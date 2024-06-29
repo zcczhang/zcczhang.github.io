@@ -1,4 +1,44 @@
 papers:
+  - name: poliformer
+    title:
+      link: https://poliformer.allen.ai/
+      name: "PoliFormer: On-Policy RL with Transformers Results in Masterful Navigators"
+    authors:
+      - name: Kuo-Hao Zeng
+        href: https://kuohaozeng.github.io/
+      - name: Zichen Zhang
+        me: true
+      - name: Kiana Ehsani
+        href: https://ehsanik.github.io/Home.html
+      - name: Rose Hendrix
+        href: https://rosehendrix.com/
+      - name: Jordi Salvador
+        href: https://jordisalvador-image.blogspot.com/
+      - name: Alvaro Herrasti
+        href: https://scholar.google.de/citations?user=89Knd5YAAAAJ
+      - name: Ross Girshick
+        href: https://www.rossgirshick.info/
+      - name: Aniruddha Kembhavi
+        href: https://anikem.github.io/
+      - name: Luca Weihs
+        href: https://lucaweihs.github.io/
+    conference:
+      name: Preprint
+      year: 2024
+    links:
+      - name: arXiv
+        href: 
+      - name: website
+        href: https://poliformer.allen.ai/
+      - name: code
+        href: 
+      - name: model
+        href: 
+    description: We present PoliFormer, an RGB-only indoor navigation agent trained end-to-end with reinforcement learning at scale. It is trained for hundreds of millions of interactions across diverse environments, leveraging parallelized, multi-machine rollouts for efficient training with high throughput. It is a masterful navigator, producing SoTA results across two distinct embodiments and four navigation benchmarks. PoliFormer can also be trivially extended to a variety of downstream applications such as object tracking, multi-object navigation, and open-vocabulary navigation in the real world with no finetuning.
+    highlighted: true
+    nogif: true
+
+
   - name: uio2
     title:
       link: https://unified-io-2.allenai.org/

@@ -351,3 +351,8 @@ b {
 .toggle input:checked~.labels::before {
   opacity: 1;
 }
+
+
+.small-caps { font-variant: small-caps; }
+.bold { font-weight: bold; }
+.underline { text-decoration: underline; }
