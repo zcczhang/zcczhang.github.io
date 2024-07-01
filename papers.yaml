@@ -27,7 +27,7 @@ papers:
       year: 2024
     links:
       - name: arXiv
-        href: 
+        href: https://arxiv.org/pdf/2406.20083
       - name: website
         href: https://poliformer.allen.ai/
       - name: code
