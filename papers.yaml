@@ -36,7 +36,6 @@ papers:
         href: 
     description: We present PoliFormer, an RGB-only indoor navigation agent trained end-to-end with reinforcement learning at scale. It is trained for hundreds of millions of interactions across diverse environments, leveraging parallelized, multi-machine rollouts for efficient training with high throughput. It is a masterful navigator, producing SoTA results across two distinct embodiments and four navigation benchmarks. PoliFormer can also be trivially extended to a variety of downstream applications such as object tracking, multi-object navigation, and open-vocabulary navigation in the real world with no finetuning.
     highlighted: true
-    nogif: true
 
 
   - name: uio2
@@ -72,6 +71,8 @@ papers:
         href: https://arxiv.org/abs/2312.17172
       - name: website
         href: https://unified-io-2.allenai.org/
+      - name: poster
+        href: files/Unified-IO-2-poster.pdf
       - name: code
         href: https://github.com/allenai/unified-io-2
       - name: model
