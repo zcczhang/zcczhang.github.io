@@ -148,7 +148,7 @@ papers:
       - name: poster
         href: files/RMRL-posters.pdf
       - name: code
-        href: https://zcczhang.github.io/rmrl
+        href: https://github.com/zcczhang/rmrl
     description: "We propose general and effective unsupervised irreversible transition measurements and a \
                   single-policy random-goal training framework, allowing agents to learn with much fewer resets \
                   and better generalize in positional, cosmetic, and structural variations in both (mobile, \
