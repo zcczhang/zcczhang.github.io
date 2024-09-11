@@ -23,7 +23,7 @@ papers:
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: Preprint
+      name: Conference on Robot Learning (CoRL)
       year: 2024
     links:
       - name: arXiv
