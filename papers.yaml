@@ -23,17 +23,17 @@ papers:
       - name: Luca Weihs
         href: https://lucaweihs.github.io/
     conference:
-      name: <mainconf><oral>Oral</oral>, Conference on Robot Learning (CoRL)</mainconf>
+      name: <mainconf><oral>Outstanding Paper Award</oral>, Conference on Robot Learning (CoRL)</mainconf>
       year: <mainconf>2024</mainconf>
     links:
       - name: arXiv
         href: https://arxiv.org/pdf/2406.20083
       - name: website
         href: https://poliformer.allen.ai/
+      - name: poster
+        href: files/poliformer-poster.pdf
       - name: code
-        href: 
-      - name: model
-        href: 
+        href: https://github.com/allenai/poliformer
     description: We present PoliFormer, an RGB-only indoor navigation agent trained end-to-end with reinforcement learning at scale. It is trained for hundreds of millions of interactions across diverse environments, leveraging parallelized, multi-machine rollouts for efficient training with high throughput. It is a masterful navigator, producing SoTA results across two distinct embodiments and four navigation benchmarks. PoliFormer can also be trivially extended to a variety of downstream applications such as object tracking, multi-object navigation, and open-vocabulary navigation in the real world with no finetuning.
     highlighted: true
 
