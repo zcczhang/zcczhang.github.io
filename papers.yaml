@@ -127,6 +127,26 @@ papers:
                   generalization at test time."
     highlighted: true
 
+  - name: openx
+    title:
+      link: https://robotics-transformer-x.github.io/
+      name: "Open X-Embodiment: Robotic Learning Datasets and RT-X Models"
+    authors:
+      - name: Open X-Embodiment Collaboration
+    conference:
+      name: '<oral>Best Paper Award</oral>, <mainconf>ICRA</mainconf>'
+      year: 2024
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2310.08864
+      - name: website
+        href: https://robotics-transformer-x.github.io/
+      - name: code
+        href: https://github.com/google-deepmind/open_x_embodiment
+    description: "We introduce the Open X-Embodiment Dataset, the largest open-source real robot dataset to date. It contains 1M+ real robot trajectories spanning 22 robot embodiments, from single robot arms to bi-manual robots and quadrupeds."
+    highlighted: false
+
+
 
   - name: rmrl
     title:
