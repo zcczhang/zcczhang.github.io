@@ -280,7 +280,7 @@ papers:
       year: 2020 
     links:
       - name: technical report
-        href: https://zcczhang.github.io/files/Research_Report.pdf
+        href: files/uav.pdf
       # - name: poster
       #   href: files/uavposter.png
       - name: code
