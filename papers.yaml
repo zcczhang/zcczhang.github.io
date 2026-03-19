@@ -148,6 +148,27 @@ papers:
 
 
 
+  - name: souplm
+    title:
+      link: https://arxiv.org/abs/2407.08196
+      name: "SoupLM: Model Integration in Large Language and Multi-Modal Models"
+    authors:
+      - name: Yue Bai
+      - name: Zichen Zhang
+        me: true
+      - name: Jiasen Lu
+        href: https://scholar.google.com/citations?user=zP9K32EAAAAJ&hl=en
+      - name: Yun Fu
+    conference:
+      name: arXiv preprint
+      year: 2024
+    links:
+      - name: arXiv
+        href: https://arxiv.org/abs/2407.08196
+    description: "We propose SoupLM, a cost-efficient soup strategy to assemble LLM variants (e.g., LLaMA, Vicuna, LLaVA) into a single well-generalized multimodal LLM."
+    highlighted: false
+    nogif: true
+
   - name: rmrl
     title:
       link: https://zcczhang.github.io/rmrl
@@ -265,29 +286,29 @@ papers:
     nogif: true
     img2: true
 
-  - name: uav
-    title:
-      link: files/uav.pdf
-      name: Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning
-    authors:
-      - me: true
-      - name: Fan Zhang
-      - name: Elisabeth Landgren
-      - name: Aaron Gould
-      - name: Esra Kadioglu Urtis
-    conference:
-      name: PrePrint
-      year: 2020 
-    links:
-      - name: technical report
-        href: files/uav.pdf
-      # - name: poster
-      #   href: files/uavposter.png
-      - name: code
-        href: https://github.com/zcczhang/UAV_Coverage
-    description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
-    highlighted: false
-    nogif: true
+  # - name: uav
+  #   title:
+  #     link: files/uav.pdf
+  #     name: Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning
+  #   authors:
+  #     - me: true
+  #     - name: Fan Zhang
+  #     - name: Elisabeth Landgren
+  #     - name: Aaron Gould
+  #     - name: Esra Kadioglu Urtis
+  #   conference:
+  #     name: PrePrint
+  #     year: 2020 
+  #   links:
+  #     - name: technical report
+  #       href: files/uav.pdf
+  #     # - name: poster
+  #     #   href: files/uavposter.png
+  #     - name: code
+  #       href: https://github.com/zcczhang/UAV_Coverage
+  #   description: DRL algorithms are implemented for singal and dual UAV area coverage path planning (CPP) in rectangular and hex tessellation gridworld, where a graph-based method with surrogate tasks is used to solve the problem in much larger and irregular environments. 
+  #   highlighted: false
+  #   nogif: true
   
   # - name: mems
   #   title:

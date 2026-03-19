@@ -1,7 +1,26 @@
 /* Color scheme stolen from https://www.seas.upenn.edu/~oleh/ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(23, 114, 208, 0.15);
+}
+
+body {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 a {
-color: #1772d0;
-text-decoration:none;
+  color: #1772d0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 .black_link {
 color: Black;
@@ -63,7 +82,9 @@ spotlightws {
 
 
 heading {
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 subtitle {
@@ -77,8 +98,9 @@ papertitle {
   font-weight: 700
 }
 name {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 40px;
+  letter-spacing: -0.03em;
 }
 
 
@@ -356,3 +378,24 @@ b {
 .small-caps { font-variant: small-caps; }
 .bold { font-weight: bold; }
 .underline { text-decoration: underline; }
+
+#mustache_target > .table-like {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#mustache_target > .table-like:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile-img {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.profile-img:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
