@@ -64,7 +64,7 @@ papers:
       - name: Aniruddha Kembhavi
         href: https://anikem.github.io/
     conference:
-      name: <mainconf><oral>Highlight (2.8%)</oral>, Computer Vision and Pattern Recognition Conference (CVPR) 2024</mainconf> <br>covered by <a class='wsLink' href="https://rsipvision.com/CVPR2024-Friday/8/">CVPR Daily</a>
+      name: <mainconf><oral>Highlight</oral>, Computer Vision and Pattern Recognition Conference (CVPR) 2024</mainconf> <br>covered by <a class='wsLink' href="https://rsipvision.com/CVPR2024-Friday/8/">CVPR Daily</a>
       year: 2024
     links:
       - name: arXiv

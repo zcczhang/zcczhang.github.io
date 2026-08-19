@@ -1,162 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <!-- <meta name=viewport content="width=device-width">
-  <meta name=viewport content="width=900"> -->
-  <meta name="description" content="Zichen (Charles) Zhang - Research at the intersection of vision, learning, and robotics.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Zichen (Charles) Zhang — research at the intersection of vision, learning, and robotics.">
+  <meta name="theme-color" content="#f7f8fa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/profile_cz.png">
-  <title>Zichen "Charles" Zhang. Personal Webpage</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-
-  <!-- Gif toggles -->
+  <title>Zichen "Charles" Zhang</title>
   <script>
-  function gif_start(image, gif) {
-    document.getElementById(image).style.opacity = "1";
-    document.getElementById(gif).style.opacity = "0";
-  }
-  function gif_stop(image, gif) {
-    document.getElementById(image).style.opacity = "0";
-    document.getElementById(gif).style.opacity = "1";
-  }
-  </script>
-
-  <!-- Selected publications toggle -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  function pubs_off_start() {
-    $('.hiddenPubs').hide();
-    var e = document.getElementById('sel_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('all_pub_button');
-    e.classList.remove("toggled");
-  }
-  function pubs_off() {
-    $('.hiddenPubs').slideUp();
-    var e = document.getElementById('sel_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('all_pub_button');
-    e.classList.remove("toggled");
-  }
-  function pubs_on() {
-    $('.hiddenPubs').slideDown();
-    var e = document.getElementById('all_pub_button');
-    e.classList.add("toggled");
-    var e = document.getElementById('sel_pub_button');
-    e.classList.remove("toggled");
-  };
-  </script>
-
-  <!-- Dynamic generation -->
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script type="text/javascript" src="data/js-yaml.min.js"></script>
-  <script type="text/javascript">
-  function renderHello() {
-    var template = document.getElementById('template').innerHTML;
-    $.get("./papers.yaml").done(function(data) {
+    (function () {
       try {
-      papers = jsyaml.load(data)
-      var rendered = Handlebars.compile(template)(papers);
-      document.getElementById('mustache_target').innerHTML = rendered;
-      pubs_off_start()
-      }
-      catch(err) {
-      }
-    });
-  }
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
   </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <!-- Dark mode -->
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
-  <script>
-  var options = {
-    autoMatchOsTheme: false // default: true
-  }
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="calib calib-tl" aria-hidden="true"></div>
+  <div class="calib calib-tr" aria-hidden="true"></div>
+  <div class="calib calib-bl" aria-hidden="true"></div>
+  <div class="calib calib-br" aria-hidden="true"></div>
 
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-  </script>
-  <script>console.log("%c\u{1f44b} Hi! Source: github.com/zcczhang/zcczhang.github.io", "color:#1772d0; font-size:14px;");</script>
+  <div class="site-controls">
+    <button type="button" class="theme-toggle" id="robot-toggle" aria-pressed="true" aria-label="Disable following robot">
+      <span class="theme-dot robot-dot"></span>
+      <span class="robot-label">BOT ON</span>
+    </button>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+      <span class="theme-dot"></span>
+      <span class="theme-label">LIGHT</span>
+    </button>
+  </div>
+
   <a name="top"></a>
-  <!-- body -->
-  <div style="max-width:970px; width:100%; margin:0 auto; line-height: 1.5;">
-      <div class="table-like" style="width:100%; text-align:left;">
-        <div style="flex: 1 0 300px;margin-right:50px">
-          <p align="center">
-            <name>Zichen "Charles" Zhang</name> 
-          </p>
-          <p align="center" style="font-family:'Courier New">
-            zcczhang1 at gmail dot com
-          </p>
-          <p>I'm the Member of the Technical Staff at <a href="https://www.skild.ai/">Skild AI Inc.</a> supervised by <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a> and <a href="https://www.cs.cmu.edu/~abhinavg/">Abhinav Gupta</a>. Previously, I was the Predoctoral Young Investigators (PYI) on the <a href="http://prior.allenai.org/">PRIOR</a> team at <a href="https://allenai.org/">AI2</a> supervised by <a href="https://lucaweihs.github.io/">Luca Weihs</a>. 
-            <!-- Previously, I was also fortunate to collaborate with people from <a href="https://svl.stanford.edu/">Stanford Vision & Learning Lab (SVL)</a> and <a href="https://research.nvidia.com/research-area/machine-learning-artificial-intelligence)">NVIDIA</a>, supervised by <a href="https://scholar.google.com/citations?hl=en&user=sljtWIUAAAAJ">Jim Fan</a> and <a href="https://www.cs.utexas.edu/~yukez/">Yuke Zhu</a>.  -->
-          I graduated from <a href="https://www.macalester.edu/">Macalester College</a> in Dec. 2022 advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>.</p>
-          
-          <!-- <p>The Generalist can specialize, and the Specialist can generalize. I am interested in both generalist and specialist agents, with a focus on developing generalizable and effective approaches that can be applied across a wide range of tasks and scenarios.</p> -->
-          <p>My research lies at the intersection of <strong>vision</strong>, <strong>learning</strong>, and <strong>robotics</strong>.</p>
-
-          <p align=center>
-            <!-- <a href="files/CV.pdf">CV</a> &nbsp/&nbsp -->
-            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=pe1ArKwAAAAJ&sortby=pubdate"> Google Scholar </a> &nbsp/&nbsp
-            <a href="https://github.com/zcczhang">GitHub</a> &nbsp/&nbsp
-            <!-- <a href="https://www.linkedin.com/in/charleszzz/">LinkedIn</a> &nbsp/&nbsp -->
-            <a href="https://twitter.com/ZCCZHANG/"> Twitter (X) </a> &nbsp/&nbsp
-            <a href="mailto:zcczhang1@gmail.com">Email</a> &nbsp/&nbsp
-            <a id="myImg">IM</a> 
-            <!-- The Modal -->
-            <div id="popup-img" class="modal">
-              <span class="close">x</span>
-              <img class="modal-content" id="img01">
-              <div id="caption"></div>
-            </div>
-          </p>
+  <div class="page">
+    <div class="table-like" style="width:100%; text-align:left;">
+      <div class="hero-copy">
+        <p align="center">
+          <span class="site-name">Zichen "Charles" Zhang</span>
+        </p>
+        <div class="telemetry" aria-hidden="true">
+          <span class="tel-dot"></span>
+          <span>research · <i>vision</i> × <i>learning</i> × <i>robotics</i></span>
         </div>
+        <p class="email">zcczhang1 at gmail dot com</p>
+        <p>I'm the Member of the Technical Staff at <a href="https://www.skild.ai/">Skild AI Inc.</a> supervised by <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a> and <a href="https://www.cs.cmu.edu/~abhinavg/">Abhinav Gupta</a>. Previously, I was the Predoctoral Young Investigators (PYI) on the <a href="http://prior.allenai.org/">PRIOR</a> team at <a href="https://allenai.org/">AI2</a> supervised by <a href="https://lucaweihs.github.io/">Luca Weihs</a>.
+        I graduated from <a href="https://www.macalester.edu/">Macalester College</a> in Dec. 2022 advised by Prof. <a href="https://mathbeveridge.github.io/">Andrew Beveridge</a> and <a href="https://www.macalester.edu/~fox/">Susan Fox</a>.</p>
 
-        <div style="flex: 0 0 250px;">
-          <img src="images/profile_cz.png" class="profile-img" style="width:100%">
-        </div>
+        <p>My research lies at the intersection of <strong>vision</strong>, <strong>learning</strong>, and <strong>robotics</strong>.</p>
+
+        <p class="links">
+          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=pe1ArKwAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
+          <a href="https://github.com/zcczhang">GitHub</a> &nbsp;/&nbsp;
+          <a href="https://twitter.com/ZCCZHANG/">Twitter (X)</a> &nbsp;/&nbsp;
+          <a href="mailto:zcczhang1@gmail.com">Email</a> &nbsp;/&nbsp;
+          <a id="myImg" role="button" tabindex="0">IM</a>
+          <div id="popup-img" class="modal">
+            <span class="close" aria-label="Close">&times;</span>
+            <img class="modal-content" id="img01" alt="WeChat QR code">
+            <div id="caption"></div>
+          </div>
+        </p>
       </div>
 
-      <script>
-        // Get the modal
-        var modal = document.getElementById('popup-img');
-        
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImg');
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = "images/Wechat.jpeg";
-            // modalImg.alt = this.alt;
-            // captionText.innerHTML = this.alt;
-        }
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-      </script> 
-
-      <!-- News -->
-      <div style="width:100%; text-align:left;">
-        <heading>News</heading>
+      <div class="profile-wrap">
+        <img src="images/profile_cz.png" class="profile-img" alt="Zichen Charles Zhang" style="width:100%">
       </div>
+    </div>
 
-      <div style="width:100%; text-align:left; margin-top:10px;">
-        <ul>
+    <div class="section">
+      <heading>News</heading>
+    </div>
+
+    <div class="news">
+      <ul>
         <li> <b> 05/2025:</b> I've joined <a href="https://www.skild.ai/">Skild AI</a> - grounding my research in the real world!</li>
         <li> <b> 11/2024:</b> <a href="https://poliformer.allenai.org/">PoliFormer</a> is accepted at CoRL 2024 (all strong accepts), and won the <strong>Outstanding Paper Award</strong> &#x1F389; </li>
         <li> <b> 07/2024:</b> Release <a href="https://poliformer.allenai.org/">PoliFormer</a>, an RGB-only indoor navigation agent trained end-to-end with on-policy RL that generalizes to the real world without adaptation, and beats previous SoTA with an improvement of up to 28.5% across LoCoBot and Stretch RE-1.</li>
@@ -172,59 +96,35 @@
     </div>
     <a name="re"></a>
 
-
-
-  <style>
-    .hiddenDesc {
-      display: none;
-    }
-  </style>
-  <script>
-    function toggleDescription(elementId) {
-      var checkbox = document.getElementById(elementId);
-      var descriptionId = "toggleDescription" + elementId;
-      var description = document.getElementById(descriptionId);
-  
-      // Check the state of the toggle and show/hide the paragraph accordingly
-      if (checkbox.checked) {
-          description.style.display = "block";  // Show the paragraph when the toggle is on
-      } else {
-          description.style.display = "none";   // Hide the paragraph when the toggle is off
-      }
-  }
-  </script>
-
-
-    <div style="width:100%; text-align:left; margin-top:20px;">
+    <div class="section">
       <heading>Research</heading>
-      <a style="font-size: 17px; color: black;">(</a><a style="font-size:17px" id='sel_pub_button' href="javascript:pubs_off()">Highlighted</a> <a style="font-size: 17px; color: black;">/</a>
-      <a style="font-size:17px" id='all_pub_button' href="javascript:pubs_on()">All</a><a style="font-size: 17px; color: black;">)</a>
+      <span class="pubs-filter">
+        (<a id="sel_pub_button" class="toggled" href="javascript:pubs_off()">Highlighted</a> /
+        <a id="all_pub_button" href="javascript:pubs_on()">All</a>)
+      </span>
       <br>
       (* indicates equal contribution, <sup><span>&#8224;</span></sup>  indicates equal advising)
       <br><br>
     </div>
 
-    <div id="mustache_target">Loading...</div>
+    <div id="mustache_target">Loading papers…</div>
     <script id="template" type="text/x-handlebars-template">
       {{#papers}}
-      <div style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px; flex-wrap:wrap-reverse; " class="table-like {{#unless highlighted}}hiddenPubs{{/unless}}" onmouseout="gif_stop('{{name}}_image', '{{name}}_gif')" onmouseover="gif_start('{{name}}_image', '{{name}}_gif')">
+      <div class="table-like paper {{#unless highlighted}}hiddenPubs{{/unless}}" data-name="{{name}}" style="width:100%;margin-left:0px;margin-right:0px;margin-top:10px; flex-wrap:wrap-reverse;">
         <div class="zero" style="flex: 1 0 270px;margin-top:0px;margin-right:20px;max-width:270px;">
           <div class="one">
             {{#unless nogif}}
             <div class="two" id='{{name}}_image'>
-              <img src='images/{{name}}_after.gif' class="paper_img">
+              <img src='images/{{name}}_after.gif' class="paper_img" alt="">
             </div>
             {{/unless}}
             {{#if img2}}
               <div class="two" id='{{name}}_image'>
-                <img src='images/{{name}}_after.png' class="paper_img">
+                <img src='images/{{name}}_after.png' class="paper_img" alt="">
               </div>
             {{/if}}
-            <img id='{{name}}_gif' src='images/{{name}}_before.png' class="paper_img">
+            <img id='{{name}}_gif' src='images/{{name}}_before.png' class="paper_img" alt="">
           </div>
-            <!-- {{#unless nogif}}
-            <p style="text-align: center;margin-top:0.4em;margin-bottom:0em;color:Gray;"><i> Hover/tap to play the gif</i></p>
-            {{/unless}} -->
         </div>
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
           <p class="paper_title" style="margin-top:0em;">{{#if title.link}}<a href={{title.link}}>{{else}}<a>{{/if}}<papertitle>{{title.name}}</papertitle></a>
@@ -241,7 +141,7 @@
           {{/if}}
           {{/authors}}
           <br>
-          <font color="DarkGray"><i>{{{conference.name}}}</i> {{{conference.year}}}</font>
+          <span class="muted-note"><i>{{{conference.name}}}</i> {{{conference.year}}}</span>
           <br>
           {{#links}}
           {{#if href}}
@@ -251,89 +151,48 @@
           {{/if}}
           {{/links}}
           </p>
-          
-          <div class="toggle-container">
-            <span class="toggle-other-text">Description</span>
-            <label class="toggle">
-                <input type="checkbox" id="checkbox{{name}}" onchange="toggleDescription('checkbox{{name}}')">
-                <span class="slider"></span>
-                <span class="labels" data-on="On" data-off="Off"></span>
-            </label>
-          </div>
+
+          <button type="button" class="abs-btn" data-desc="checkbox{{name}}" onclick="toggleDescription('checkbox{{name}}')" aria-expanded="false">
+            <span class="chev">▸</span> detail
+          </button>
           <div id="toggleDescriptioncheckbox{{name}}" class="hiddenDesc">
             <p style="margin-bottom:0em;">{{description}}</p>
           </div>
-          
-
         </div>
       </div>
       {{/papers}}
     </script>
-    <script type="text/javascript">
-    renderHello()
-    </script>
 
-    <!-- This <i> tag was for some reason necessary for the publication list switch to work -->
-    <!-- <i> -->
-
-    <!-- Teaching -->
     <a name="t"></a>
-    <div style="width:100%; text-align:left; margin-top:20px;">
-    <heading>Service</heading> <br>
+    <div class="section">
+      <heading>Service</heading>
     </div>
-    <div style="width:100%; text-align:left; margin-top:10px;">
-      <subtitle>Reviewer</subtitle> 
-      <li>CVPR 2026, NeurIPS 2024, ICRA 2024, CVPR 2024, NeurIPS 2023, CoRL 2023</li>    
+    <div class="service-block">
+      <subtitle>Reviewer</subtitle>
+      <li>CVPR 2026, 2025, 2024; ICML 2025; IROS 2025; WACV 2025; RA-L 2024; NeurIPS 2024; ICRA 2024; CoRL Deployable
+        Workshop 2023; NeurIPS FMDM Workshop 2023.</li>
     </div>
-    <div style="width:100%; text-align:left; margin-top:10px;">
+    <div class="service-block">
       <subtitle>Talks</subtitle>
       <li> <b>05/2024:</b> "Universal Visual Decomposer" and "Unified-IO 2" at <a href="https://www.cs.tsinghua.edu.cn/csen/">Tsinghua University</a> hosted by Prof. <a href="https://sites.google.com/site/thuliuhuaping/home">Huaping Liu.</a>
       <li> <b>01/2024:</b> "Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action" at <a href="https://research.google/">Google Deepmind</a> with <a href="https://scholar.google.com/citations?hl=en&user=zP9K32EAAAAJ&view_op=list_works">Jiasen Lu</a>, hosted by <a href="https://fxia22.github.io/">Fei Xia</a> and <a href="https://brianichter.com/">Brian Ichter</a> .</li>
       <li> <b>04/2023:</b> "Autonomous Visuomotor Reinforcement Learning" at <a href="https://ranjaykrishna.com/index.html">Ranjay Krishna</a> group.</li>
     </div>
-    <div style="width:100%; text-align:left; margin-top:10px;">
+    <div class="service-block">
       <subtitle>Teaching</subtitle>
       <li> <strong>TA at Macalester College</strong> : Comp 484 Intro to Artificial Intelligence, MATH 378 Complex Analysis, STAT/COMP 112 Intro to Data Science, COMP 394 Topics Course: Reinforcement Learning, and COMP 128 Data Structure</li>
-      <!-- <li> <b>09/2022:</b> Comp 484 Intro to Artificial Intelligence</li>
-      <li> <b>01/2022:</b> MATH 378 Complex Analysis</li>
-      <li> <b>09/2021:</b> STAT/COMP 112 Intro to Data Science</li>
-      <li> <b>01/2021:</b> COMP 394 Topics Course: Reinforcement Learning <br> <i>(design and write code implementations for homework and class materials)</i></li>
-      <li> <b>09/2020:</b> COMP 128 Data Structure</li>
-      <li> <b>01/2020:</b> STAT/COMP 112 Intro to Data Science</li> -->
     </div>
-
-    <div style="width:100%; text-align:left; margin-top:20px; display:none">
-      <heading>Others </heading>
-    </div>
-    <div style="max-width:900px; width:100%; margin:0 auto; display:none">
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-          <p align="center">
-              <a href="#top"><strong>Home</strong></a>&nbsp&nbsp/&nbsp 
-              <!-- <a href=/projects><strong>Projects</strong></a>&nbsp&nbsp/&nbsp  -->
-              <a href=/posts><strong>Posts</strong></a>
-              <!-- <a><strong>Personal (Comming Soon)</strong></a> -->
-          </p>
-          </tr>
-      </table>
-    </div>
-
-  <span style="display:none">
-    <details>
-      <summary>
-      Pageviews
-      </summary>
-      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=5ee2ff&w=400&t=tt&d=5De8UX9TDFsVQrQw4cE3CBhNblYyl2vQbk42qsTB9Fw&co=ffffff&cmo=d99cff&cmn=ffa3b9&ct=808080"></script>
-    </details>
-  </span>
 
     <br>
     <hr>
-    <div style="margin:auto">
-        <center>
-        Inspired by <a href="https://jonbarron.info/">this</a> and <a href="https://www.seas.upenn.edu/~oleh/">this</a>.
-        </center>
+    <div class="footer">
+      Inspired by <a href="https://jonbarron.info/">this</a> and <a href="https://www.seas.upenn.edu/~oleh/">this</a>.
+      <div id="field-hud" aria-hidden="true"></div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js"></script>
+  <script src="data/js-yaml.min.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
