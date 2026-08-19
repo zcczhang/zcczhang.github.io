@@ -12,6 +12,16 @@
     reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   } catch (_) {}
 
+  function isCoarseDevice() {
+    try {
+      if (window.matchMedia("(pointer: coarse)").matches) return true;
+      if (window.matchMedia("(hover: none) and (max-width: 820px)").matches) return true;
+    } catch (_) {}
+    return navigator.maxTouchPoints > 0 && window.innerWidth < 820;
+  }
+
+  var coarseDevice = isCoarseDevice();
+
   /* ------------------------------------------------------------------ */
   /* Theme                                                                */
   /* ------------------------------------------------------------------ */
@@ -74,26 +84,26 @@
   }
 
   function viewport() {
-    if (window.visualViewport) {
-      return { w: window.visualViewport.width, h: window.visualViewport.height };
-    }
     return { w: window.innerWidth, h: window.innerHeight };
   }
 
   function RobotGuide(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d", { alpha: true });
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.coarse = coarseDevice;
+    this.dpr = Math.min(window.devicePixelRatio || 1, this.coarse ? 1.25 : 2);
     this.t = 0;
     this.steps = 0;
     this.running = false;
     this.enabled = true;
     this.lastTs = 0;
-    this.pointer = { x: 0, y: 0, active: false, coarse: false };
+    this.pointer = { x: 0, y: 0, active: false, coarse: this.coarse };
     this.goal = { x: 0, y: 0 };
     this.bot = { x: 0, y: 0, heading: -0.5, speed: 0, wheel: 0, face: 1, pitch: 0, pitchVel: 0, prevSpeed: 0, accel: 0, stride: 0, amp: 0, bank: 0 };
     this.trail = [];
     this.touchStart = null;
+    this.tiltBound = false;
+    this.tiltHandler = null;
     this.syncColors();
     this.resize();
     this.bot.x = this.w * 0.18;
@@ -141,46 +151,72 @@
     }
   };
 
+  RobotGuide.prototype.enableTilt = function (done) {
+    var self = this;
+    if (this.tiltBound) {
+      if (done) done(true);
+      return;
+    }
+    this.tiltHandler = function (e) {
+      if (!self.running || !self.enabled) return;
+      var gamma = e.gamma;
+      var beta = e.beta;
+      if (gamma == null || beta == null) return;
+      var gx = gamma / 28;
+      var gy = (beta - 55) / 32;
+      if (gx > 1) gx = 1;
+      if (gx < -1) gx = -1;
+      if (gy > 1) gy = 1;
+      if (gy < -1) gy = -1;
+      self.setPointer(self.w * (0.5 + gx * 0.4), self.h * (0.48 + gy * 0.32), true);
+    };
+    function bind() {
+      window.addEventListener("deviceorientation", self.tiltHandler, true);
+      self.tiltBound = true;
+      if (done) done(true);
+    }
+    if (typeof DeviceOrientationEvent !== "undefined" && typeof DeviceOrientationEvent.requestPermission === "function") {
+      DeviceOrientationEvent.requestPermission().then(function (state) {
+        if (state === "granted") bind();
+        else if (done) done(false);
+      }).catch(function () {
+        if (done) done(false);
+      });
+    } else if (typeof DeviceOrientationEvent !== "undefined") {
+      bind();
+    } else if (done) {
+      done(false);
+    }
+  };
+
+  RobotGuide.prototype.disableTilt = function () {
+    if (this.tiltHandler) {
+      window.removeEventListener("deviceorientation", this.tiltHandler, true);
+    }
+    this.tiltBound = false;
+    this.tiltHandler = null;
+    this.pointer.active = false;
+  };
+
   RobotGuide.prototype.bind = function () {
     var self = this;
 
-    window.addEventListener("mousemove", function (e) {
-      self.pointer.coarse = false;
-      self.setPointer(e.clientX, e.clientY, true);
-    }, { passive: true });
+    if (!this.coarse) {
+      window.addEventListener("mousemove", function (e) {
+        self.pointer.coarse = false;
+        self.setPointer(e.clientX, e.clientY, true);
+      }, { passive: true });
 
-    window.addEventListener("mouseleave", function () {
-      self.pointer.active = false;
-    });
-
-    window.addEventListener("touchstart", function (e) {
-      if (!e.touches || !e.touches.length) return;
-      var t = e.touches[0];
-      self.touchStart = { x: t.clientX, y: t.clientY, t: Date.now() };
-    }, { passive: true });
-
-    window.addEventListener("touchend", function (e) {
-      var start = self.touchStart;
-      self.touchStart = null;
-      if (!start) return;
-      var changed = (e.changedTouches && e.changedTouches[0]) || null;
-      var x = changed ? changed.clientX : start.x;
-      var y = changed ? changed.clientY : start.y;
-      var dx = x - start.x;
-      var dy = y - start.y;
-      if (dx * dx + dy * dy > 144) return;
-      self.pointer.coarse = true;
-      self.setPointer(x, y, true);
-    }, { passive: true });
+      window.addEventListener("mouseleave", function () {
+        self.pointer.active = false;
+      });
+    }
 
     function onResize() {
-      self.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      self.dpr = Math.min(window.devicePixelRatio || 1, self.coarse ? 1.25 : 2);
       self.resize();
     }
     window.addEventListener("resize", onResize);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", onResize);
-    }
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) self.running = false;
@@ -626,7 +662,10 @@
   RobotGuide.prototype.setEnabled = function (on) {
     this.enabled = !!on;
     if (on) this.start();
-    else this.stop();
+    else {
+      this.disableTilt();
+      this.stop();
+    }
   };
 
   RobotGuide.prototype.freeze = function () {
@@ -656,6 +695,12 @@
       if (mode === "all") all.classList.add("toggled");
       else all.classList.remove("toggled");
     }
+    if (mode === "all") {
+      each(document.querySelectorAll(".hiddenPubs img[data-src]"), function (img) {
+        img.src = img.getAttribute("data-src");
+        img.removeAttribute("data-src");
+      });
+    }
   }
 
   window.pubs_off = function () { setPubs("highlighted"); };
@@ -672,19 +717,35 @@
   };
 
   function bindPaperHover() {
+    var canHover = true;
+    try { canHover = window.matchMedia("(hover: hover)").matches; } catch (_) {}
     each(document.querySelectorAll(".paper"), function (card) {
       var name = card.getAttribute("data-name");
       var img = document.getElementById(name + "_image");
       var gif = document.getElementById(name + "_gif");
-      if (!img || !gif) return;
-      var start = function () { img.style.opacity = "1"; gif.style.opacity = "0"; };
-      var stop = function () { img.style.opacity = "0"; gif.style.opacity = "1"; };
+      if (!gif) return;
+      if (!canHover || !img) return;
+      var start = function () {
+        var src = img.getAttribute("data-gif");
+        if (src && !img.querySelector("img")) {
+          var el = document.createElement("img");
+          el.className = "paper_img";
+          el.alt = "";
+          el.decoding = "async";
+          el.src = src;
+          img.appendChild(el);
+        }
+        img.style.opacity = "1";
+        gif.style.opacity = "0";
+      };
+      var stop = function () {
+        img.style.opacity = "0";
+        gif.style.opacity = "1";
+      };
       card.addEventListener("mouseenter", start);
       card.addEventListener("mouseleave", stop);
       card.addEventListener("focusin", start);
       card.addEventListener("focusout", stop);
-      card.addEventListener("touchstart", start, { passive: true });
-      card.addEventListener("touchend", stop, { passive: true });
       card.addEventListener("mouseenter", function () {
         if (window.__field) window.__field.setGoalFromElement(card);
       });
@@ -768,34 +829,58 @@
   var robotBtn = document.getElementById("robot-toggle");
 
   function storedRobot() {
-    try { return localStorage.getItem("robot"); } catch (_) { return null; }
+    try { return localStorage.getItem(coarseDevice ? "robot-mobile" : "robot"); } catch (_) { return null; }
+  }
+
+  function ensureField() {
+    if (window.__field) return window.__field;
+    var canvas = document.getElementById("field");
+    if (!canvas) return null;
+    window.__field = new RobotGuide(canvas);
+    return window.__field;
   }
 
   function applyRobot(on, persist) {
-    if (on) document.body.classList.remove("robot-off");
-    else document.body.classList.add("robot-off");
     if (robotBtn) {
       robotBtn.setAttribute("aria-pressed", on ? "true" : "false");
-      robotBtn.setAttribute("aria-label", on ? "Disable following robot" : "Enable following robot");
+      robotBtn.setAttribute("aria-label", on
+        ? (coarseDevice ? "Disable tilt-steered robot" : "Disable following robot")
+        : (coarseDevice ? "Enable tilt-steered robot" : "Enable following robot"));
       var label = robotBtn.querySelector(".robot-label");
       if (label) label.textContent = on ? "BOT ON" : "BOT OFF";
     }
-    if (window.__field) window.__field.setEnabled(on);
+    if (on) {
+      var field = ensureField();
+      if (!field) return;
+      if (coarseDevice) {
+        field.enableTilt(function (ok) {
+          if (!ok) {
+            applyRobot(false, true);
+            return;
+          }
+          document.body.classList.remove("robot-off");
+          field.setEnabled(true);
+        });
+      } else {
+        document.body.classList.remove("robot-off");
+        field.setEnabled(true);
+      }
+    } else {
+      document.body.classList.add("robot-off");
+      if (window.__field) window.__field.setEnabled(false);
+    }
     if (persist) {
-      try { localStorage.setItem("robot", on ? "on" : "off"); } catch (_) {}
+      try { localStorage.setItem(coarseDevice ? "robot-mobile" : "robot", on ? "on" : "off"); } catch (_) {}
     }
   }
 
-  var canvas = document.getElementById("field");
   var robotPref = storedRobot();
-  var robotOn = robotPref ? robotPref === "on" : !reducedMotion;
-  if (canvas) {
-    var field = new RobotGuide(canvas);
-    window.__field = field;
-    applyRobot(robotOn, false);
-  } else {
-    applyRobot(robotOn, false);
-  }
+  var needsOrientGesture = typeof DeviceOrientationEvent !== "undefined" &&
+    typeof DeviceOrientationEvent.requestPermission === "function";
+  var robotOn = coarseDevice
+    ? (!needsOrientGesture && robotPref === "on" && !reducedMotion)
+    : (robotPref ? robotPref === "on" : !reducedMotion);
+  applyRobot(robotOn, false);
 
   if (robotBtn) {
     robotBtn.addEventListener("click", function () {

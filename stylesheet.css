@@ -206,6 +206,11 @@ name,
 
 .paper_img {
   max-width: 100%;
+  height: auto;
+}
+
+.paper-motion {
+  opacity: 0;
 }
 
 .fade {
@@ -602,7 +607,7 @@ body.robot-off #field-hud {
 .telemetry i {
   font-style: normal;
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .tel-dot {

@@ -7,8 +7,9 @@
   <meta name="theme-color" content="#f7f8fa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
+  <link rel="preload" as="image" href="images/profile_cz.png">
   <link rel="icon" type="image/png" href="images/profile_cz.png">
   <title>Zichen "Charles" Zhang</title>
   <script>
@@ -21,7 +22,7 @@
   </script>
 </head>
 
-<body>
+<body class="robot-off">
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="calib calib-tl" aria-hidden="true"></div>
   <div class="calib calib-tr" aria-hidden="true"></div>
@@ -29,9 +30,9 @@
   <div class="calib calib-br" aria-hidden="true"></div>
 
   <div class="site-controls">
-    <button type="button" class="theme-toggle" id="robot-toggle" aria-pressed="true" aria-label="Disable following robot">
+    <button type="button" class="theme-toggle" id="robot-toggle" aria-pressed="false" aria-label="Enable following robot">
       <span class="theme-dot robot-dot"></span>
-      <span class="robot-label">BOT ON</span>
+      <span class="robot-label">BOT OFF</span>
     </button>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
       <span class="theme-dot"></span>
@@ -71,7 +72,7 @@
       </div>
 
       <div class="profile-wrap">
-        <img src="images/profile_cz.png" class="profile-img" alt="Zichen Charles Zhang" style="width:100%">
+        <img src="images/profile_cz.png" class="profile-img" alt="Zichen Charles Zhang" width="250" height="250" decoding="async" fetchpriority="high" style="width:100%;height:auto">
       </div>
     </div>
 
@@ -114,16 +115,16 @@
         <div class="zero" style="flex: 1 0 270px;margin-top:0px;margin-right:20px;max-width:270px;">
           <div class="one">
             {{#unless nogif}}
-            <div class="two" id='{{name}}_image'>
-              <img src='images/{{name}}_after.gif' class="paper_img" alt="">
-            </div>
+            <div class="two paper-motion" id='{{name}}_image' data-gif="images/{{name}}_after.gif"></div>
             {{/unless}}
             {{#if img2}}
-              <div class="two" id='{{name}}_image'>
-                <img src='images/{{name}}_after.png' class="paper_img" alt="">
-              </div>
+            <div class="two paper-motion" id='{{name}}_image' data-gif="images/{{name}}_after.png"></div>
             {{/if}}
-            <img id='{{name}}_gif' src='images/{{name}}_before.png' class="paper_img" alt="">
+            {{#if highlighted}}
+            <img id='{{name}}_gif' src="images/{{name}}_before.png" class="paper_img" alt="" width="270" height="160" loading="lazy" decoding="async">
+            {{else}}
+            <img id='{{name}}_gif' data-src="images/{{name}}_before.png" class="paper_img" alt="" width="270" height="160" decoding="async">
+            {{/if}}
           </div>
         </div>
         <div style="flex: 10000 1 400px;margin-bottom:10px;" valign="top">
@@ -191,8 +192,8 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js"></script>
-  <script src="data/js-yaml.min.js"></script>
-  <script src="site.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js"></script>
+  <script defer src="data/js-yaml.min.js"></script>
+  <script defer src="site.js"></script>
 </body>
 </html>
