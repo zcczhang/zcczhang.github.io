@@ -1,7 +1,7 @@
 papers:
   - name: poliformer
     title:
-      link: https://poliformer.allen.ai/
+      link: https://zcczhang.github.io/poliformer/
       name: "PoliFormer: On-Policy RL with Transformers Results in Masterful Navigators"
     authors:
       - name: Kuo-Hao Zeng
@@ -29,7 +29,7 @@ papers:
       - name: arXiv
         href: https://arxiv.org/pdf/2406.20083
       - name: website
-        href: https://poliformer.allen.ai/
+        href: https://zcczhang.github.io/poliformer/
       - name: poster
         href: files/poliformer-poster.pdf
       - name: code
