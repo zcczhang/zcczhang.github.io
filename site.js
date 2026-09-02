@@ -261,7 +261,7 @@
 
     bot.x += Math.cos(bot.heading) * bot.speed * s * 3.1;
     bot.y += Math.sin(bot.heading) * bot.speed * s * 3.1;
-    var wheelR = 2.55 * (this.scale * 1.18);
+    var wheelR = 3.4 * (this.scale * 1.22);
     bot.wheel += wheelR > 0.5 ? (bot.speed * s * 3.1) / wheelR : 0;
     if (Math.abs(Math.cos(bot.heading)) > 0.18) {
       bot.face = Math.cos(bot.heading) >= 0 ? 1 : -1;
@@ -282,9 +282,9 @@
     if (bot.pitch > 0.1) bot.pitch = 0.1;
     if (bot.pitch < -0.07) bot.pitch = -0.07;
 
-    var wantAmp = bot.speed > 1.7 ? Math.min(1, (bot.speed - 1.65) / 0.65) : 0;
-    bot.amp += (wantAmp - bot.amp) * 0.1 * s;
-    if (bot.amp > 0.04) bot.stride += bot.speed * s * 0.09;
+    var wantAmp = Math.min(1, bot.speed / 2.2);
+    bot.amp += (wantAmp - bot.amp) * 0.08 * s;
+    bot.stride += (0.35 + bot.speed) * s * 0.07;
 
     var m = 22;
     if (bot.x < m) bot.x = m;
@@ -340,30 +340,16 @@
     ctx.globalAlpha = 1;
   };
 
-  RobotGuide.prototype.drawLimb = function (ctx, x1, y1, x2, y2, x3, y3, width) {
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = width;
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.lineTo(x3, y3);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(x1, y1, width * 0.55, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(x2, y2, width * 0.45, 0, Math.PI * 2);
-    ctx.fill();
-  };
-
-  RobotGuide.prototype.drawWheel = function (ctx, x, y, r, ang, squash) {
+  RobotGuide.prototype.drawWheel = function (ctx, x, y, r, ang, squash, fill, rim, hub) {
     squash = squash == null ? 1 : Math.max(0.16, squash);
+    fill = fill || this.colWheel;
+    rim = rim || this.colBot;
+    hub = hub || this.colBody;
     ctx.save();
     ctx.translate(x, y);
     ctx.scale(squash, 1);
-    ctx.fillStyle = this.colWheel;
-    ctx.strokeStyle = this.colBot;
+    ctx.fillStyle = fill;
+    ctx.strokeStyle = rim;
     ctx.lineWidth = 0.85 / squash;
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
@@ -371,14 +357,10 @@
     ctx.stroke();
     ctx.beginPath();
     ctx.arc(0, 0, r * 0.55, 0, Math.PI * 2);
-    ctx.fillStyle = this.colBody;
+    ctx.fillStyle = hub;
     ctx.fill();
     ctx.stroke();
-    ctx.beginPath();
-    ctx.fillStyle = "#5ec8f0";
-    ctx.arc(0, 0, r * 0.22, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = this.colWheel;
+    ctx.strokeStyle = fill;
     ctx.lineWidth = Math.max(0.6, r * 0.2);
     ctx.beginPath();
     ctx.moveTo(Math.cos(ang) * r * 0.78, Math.sin(ang) * r * 0.78);
@@ -390,7 +372,7 @@
   RobotGuide.prototype.drawRobot = function () {
     var ctx = this.ctx;
     var bot = this.bot;
-    var k = this.scale * 1.18;
+    var k = this.scale * 1.22;
     var heading = bot.heading;
     var front = Math.abs(Math.sin(heading));
     var side = Math.abs(Math.cos(heading));
@@ -399,217 +381,291 @@
     var amp = bot.amp;
     var stride = bot.stride;
     var squash = 0.22 + 0.78 * side;
-    var hx = 2.6 + 5.2 * front;
-    var hz = 7.8 * side;
-    var sway = Math.sin(stride) * amp * 2.15;
-    var crouch = amp * 0.35;
-    var bob = Math.max(0, -Math.sin(stride)) * amp * 0.7;
+    var lookYaw = bot.bank * 0.7 + Math.sin(this.t * 0.0015) * 0.16;
+    var lookPitch = 0.16 + pitch * 1.6 + Math.sin(this.t * 0.00105) * 0.08;
+    var extend = 0.62 + 0.38 * (1 - Math.min(1, bot.speed / 2.15));
+    var armSwing = Math.sin(stride) * (0.35 + amp * 0.55);
+    var bob = Math.abs(Math.sin(bot.wheel * 0.55)) * Math.min(0.4, bot.speed * 0.16);
+    var pal = {
+      yellow: "#E3B12A",
+      yellowShadow: "#C08E12",
+      rust: "#7A4E28",
+      tread: "#2B221C",
+      treadMid: "#4A3B30",
+      metal: "#A8AEB4",
+      metalDark: "#5E646A",
+      metalLight: "#D8DCE0",
+      panel: "#1A2226",
+      lens: "#12161A",
+      iris: "#F2D56B",
+      glint: "#FFF6D4"
+    };
 
     function proj(x, yUp, z) {
-      var hipY = 13.2;
+      var hipY = 8.2;
       var dy = yUp - hipY;
       z += dy * pitch;
-      x += yUp * bot.bank * 0.08;
+      x += yUp * bot.bank * 0.07;
       return {
-        x: x * (0.3 + 0.7 * front) + z * side,
+        x: x * (0.28 + 0.72 * front) + z * side,
         y: -yUp + z * 0.08 * front + x * 0.06 * coming,
-        d: z * coming + x * 0.35
+        d: z * coming + x * 0.4
       };
     }
 
-    function limb(a, b, c, w) {
-      var pa = proj(a[0], a[1], a[2]);
-      var pb = proj(b[0], b[1], b[2]);
-      var pc = proj(c[0], c[1], c[2]);
-      ctx.strokeStyle = this.colBot;
-      ctx.fillStyle = this.colBot;
-      this.drawLimb(ctx, pa.x, pa.y, pb.x, pb.y, pc.x, pc.y, w);
+    function joint(p, r) {
+      ctx.beginPath();
+      ctx.fillStyle = pal.metalDark;
+      ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.fillStyle = pal.metalLight;
+      ctx.arc(p.x, p.y, r * 0.42, 0, Math.PI * 2);
+      ctx.fill();
     }
 
-    function skate(phase, sideSign) {
-      var sn = Math.sin(phase);
-      var push = Math.max(0, -sn) * amp;
-      var rec = Math.max(0, sn);
-      rec = rec * rec * (3 - 2 * rec) * amp;
-      var recY = rec * 2.5 - crouch * 0.12;
-      var stance = sideSign * hx * 0.5 + sway;
-      var az = -push * 8.4 + rec * 3.4;
-      return {
-        hip: [stance, 13.1 - crouch, sideSign * hz * 0.08],
-        knee: [
-          stance,
-          7.3 - crouch + rec * 1.4 + push * 0.5,
-          -push * 4.4 + rec * 1.6
-        ],
-        ankle: [stance, 5.55 + recY, az],
-        wheel: [stance, 2.55 + recY, az]
-      };
+    function link(a, b, w) {
+      ctx.strokeStyle = pal.metal;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.lineWidth = w;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
     }
 
     ctx.save();
-    ctx.translate(bot.x, bot.y + 1.4 * k + bob * k);
+    ctx.translate(bot.x, bot.y + 1.15 * k + bob * k);
     ctx.scale(bot.face * k * (1 + coming * 0.05), k * (1 + coming * 0.03));
 
-    var L = skate(stride, -1);
-    var R = skate(stride + Math.PI, 1);
-    var arm = Math.sin(stride) * amp;
-    var lSh = [-5.4 - 1.4 * front, 28.5 - crouch, 0];
-    var rSh = [5.4 + 1.4 * front, 28.5 - crouch, 0];
-    var lElb = [-7.1, 20.5 - crouch, 0.4 - arm * 2.5];
-    var rElb = [7.1, 20.5 - crouch, 0.4 + arm * 2.5];
-    var lHand = [-8.4 - 1.5 * front, 13.5 - crouch * 0.3, 0.6 - arm * 6];
-    var rHand = [8.4 + 1.5 * front, 13.5 - crouch * 0.3, 0.6 + arm * 6];
+    var bodyW = 9.4 + 6.8 * front;
+    var bodyH = 8.6;
+    var bodyY = 8.35;
+    var treadX = 5.35 + 2.55 * front;
+    var body = proj(0, bodyY, 0);
 
-    var lW = proj(L.wheel[0], L.wheel[1], L.wheel[2]);
-    var rW = proj(R.wheel[0], R.wheel[1], R.wheel[2]);
-    var wr = 2.55;
-
-    var drawLeg = function (pose) {
-      limb.call(this, pose.hip, pose.knee, pose.ankle, 2.45);
-      var pw = proj(pose.wheel[0], pose.wheel[1], pose.wheel[2]);
-      var boot = proj(pose.ankle[0], pose.ankle[1], pose.ankle[2]);
-      var lifted = Math.max(0, pose.wheel[1] - 2.6);
-
+    var drawTread = function (sx) {
+      var a = proj(sx, 2.2, -4.7);
+      var b = proj(sx, 2.2, 4.7);
+      var mid = proj(sx, 2.2, 0);
       ctx.save();
-      ctx.translate(pw.x, pw.y + wr + 0.35);
-      ctx.scale(1.05, 0.24);
+      ctx.translate(mid.x, mid.y + 2.5);
+      ctx.scale(1.2 + 0.55 * side, 0.22);
       ctx.beginPath();
-      ctx.arc(0, 0, 4.2, 0, Math.PI * 2);
-      ctx.fillStyle = lifted > 0.8 ? "rgba(0,0,0,0.03)" : "rgba(0,0,0,0.10)";
+      ctx.arc(0, 0, 5.1, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
       ctx.fill();
       ctx.restore();
 
-      this.drawWheel(ctx, pw.x, pw.y, wr * (pw.d > 0 ? 1.05 : 0.95), bot.wheel, squash);
+      ctx.lineCap = "round";
+      ctx.strokeStyle = pal.tread;
+      ctx.lineWidth = 5.1;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+      ctx.strokeStyle = pal.treadMid;
+      ctx.lineWidth = 3.2;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
 
-      var bw = 2.15 + 1.35 * front;
-      ctx.fillStyle = this.colBot;
-      roundedRect(ctx, boot.x - bw / 2, boot.y - 0.2, bw, 2.4, 0.85);
+      var i;
+      for (i = -2; i <= 2; i++) {
+        var wp = proj(sx, 2.2, i * 2.15);
+        this.drawWheel(ctx, wp.x, wp.y, 1.32, bot.wheel + i * 0.45, squash, pal.treadMid, pal.metalDark, pal.metal);
+      }
+      ctx.strokeStyle = pal.yellowShadow;
+      ctx.lineWidth = 1.05;
+      for (i = 0; i < 7; i++) {
+        var u = (bot.wheel * 0.28 + i / 7) % 1;
+        if (u < 0) u += 1;
+        var cz = -4.7 + u * 9.4;
+        var c0 = proj(sx, 0.7, cz);
+        var c1 = proj(sx, 3.6, cz);
+        ctx.beginPath();
+        ctx.moveTo(c0.x, c0.y);
+        ctx.lineTo(c1.x, c1.y);
+        ctx.stroke();
+      }
+    }.bind(this);
+
+    var drawArm = function (sign) {
+      var sh = proj(sign * (5.7 + 1.9 * front), 11.1, 1.1);
+      var el = proj(sign * (8.4 + 2.4 * front), 7.2 - amp * 0.5, 2.6 + Math.abs(armSwing) * 2);
+      var hd = proj(sign * (7.2 + 1.5 * front), 4.4 - amp * 0.35, 5.1 + armSwing * 3.2);
+      link.call(this, sh, el, 2.4);
+      link.call(this, el, hd, 1.95);
+      joint.call(this, sh, 1.55);
+      joint.call(this, el, 1.22);
+      var fx = hd.x - el.x;
+      var fy = hd.y - el.y;
+      var fl = Math.sqrt(fx * fx + fy * fy) || 1;
+      fx /= fl;
+      fy /= fl;
+      var px = -fy;
+      var py = fx;
+      ctx.strokeStyle = pal.metalDark;
+      ctx.lineCap = "round";
+      ctx.lineWidth = 1.35;
+      ctx.beginPath();
+      ctx.moveTo(hd.x, hd.y);
+      ctx.lineTo(hd.x + fx * 2.5 + px * 1.2, hd.y + fy * 2.5 + py * 1.2);
+      ctx.moveTo(hd.x, hd.y);
+      ctx.lineTo(hd.x + fx * 2.5 - px * 1.2, hd.y + fy * 2.5 - py * 1.2);
+      ctx.stroke();
+      joint.call(this, hd, 1.08);
+    }.bind(this);
+
+    var neckPt = function (seg) {
+      return proj(
+        lookYaw * seg * 2.85,
+        13.15 + seg * 3.05 * extend,
+        lookPitch * seg * 2.35 + 0.45
+      );
+    };
+
+    var drawNeck = function () {
+      var n0 = neckPt(0);
+      var n1 = neckPt(1);
+      var n2 = neckPt(2);
+      var n3 = neckPt(2.65);
+      link.call(this, n0, n1, 2.15);
+      link.call(this, n1, n2, 1.85);
+      link.call(this, n2, n3, 1.55);
+      joint.call(this, n0, 1.7);
+      joint.call(this, n1, 1.35);
+      joint.call(this, n2, 1.2);
+      joint.call(this, n3, 1.05);
+    }.bind(this);
+
+    var drawEyes = function () {
+      var spread = 2.55 + 3.15 * front;
+      var yUp = 13.15 + 2.65 * 3.05 * extend;
+      var z = lookPitch * 2.65 * 2.35 + 1.05;
+      var x0 = lookYaw * 2.65 * 2.85;
+      var left = proj(x0 - spread, yUp, z);
+      var right = proj(x0 + spread, yUp, z);
+      var brow = proj(x0, yUp + 0.15, z - 0.15);
+      ctx.strokeStyle = pal.metal;
+      ctx.lineCap = "round";
+      ctx.lineWidth = 2.15;
+      ctx.beginPath();
+      ctx.moveTo(left.x, left.y);
+      ctx.lineTo(right.x, right.y);
+      ctx.stroke();
+      joint.call(this, brow, 1.25);
+
+      function eye(p, dir) {
+        var ew = 3.35 + 2.2 * front;
+        var eh = 3.55;
+        ctx.fillStyle = pal.metalLight;
+        roundedRect(ctx, p.x - ew / 2, p.y - eh / 2, ew, eh, 1.35);
+        ctx.fill();
+        ctx.strokeStyle = pal.metalDark;
+        ctx.lineWidth = 0.85;
+        ctx.stroke();
+        ctx.fillStyle = pal.lens;
+        roundedRect(ctx, p.x - ew * 0.36, p.y - eh * 0.36, ew * 0.72, eh * 0.72, 1.05);
+        ctx.fill();
+        var ix = p.x + lookYaw * 0.55 * dir + 0.15 * coming;
+        var iy = p.y + lookPitch * 0.45;
+        ctx.beginPath();
+        ctx.fillStyle = pal.iris;
+        ctx.arc(ix, iy, Math.max(0.85, 0.7 + 0.4 * front), 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = pal.glint;
+        ctx.arc(ix - 0.32, iy - 0.36, 0.32, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      if (left.d < right.d) {
+        eye.call(this, left, -1);
+        eye.call(this, right, 1);
+      } else {
+        eye.call(this, right, 1);
+        eye.call(this, left, -1);
+      }
+      var glow = ctx.createRadialGradient(brow.x, brow.y, 0.6, brow.x + 3 * coming, brow.y, 10);
+      glow.addColorStop(0, "rgba(242, 213, 107, 0.22)");
+      glow.addColorStop(1, "rgba(242, 213, 107, 0)");
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(brow.x, brow.y, 9, 0, Math.PI * 2);
       ctx.fill();
     }.bind(this);
 
-    var leftFar = lW.d < rW.d;
-    if (leftFar) {
-      limb.call(this, lSh, lElb, lHand, 2.9);
-      drawLeg(L);
-    } else {
-      limb.call(this, rSh, rElb, rHand, 2.9);
-      drawLeg(R);
-    }
-
-    var shoulders = proj(sway * 0.15, 28.4 - crouch, 0);
-    var pelvis = proj(sway * 0.3, 14.2 - crouch, 0);
-    var tw = 8.1 + 7.4 * front;
-    var torsoH = Math.max(10, pelvis.y - shoulders.y);
-    ctx.fillStyle = this.colBody;
-    ctx.strokeStyle = this.colBot;
-    ctx.lineWidth = 1.6;
-    roundedRect(ctx, shoulders.x - tw / 2, shoulders.y, tw, torsoH, 5);
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle = this.colBot;
-    roundedRect(ctx, pelvis.x - tw * 0.36, pelvis.y - 3.5, tw * 0.72, 6.5, 2.4);
-    ctx.fill();
-    roundedRect(ctx, shoulders.x - 2.9, shoulders.y + torsoH * 0.38, 5.8, 6.2, 2);
-    ctx.fill();
-
-    var neck = proj(sway * 0.1, 31.4 - crouch, 0);
-    ctx.fillStyle = this.colBot;
-    roundedRect(ctx, neck.x - 1.45, neck.y - 1.4, 2.9, 4.0, 1.15);
-    ctx.fill();
-
-    var hp = proj(sway * 0.05, 34.8 - crouch * 0.15, 0.25);
-    var hx = hp.x;
-    var hy = hp.y;
-    var hw = 5.2 + 2.5 * front;
-    var hh = 4.85;
-
-    ctx.save();
-    ctx.translate(hx, hy + 0.2);
-    ctx.scale(hw / 10.4, hh / 10.4);
-    ctx.beginPath();
-    ctx.arc(0, 0.2, 5.15, 0, Math.PI * 2);
-    ctx.fillStyle = this.colBody;
-    ctx.fill();
-    ctx.lineWidth = 1.35;
-    ctx.strokeStyle = this.colBot;
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(0, -1.45, 3.55, Math.PI * 1.12, Math.PI * 1.88);
-    ctx.strokeStyle = this.colBot;
-    ctx.lineWidth = 1.05;
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(-1.4, -1.8, 2.4, Math.PI * 1.15, Math.PI * 1.55);
-    ctx.strokeStyle = "rgba(255,255,255,0.35)";
-    ctx.lineWidth = 0.7;
-    ctx.stroke();
-    ctx.restore();
-
-    if (front > 0.38) {
-      ctx.fillStyle = this.colBot;
-      ctx.beginPath();
-      ctx.arc(hx - hw * 0.5, hy + 0.35, 1.2, 0, Math.PI * 2);
+    var drawBody = function () {
+      ctx.fillStyle = pal.yellow;
+      ctx.strokeStyle = pal.yellowShadow;
+      ctx.lineWidth = 1.55;
+      roundedRect(ctx, body.x - bodyW / 2, body.y - bodyH / 2, bodyW, bodyH, 1.35);
       ctx.fill();
-      ctx.beginPath();
-      ctx.arc(hx + hw * 0.5, hy + 0.35, 1.2, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    var visorW = 3.3 + 4.5 * front;
-    var visorX = hx + 0.8 * side;
-    var visorY = hy + 0.4;
-    ctx.fillStyle = "#0a1622";
-    roundedRect(ctx, visorX - visorW / 2, visorY - 1.4, visorW, 2.8, 1.4);
-    ctx.fill();
-    ctx.fillStyle = "rgba(125, 211, 252, 0.3)";
-    roundedRect(ctx, visorX - visorW / 2 + 0.32, visorY - 0.9, visorW - 0.64, 1.8, 0.95);
-    ctx.fill();
-    ctx.fillStyle = "rgba(255,255,255,0.22)";
-    roundedRect(ctx, visorX - visorW / 2 + 0.55, visorY - 1.05, visorW - 1.4, 0.45, 0.22);
-    ctx.fill();
-
-    function cameraEye(ex, ey, r) {
-      ctx.beginPath();
-      ctx.fillStyle = "#05080c";
-      ctx.arc(ex, ey, r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.strokeStyle = this.colBot;
-      ctx.lineWidth = 0.9;
-      ctx.arc(ex, ey, r, 0, Math.PI * 2);
       ctx.stroke();
-      ctx.beginPath();
-      ctx.fillStyle = "#3ec6ff";
-      ctx.arc(ex + 0.12 * r, ey, r * 0.5, 0, Math.PI * 2);
+      ctx.fillStyle = pal.yellowShadow;
+      roundedRect(ctx, body.x - bodyW * 0.42, body.y + bodyH * 0.08, bodyW * 0.84, bodyH * 0.28, 0.7);
       ctx.fill();
-      ctx.beginPath();
-      ctx.fillStyle = "#dff6ff";
-      ctx.arc(ex - 0.28 * r, ey - 0.3 * r, r * 0.2, 0, Math.PI * 2);
+      var pw = bodyW * 0.62;
+      var ph = bodyH * 0.38;
+      var px = body.x - pw / 2;
+      var py = body.y - bodyH * 0.36;
+      ctx.fillStyle = pal.panel;
+      roundedRect(ctx, px, py, pw, ph, 0.55);
       ctx.fill();
-    }
+      ctx.strokeStyle = pal.metalDark;
+      ctx.lineWidth = 0.45;
+      var r;
+      var c;
+      for (r = 1; r < 4; r++) {
+        ctx.beginPath();
+        ctx.moveTo(px + 0.4, py + (ph * r) / 4);
+        ctx.lineTo(px + pw - 0.4, py + (ph * r) / 4);
+        ctx.stroke();
+      }
+      for (c = 1; c < 5; c++) {
+        ctx.beginPath();
+        ctx.moveTo(px + (pw * c) / 5, py + 0.35);
+        ctx.lineTo(px + (pw * c) / 5, py + ph - 0.35);
+        ctx.stroke();
+      }
+      ctx.fillStyle = pal.rust;
+      ctx.globalAlpha = 0.35;
+      ctx.beginPath();
+      ctx.arc(body.x + bodyW * 0.28, body.y + bodyH * 0.22, 1.4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      var collar = proj(0, 13.05, 0.55);
+      ctx.fillStyle = pal.metalDark;
+      roundedRect(ctx, collar.x - 2.1, collar.y - 1.05, 4.2, 2.3, 0.9);
+      ctx.fill();
+      ctx.fillStyle = pal.metal;
+      roundedRect(ctx, collar.x - 1.35, collar.y - 0.55, 2.7, 1.3, 0.55);
+      ctx.fill();
+    }.bind(this);
 
-    if (front > 0.25) {
-      var spread = 1.05 + 1.1 * front;
-      cameraEye.call(this, hx - spread, visorY, 1.0);
-      cameraEye.call(this, hx + spread, visorY, 1.0);
+    var lT = proj(-treadX, 2.2, 0);
+    var rT = proj(treadX, 2.2, 0);
+    var leftFar = lT.d < rT.d;
+    if (leftFar) {
+      drawTread(-treadX);
+      drawArm(-1);
     } else {
-      cameraEye.call(this, hx + 1.5, visorY, 1.1);
+      drawTread(treadX);
+      drawArm(1);
     }
 
-    var glow = ctx.createRadialGradient(visorX + 1.2 * side, visorY, 0.5, visorX + 5 * side, visorY, 9);
-    glow.addColorStop(0, "rgba(125, 211, 252, 0.16)");
-    glow.addColorStop(1, "rgba(125, 211, 252, 0)");
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(visorX + 2 * side, visorY, 8, 0, Math.PI * 2);
-    ctx.fill();
+    drawBody();
+    drawNeck();
+    drawEyes();
 
     if (leftFar) {
-      limb.call(this, rSh, rElb, rHand, 3.1);
-      drawLeg(R);
+      drawArm(1);
+      drawTread(treadX);
     } else {
-      limb.call(this, lSh, lElb, lHand, 3.1);
-      drawLeg(L);
+      drawArm(-1);
+      drawTread(-treadX);
     }
 
     ctx.restore();
